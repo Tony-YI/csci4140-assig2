@@ -18,10 +18,6 @@
 	{
 		$array['file_name'] = "$file_name";
 	}
-
-	$haha1 = (1000000 < $file_size);
-	$haha2 = (1000000 > $file_size);
-	echo "haha1 = $haha1, haha2 = $haha2";
 	if(1000000 < $file_size)
 	{
 		$file_size_flag = "File size too large. Should be less than 1MB.";
