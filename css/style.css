@@ -1,8 +1,8 @@
 #dropbox
 {
-	width: 100%;
+	width: 92%%;
 	height: 70px;
-	border: solid 1px;
+	border: solid 2%;
 	border-color: red;
 	border-radius: 10px;
 	text-align: center;
@@ -10,7 +10,9 @@
 
 #progress_bar
 {
-	width: 100%;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 90%;
 }
 
 body
