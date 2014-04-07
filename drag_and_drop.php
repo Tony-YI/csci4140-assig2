@@ -21,7 +21,7 @@
 	if(1000000 < $file_size)
 	{
 		$file_size_flag = "File size too large. Should be less than 1MB.";
-		$array['$file_size_flag'] = "$file_size_flag";
+		$array['file_size_flag'] = "$file_size_flag";
 	}
 	if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
 	{
@@ -34,7 +34,7 @@
 
 	$haha = array();
 	$haha['file_name'] = "1";
-	$haha['$file_size_flag'] = "2";
+	$haha['file_size_flag'] = "2";
 	$haha['file_type_flag'] = "3";
 	$haha['mysql_error'] = "4";
 	$response1 = json_encode($haha);
