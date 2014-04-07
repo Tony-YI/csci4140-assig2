@@ -34,12 +34,11 @@ function dragOver(e)
 {
 	e.preventDefault();
 	e.stopPropagation();
-	e.target.style.border = "solid 5px";
-	e.target.style.border.color = "red";
+	e.target.style.border = "solid 5px red";
 }
 function dragLeave(e)
 {
 	e.preventDefault();
 	e.stopPropagation();
-	e.target.style.border.color = "red";
+	e.target.style.border = "solid 1px red";
 }
