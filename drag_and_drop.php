@@ -30,6 +30,7 @@
 	}
 
 	$str .= "}";
+	echo $str;
 	$response = json_encode($str);
 	echo $response;
 ?>
