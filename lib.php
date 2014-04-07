@@ -52,7 +52,7 @@ function drop_db()
 
 	catch(PDOException $err)
 	{
-  		echo $e->getMessage();
+  		echo $err->getMessage();
 	} 
 
 
