@@ -33,5 +33,5 @@
 
 	$str2 = "{\"file_name\":\"1.jpg\"}";
 	$response = json_decode($str2);
-	print_r($response);
+	echo ($str2);
 ?>
