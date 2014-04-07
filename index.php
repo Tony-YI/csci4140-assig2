@@ -4,7 +4,6 @@
 	</head>
 
 	<body>
-		<div action="test.php">
-		</div>
+		<?php echo "Hello world.";?>
 	</body>
 </html>
