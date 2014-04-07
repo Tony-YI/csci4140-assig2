@@ -23,6 +23,4 @@ echo "Done<h3/>";
 echo "<h3>Initiating Storage...";
 init_storage();
 echo "Done<h3/>";
-
-show();
 ?>
