@@ -52,8 +52,8 @@ function drop_db()
 
 	catch(PDOException $err)
 	{
-  		echo $err->getMessage();
-	} 
+		echo "haha";
+	}
 
 
 	$db_obj = NULL;
