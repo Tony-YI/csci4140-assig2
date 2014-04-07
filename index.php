@@ -5,11 +5,6 @@
 
 	<body>
 		<?php echo "<a href='./reinit.php'>Reinint</a>";?>
-		<?php
-		require "./lib.php";
-		echo "<h1>reinitiating...</h1>";
-		drop_db();
-		echo "<h1>Done</h1>";
-		?>
+		<?php require "./lib.php";echo "<h1>reinitiating...</h1>";drop_db();echo "<h1>Done</h1>";?>
 	</body>
 </html>
