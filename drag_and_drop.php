@@ -16,7 +16,8 @@
 
 	if($file_name)
 	{
-		$str .= "file_name:"."$file_name";
+		$str = $str.'file_name:'.$file_name.',';
+		echo $str;
 	}
 	if($file_size > 1000000)
 	{
