@@ -1,8 +1,10 @@
 #dropbox
 {
-	width: 92%%;
+	margin-right: 5%;
+	margin-left: 5%;
+	width: 90%%;
 	height: 70px;
-	border: solid 2%;
+	border: solid 1px;
 	border-color: red;
 	border-radius: 10px;
 	text-align: center;
