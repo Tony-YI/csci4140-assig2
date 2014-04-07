@@ -172,11 +172,11 @@ function clean_storage()
 /********************************************/
 function show()
 {
-	echo $_ENV{"OPENSHIFT_DATA_DIR"}; 
-	echo $_ENV{"OPENSHIFT_REPO_DIR"};
-	$result1 = `cd "$_ENV{\"OPENSHIFT_DATA_DIR\"}" && ls`;
+	$q1 = $_ENV{"OPENSHIFT_DATA_DIR"}; 
+	$q2 = $_ENV{"OPENSHIFT_REPO_DIR"};
+	$result1 = `cd "$q1" && ls`;
 	echo $result1;
-	$result2 = `cd "$_ENV{\"OPENSHIFT_REPO_DIR\"}" && ls`;
+	$result2 = `cd "$_ENV{/"OPENSHIFT_REPO_DIR/"}" && ls`;
 	echo $result2;
 }
 
