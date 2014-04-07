@@ -10,11 +10,11 @@ function drop(e)
 	//End of adding something
 
 	var reader = new FileReader(); //file API
-	reader.onloadend = handleReaderLoadEnd; //init the reader event handlers
+	reader.onloadend = handleReaderLoadEnd(e, file_name); //init the reader event handlers
 	reader.readAsDataURL(file); //begin the read operation
 }
 
-function handleReaderLoadEnd(e)
+function handleReaderLoadEnd(e, file_name)
 {
 	var data = e.target.result.split(',')[1]; //get the image data
 
