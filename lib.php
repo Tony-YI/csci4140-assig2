@@ -14,18 +14,20 @@ $db_name = $_ENV{"OPENSHIFT_APP_NAME"};
 
 function creat_db()
 {
+	global $db_host, $db_name, $db_username, $db_password;
 	//$dbh = new PDO('mysql:host=localhost;dbname=test', $username, $password);
-	$db_source = "mysql:host=global $db_host;";
+	$db_source = "mysql:host=$db_host;";
 
-	if(debug == 1)
+	global $debug;
+	if($debug == 1)
 	{
 		echo "$db_source";
 	}
 
-	$db_obj = new PDO($db_source, global $db_username, global $db_password);
+	$db_obj = new PDO($db_source, $db_username, $db_password);
 
 	//$query = $dbh->prepare(“UPDATE client SET pass=‘cool’ WHERE  user=‘tywong’”);
-	$query1 = $db_obj->prepare("CREATE DATABASE global $db_name;");
+	$query1 = $db_obj->prepare("CREATE DATABASE $db_name;");
 	$query1->execute();
 
 	$query2 = $db_obj->prepare("SET GLOBAL time_zone = '-5:00';");
@@ -35,19 +37,21 @@ function creat_db()
 
 function drop_db()
 {
-	$db_source = "mysql:host=global $db_host;";
+	global $db_host, $db_name, $db_username, $db_password;
+	$db_source = "mysql:host=$db_host;";
+	$db_obj = new PDO($db_source, $db_username, $db_password);
 
-	$db_obj = new PDO($db_source, global $db_username, global $db_password);
-
-	$query = $db_obj->prepare("CREATE DATABASE global $db_name;");
+	$query = $db_obj->prepare("CREATE DATABASE $db_name;");
 	$query->execute();
 	$db_obj = NULL;
 }
 
 function db_execute($query)
 {
-	$db_source = "mysql:host=global $db_host;dbname=global $db_name";
-	$db_obj = new PDO($db_source, global $db_username, global $db_password);
+	global $db_host, $db_name, $db_username, $db_password;
+	$db_source = "mysql:host=$db_host;dbname=$db_name";
+	$db_obj = new PDO($db_source, $db_username, $db_password);
+	
 	$q = $db_obj->prepare($query);
 	$q->execute();
 	$db_obj = NULL;
