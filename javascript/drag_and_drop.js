@@ -47,7 +47,7 @@ function handleReaderLoadEnd(e, file)
 			else
 			{
 				document.getElementById('progress_bar').value = 0; //upload finished, reset it to 0
-				document,getElementById('dropbox').style.background = "white";
+				document.getElementById('dropbox').style.background = "white";
 
 				try
 				{
@@ -67,7 +67,7 @@ function handleReaderLoadEnd(e, file)
 			}
 		}
 	};
-	return NULL;
+	return null; //not NULL
 }
 
 function progress_bar(e)
