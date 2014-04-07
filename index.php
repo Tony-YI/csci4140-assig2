@@ -48,6 +48,6 @@
 	<body>
 		<?php echo "<a href='./reinit.php'>Reinint</a>";?>
 
-		<div id="dropbox" ondrop="init()">Drop file here. One file at a time...</div>
+		<div id="dropbox" ondrop="drop()">Drop file here. One file at a time...</div>
 	</body>
 </html>
