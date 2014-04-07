@@ -176,7 +176,7 @@ function show()
 	$q2 = $_ENV{"OPENSHIFT_REPO_DIR"};
 	$result1 = `cd "$q1" && ls`;
 	echo $result1;
-	$result2 = `cd "$_ENV{/"OPENSHIFT_REPO_DIR/"}" && ls`;
+	$result2 = `cd "$_ENV{'OPENSHIFT_REPO_DIR'}" && ls`;
 	echo $result2;
 }
 
