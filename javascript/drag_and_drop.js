@@ -19,15 +19,17 @@ function handleReaderLoadEnd(e)
 	var data = e.target.result.split(',')[1]; //get the image data
 
 	var xhr = new XMLHttpRequest();
-	var url = "./drag_and_drop.php";  //This is the file due with the drag_and_drop upload
-	xhr.open('POST', url, true);	//true means async.
 
+	xhr.open('POST', './drag_and_drop.php', true);	//This is the file due with the drag_and_drop upload.
+													//true means async.
 	//You still need to add something here
 	xhr.setRequestHeader('FILE_NAME', file_name);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	//End of adding something
 
-	xhr.send(data);
+	//xhr.send(data);
+
+	alert("Fuckkkkkk");
 }
 
 function dragOver(e)
