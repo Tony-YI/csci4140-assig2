@@ -8,9 +8,9 @@ In this file, all the php function call is inclued.
 /********Setup DataBase (PHP-MYSQL)**********/
 /********************************************/
 $db_host = $_ENV{'OPENSHIFT_MYSQL_DB_HOST'};
-$db_username = $_ENV{"OPENSHIFT_MYSQL_DB_USERNAME"};
-$db_password = $_ENV{"OPENSHIFT_MYSQL_DB_PASSWORD"};
-$db_name = $_ENV{"OPENSHIFT_APP_NAME"};
+$db_username = $_ENV{'OPENSHIFT_MYSQL_DB_USERNAME'};
+$db_password = $_ENV{'OPENSHIFT_MYSQL_DB_PASSWORD'};
+$db_name = $_ENV{'OPENSHIFT_APP_NAME'};
 
 function create_db()
 {
