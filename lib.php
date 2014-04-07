@@ -51,7 +51,7 @@ function drop_db()
 		$db_obj = new PDO($db_source, $db_username, $db_password);
 
 		echo "4";
-		$db_boj->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$db_obj->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		echo "5";
 		$query = $db_obj->prepare("CREATE DATABASE $db_name;");
