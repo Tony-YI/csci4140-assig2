@@ -107,9 +107,9 @@ function db_execute($query)
 /***********Setup Permanent Storage**********/
 /********************************************/
 $data_dir = $_ENV{"OPENSHIFT_DATA_DIR"};
-$img_dir = '_img';
-$shortcut_dir = '_shortcut';
-$temp_dir = '_temp';
+$img_dir = "_img";
+$shortcut_dir = "_shortcut";
+$temp_dir = "_temp";
 
 function show_dir()
 {
