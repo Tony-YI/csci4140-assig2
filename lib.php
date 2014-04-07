@@ -115,7 +115,7 @@ function init_storage()
 {
 	try
 	{
-		$result = 'cd "$data_dir" && mkdir "$temp_dir" && mkdir "$img_dir" && mkdir "$shortcut_dir"';
+		$result = `cd "$data_dir" && mkdir "$temp_dir" && mkdir "$img_dir" && mkdir "$shortcut_dir"`;
 		echo "$result";
 	}
 	catch(Exception $e)
