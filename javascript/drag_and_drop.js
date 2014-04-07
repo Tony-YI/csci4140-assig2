@@ -34,6 +34,10 @@ function handleReaderLoadEnd(e, file)
 	xhr.setRequestHeader('FILE_TYPE', file.type);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); //this is required in order to pretend to be a form submittion
 
+	console.log(file.name);
+	console.log(file.size);
+	console.log(file.type);
+
 	xhr.send(data);
 
 	xhr.onreadystatechange = function ()
@@ -69,17 +73,33 @@ function handleReaderLoadEnd(e, file)
 				{
 					document.getElementById('file_name').innerHTML = response.file_name;
 				}
+				else //clear the old data
+				{
+					document.getElementById('file_name').innerHTML = null;
+				}
 				if(response.file_type_flag)
 				{
 					document.getElementById('file_type_flag').innerHTML = response.file_type_flag;
+				}
+				else
+				{
+					document.getElementById('file_type_flag').innerHTML = null;
 				}
 				if(response.file_size_flag)
 				{
 					document.getElementById('file_size_flag').innerHTML = response.file_size_flag;
 				}
+				else
+				{
+					document.getElementById('file_size_flag').innerHTML = null;
+				}
 				if(response.mysql_error)
 				{
 					document.getElementById('mysql_error').innerHTML = response.mysql_error;
+				}
+				else
+				{
+					document.getElementById('mysql_error').innerHTML = null;
 				}
 
 				//TODO: update_album();
