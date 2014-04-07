@@ -115,7 +115,8 @@ function init_storage()
 {
 	try
 	{
-		'cd "$data_dir" && mkdir "$temp_dir" && mkdir "$img_dir" && mkdir "$shortcut_dir"';
+		$result = 'cd "$data_dir" && mkdir "$temp_dir" && mkdir "$img_dir" && mkdir "$shortcut_dir"';
+		echo "$result";
 	}
 	catch(Exception $e)
 	{
@@ -127,8 +128,8 @@ function clean_storage()
 {
 	try
 	{
-		$hehe = `cd "$data_dir" && ls`;
-		echo "$hehe";
+		$result = `cd "$data_dir" && ls`;
+		echo "$result";
 	}
 	catch(Exception $e)
 	{
