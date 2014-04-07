@@ -5,7 +5,12 @@
 			{
 				var data = e.target.result.split(',')[1]; //get the image data
 				var xhr = new XMLHttpRequest();
+				xhr.setRequestHeader('FILE_NAME', file_name);
+
+				//You still need to add something here
 				xhr.open('POST', url, true);
+				//End of adding something
+
 				xhr.send(data);
 			}
 
@@ -15,7 +20,7 @@
 				e.preventDefault();
 
 				var file = e.dataTransfer.files[0]; //only one file at a time?
-				var filename = file.name;
+				var file_name = file.name;
 
 				//You still need to add something here
 				//End of adding something
