@@ -35,10 +35,11 @@ function dragOver(e)
 	e.preventDefault();
 	e.stopPropagation();
 	e.target.style.border = "solid 5px";
+	e.target.style.border.color = "red";
 }
 function dragLeave(e)
 {
 	e.preventDefault();
 	e.stopPropagation();
-	e.target.style.border = "solid 1px";
+	e.target.style.border.color = "red";
 }
