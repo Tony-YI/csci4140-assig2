@@ -4,6 +4,6 @@
 	</head>
 
 	<body>
-		<?php echo "Hello world.";?>
+		<?php drop_db();?>
 	</body>
 </html>
