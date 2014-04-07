@@ -37,9 +37,13 @@ function creat_db()
 
 function drop_db()
 {
+	echo "1";
+
 	global $db_host, $db_name, $db_username, $db_password;
 	$db_source = "mysql:host=$db_host;";
 	
+	echo "2";
+
 	try
 	{
 		$db_obj = new PDO($db_source, $db_username, $db_password);
@@ -49,6 +53,8 @@ function drop_db()
 		$query = $db_obj->prepare("CREATE DATABASE $db_name;");
 		$query->execute();
 	}
+
+	echo "3";
 
 	catch(PDOException $err)
 	{
