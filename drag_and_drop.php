@@ -12,26 +12,23 @@
 	$file_size = $_SERVER{'HTTP_FILE_SIZE'};
 	$file_type = $_SERVER{'HTTP_FILE_TYPE'};
 
-	$str = "{";
+	$array = array();
 
 	if($file_name)
 	{
-		$str = $str.'file_name:'.$file_name;
+		$array['file_name'] = "$file_name";
 	}
 	if($file_size > 1000000)
 	{
 		$file_size_flag = "File size too large. Should be less than 1MB.";
-		$str = $str.',file_size_flag:'.$file_size_flag;
+		$array['$file_size_flag'] = "$file_size_flag";
 	}
 	if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
 	{
-		$file_size_flag = "File should be jpeg/jpg/png/gif.";
-		$str = $str.',file_type_flag:'.$file_type_flag;
+		$file_type_flag = "File should be jpeg/jpg/png/gif.";
+		$array['file_type_flag'] = "$file_type_flag";
 	}
 
-	$str = $str."}";
-
-	$str2 = "{\"file_name\":\"1.jpg\"}";
-	$response = json_decode($str2);
-	echo ($str2);
+	$response = json_encode($array);
+	echo ($response);
 ?>
