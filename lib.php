@@ -158,4 +158,23 @@ function clean_storage()
 	}
 }
 /********************************************/
+/***********Setup Album Display**************/
+/********************************************/
+#since the photos are store in the presistent storage
+#are not accessable by the browser.
+#we must create a symbolic link of the presisten dir
+#so that we can get back the photo using browser
+
+#add file "deploy" in [project_name]/.openshift/action_hooks/
+#the file name must be "deploy"
+#add line into "deploy"
+#ln -s {OPENSHIFT_DATA_DIR} {OPENSHIFT_REPO_DIR}/php/data
+/********************************************/
+function show()
+{
+	echo "$_ENV{OPENSHIFT_DATA_DIR} $_ENV{OPENSHIFT_REPO_DIR} ";
+	echo "`cd $_ENV{OPENSHIFT_DATA_DIR} && ls`";
+	echo "`cd $_ENV{OPENSHIFT_REPO_DIR} && ls`";
+}
+
 ?>
