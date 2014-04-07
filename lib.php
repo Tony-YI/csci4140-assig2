@@ -134,6 +134,7 @@ function init_storage()
 	{
 		$result = `cd "$data_dir" && mkdir "$temp_dir" && mkdir "$img_dir" && mkdir "$shortcut_dir"`;
 		echo "$result";
+		show_dir();
 	}
 	catch(Exception $e)
 	{
@@ -149,6 +150,7 @@ function clean_storage()
 	{
 		$result = `cd "$data_dir" && rm -rf "$temp_dir" && rm -rf "$img_dir" && rm -rf "$shortcut_dir" `;
 		echo "$result";
+		show_dir();
 	}
 	catch(Exception $e)
 	{
