@@ -111,12 +111,26 @@ $img_dir = $data_dir.'_img';
 $shortcut_dir = $data_dir.'_shortcut';
 $temp_dir = $data_dir.'_temp';
 
+function show_dir()
+{
+	try
+	{
+		$result = `cd "$data_dir" && ls -a`;
+		echo "$result";
+	}
+	catch(Exception $e)
+	{
+		echo "$e";
+	}
+}
+
 function init_storage()
 {
 	try
 	{
 		$result = `cd "$data_dir" && mkdir "$temp_dir" && mkdir "$img_dir" && mkdir "$shortcut_dir"`;
 		echo "$result";
+		show_dir();
 	}
 	catch(Exception $e)
 	{
