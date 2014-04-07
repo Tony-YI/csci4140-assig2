@@ -11,5 +11,6 @@
 		<?php echo "<a href='./reinit.php'>Reinint</a>";?>
 
 		<div id="dropbox">Drop file here. One file at a time...</div>
+		<progress id="progress_bar" value="0" max="100"></progress>
 	</body>
 </html>

@@ -6,33 +6,40 @@ function drop(e)
 	var file = e.dataTransfer.files[0]; //only one file at a time?
 	var file_name = file.name;
 
-	//You still need to add something here
-	//End of adding something
-
 	var reader = new FileReader(); //file API
-	reader.onloadend = handleReaderLoadEnd(e, file_name); //init the reader event handlers
-	reader.readAsDataURL(file); //begin the read operation
+	//init the reader event handlers
+	reader.onloadend = (function(file){
+			return function(e) {
+				handleReaderLoadEnd(e,file);
+				return null;
+			};	
+		})(file); //don't know why, just copy and paste
+	//begin the read operation
+	reader.readAsDataURL(file); 
 }
 
-function handleReaderLoadEnd(e, file_name)
+function handleReaderLoadEnd(e, file)
 {
 	var data = e.target.result.split(',')[1]; //get the image data
 
 	var xhr = new XMLHttpRequest();
 
+	xhr.upload.addEventListener('progress', progress_bar, false);
+
 	xhr.open('POST', './drag_and_drop.php', true);	//This is the file due with the drag_and_drop upload.
 													//true means async.
-	
-	alert("Fuckkkkkk1");
 
-	//You still need to add something here
-	xhr.setRequestHeader('FILE_NAME', file_name);
-	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	//End of adding something
+	xhr.setRequestHeader('FILE_NAME', file.name);
+	xhr.setRequestHeader('FILE_SIZE', file.size);
+	xhr.setRequestHeader('FILE_TYPE', file.type);
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); //this is required in order to pretend to be a form submittion
 
-	//xhr.send(data);
+	xhr.send(data);
+}
 
-	alert("Fuckkkkkk2");
+function progress_bar(e)
+{
+	document.getElementById('prograss_bar').value = e.loaded/e.total * 100;
 }
 
 function dragOver(e)
