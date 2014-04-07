@@ -113,7 +113,7 @@ $temp_dir = $data_dir.'_temp';
 
 function init_storage()
 {
-
+	echo "init_storage";
 }
 
 function clean_storge()
