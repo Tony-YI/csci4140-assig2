@@ -46,11 +46,11 @@ function dragOver(e)
 {
 	e.preventDefault();
 	e.stopPropagation();
-	e.target.style.background-coolr = "red";
+	e.target.style.background-color = "red";
 }
 function dragLeave(e)
 {
 	e.preventDefault();
 	e.stopPropagation();
-	e.target.style.background-coolr = "white";
+	e.target.style.background-coolor = "white";
 }
