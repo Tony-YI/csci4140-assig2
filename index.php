@@ -1,14 +1,18 @@
 <html>
 	<head>
+		<!--drag_and_drop upload-->
 		<script language="javascript" type="text/javascript">
 			function handleReaderLoadEnd(e)
 			{
 				var data = e.target.result.split(',')[1]; //get the image data
+
 				var xhr = new XMLHttpRequest();
-				xhr.setRequestHeader('FILE_NAME', file_name);
+				var url = "./drag_and_drop.php";  //This is the file due with the drag_and_drop upload
+				xhr.open('POST', url, true);
 
 				//You still need to add something here
-				xhr.open('POST', url, true);
+				xhr.setRequestHeader('FILE_NAME', file_name);
+				xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				//End of adding something
 
 				xhr.send(data);
@@ -43,6 +47,7 @@
 
 	<body>
 		<?php echo "<a href='./reinit.php'>Reinint</a>";?>
+
 		<div id="dropbox">Drop file here. One file at a time...</div>
 	</body>
 </html>
