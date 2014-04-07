@@ -1,7 +1,7 @@
 <?php
 	require "./lib.php";
 
-	header("Content-type: text/plain");
+	header("Content-type: text/json");
 	//$raw_data = file_get_contents('php://input');
 	//$data = base64_decode($raw_data);	//decode the result
 	//$file_name = $_SERVER['HTTP_FILE_NAME'];
@@ -29,7 +29,7 @@
 		$str = $str.',file_type_flag:'.$file_type_flag;
 	}
 
-	$str .= "}";
+	$str = $str."}";
 	$response = json_decode($str);
 	print_r($response);
 ?>
