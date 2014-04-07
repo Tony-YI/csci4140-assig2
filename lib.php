@@ -10,7 +10,7 @@ $db_username = $_ENV{"OPENSHIFT_MYSQL_DB_USERNAME"};
 $db_password = $_ENV{"OPENSHIFT_MYSQL_DB_PASSWORD"};
 $db_name = $_ENV{"OPENSHIFT_APP_NAME"};
 
-function creat_db()
+function create_db()
 {
 	global $db_host, $db_name, $db_username, $db_password;
 	//$dbh = new PDO('mysql:host=localhost;dbname=test', $username, $password);
@@ -58,7 +58,7 @@ function drop_db()
 	$db_obj = NULL;
 }
 
-function creat_table()
+function create_table()
 {
 	global $db_host, $db_name, $db_username, $db_password;
 	$db_source = "mysql:host=$db_host;dbname=$db_name";
