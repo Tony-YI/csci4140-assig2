@@ -12,5 +12,13 @@
 
 		<div id="dropbox">Drop file here. One file at a time...</div>
 		<progress id="progress_bar" value="0" max="100"></progress>
+
+		<div>
+			<h3>Console</h3>
+			<p id="file_name"></p>
+			<p id="file_type_flag"></p>
+			<p id="file_size_flag"></p>
+			<p id="mysql_error"></p>
+		</div>
 	</body>
 </html>

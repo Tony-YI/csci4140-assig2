@@ -35,6 +35,38 @@ function handleReaderLoadEnd(e, file)
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); //this is required in order to pretend to be a form submittion
 
 	xhr.send(data);
+
+	xhr.onreadystatechange = function ()
+	{
+		if(xhr.readyState == 4)
+		{
+			if(xhr.status !== 200) //200 OK
+			{
+				alert("Error Code: " + new string(xhr.status));
+			}
+			else
+			{
+				document.getElementById('progress_bar').value = 0; //upload finished, reset it to 0
+
+				try
+				{
+					var response = JSON.parse(xhr.responseText);
+				}
+				catch(e)
+				{
+					console.log(e);
+					console.log(xhr.responseText);
+					return; //exit the function
+				}
+
+				console.log(response.file_name);
+				console.log(response.file_type_flag);
+				console.log(response.file_size_flag);
+				console.log(response.mysql_error);
+			}
+		}
+	};
+	return NULL;
 }
 
 function progress_bar(e)
