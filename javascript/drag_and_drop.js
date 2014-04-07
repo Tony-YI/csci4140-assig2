@@ -10,11 +10,11 @@ function drop(e)
 	//End of adding something
 
 	var reader = new FileReader(); //file API
-	reader.onloadend = handleReaderLoadEnd; //init the reader event handlers
+	reader.onloadend = handleReaderLoadEnd(e, file_name); //init the reader event handlers
 	reader.readAsDataURL(file); //begin the read operation
 }
 
-function handleReaderLoadEnd(e)
+function handleReaderLoadEnd(e, file_name)
 {
 	var data = e.target.result.split(',')[1]; //get the image data
 
@@ -26,7 +26,7 @@ function handleReaderLoadEnd(e)
 	alert("Fuckkkkkk1");
 
 	//You still need to add something here
-	xhr.setRequestHeader('FILE_NAME', '1.jpg');
+	xhr.setRequestHeader('FILE_NAME', file_name);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	//End of adding something
 
