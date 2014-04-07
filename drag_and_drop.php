@@ -18,7 +18,7 @@
 	{
 		$array['file_name'] = "$file_name";
 	}
-	echo ($file_size)
+	echo ($file_size);
 	if($file_size > 1000000)
 	{
 		$file_size_flag = "File size too large. Should be less than 1MB.";
