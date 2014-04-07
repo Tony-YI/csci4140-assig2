@@ -23,14 +23,13 @@
 		$file_size_flag = "File size too large. Should be less than 1MB.";
 		$str = $str.',file_size_flag:'.$file_size_flag.',';
 	}
-	if($file_type != "image/jpeg" || $file_type != "image/jpg" || $file_type != "image/gif" || $file_type != "image/png")
+	if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
 	{
 		$file_size_flag = "File should be jpeg/jpg/png/gif.";
 		$str = $str.',file_type_flag:'.$file_type_flag;
 	}
 
 	$str .= "}";
-	echo $str;
 	$response = json_encode($str);
 	echo $response;
 ?>
