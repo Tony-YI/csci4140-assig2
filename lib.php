@@ -113,13 +113,27 @@ $temp_dir = $data_dir.'_temp';
 
 function init_storage()
 {
-	'cd "$data_dir" && mkdir "$temp_dir" && mkdir "$img_dir" && mkdir "$shortcut_dir"';
+	try
+	{
+		'cd "$data_dir" && mkdir "$temp_dir" && mkdir "$img_dir" && mkdir "$shortcut_dir"';
+	}
+	catch(Exception $e)
+	{
+		echo "$e";
+	}
 }
 
 function clean_storage()
 {
-	$hehe = `cd "$data_dir" $$ ls`;
-	echo "$hehe";
+	try
+	{
+		$hehe = `cd "$data_dir" && ls`;
+		echo "$hehe";
+	}
+	catch(Exception $e)
+	{
+		echo "$e";
+	}
 }
 /********************************************/
 ?>
