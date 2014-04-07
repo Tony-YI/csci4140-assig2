@@ -16,11 +16,11 @@ echo "<h3>Creating Table...";
 create_table();
 echo "Done</h3>";
 
-echo "<h3>Cleaning Storage..."
+echo "<h3>Cleaning Storage...";
 clean_storage();
-echo "Done<h3/>"
+echo "Done<h3/>";
 
-echo "<h3>Initiating Storage..."
+echo "<h3>Initiating Storage...";
 init_storage();
-echo "Done<h3/>"
+echo "Done<h3/>";
 ?>

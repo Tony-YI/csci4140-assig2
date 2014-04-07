@@ -116,7 +116,7 @@ function init_storage()
 	echo "init_storage";
 }
 
-function clean_storge()
+function clean_storage()
 {
 	$hehe = `cd "$data_dir" $$ ls`;
 	echo "$hehe";
