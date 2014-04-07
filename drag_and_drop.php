@@ -13,11 +13,11 @@
 
 	if($file_size > 1000000)
 	{
-		$file_size_flag = "File size too large. Should be less than 1MB."
+		$file_size_flag = "File size too large. Should be less than 1MB.";
 	}
 	if($file_type != "image/jpeg" || $file_type != "image/jpg" || $file_type != "image/gif" || $file_type != "image/png")
 	{
-		$file_size_flag = "File should be jpeg/jpg/png/gif."
+		$file_size_flag = "File should be jpeg/jpg/png/gif.";
 	}
 
 	echo "file_name = $file_name, file_size = $file_size, file_type=$file_type";
