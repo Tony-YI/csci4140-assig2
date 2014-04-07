@@ -113,7 +113,7 @@ $temp_dir = $data_dir.'_temp';
 
 function init_storage()
 {
-	echo "init_storage";
+	'cd "$data_dir" && mkdir "$temp_dir" && mkdir "$img_dir" && mkdir "$shortcut_dir"';
 }
 
 function clean_storage()
