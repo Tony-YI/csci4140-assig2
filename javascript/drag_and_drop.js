@@ -22,14 +22,17 @@ function handleReaderLoadEnd(e)
 
 	xhr.open('POST', './drag_and_drop.php', true);	//This is the file due with the drag_and_drop upload.
 													//true means async.
+	
+	alert("Fuckkkkkk1");
+
 	//You still need to add something here
-	xhr.setRequestHeader('FILE_NAME', file_name);
+	xhr.setRequestHeader('FILE_NAME', '1.jpg');
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	//End of adding something
 
 	//xhr.send(data);
 
-	alert("Fuckkkkkk");
+	alert("Fuckkkkkk2");
 }
 
 function dragOver(e)
