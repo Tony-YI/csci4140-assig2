@@ -4,6 +4,6 @@
 	</head>
 
 	<body>
-		<?php drop_db();?>
+		<?php echo "<a href='./reinit.php'>Reinint</a>";?>
 	</body>
 </html>
