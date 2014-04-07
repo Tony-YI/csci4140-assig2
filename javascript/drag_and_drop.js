@@ -39,7 +39,7 @@ function handleReaderLoadEnd(e, file)
 
 function progress_bar(e)
 {
-	document.getElementById('prograss_bar').value = e.loaded/e.total * 100;
+	document.getElementById('progress_bar').value = e.loaded/e.total * 100;
 }
 
 function dragOver(e)

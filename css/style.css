@@ -7,3 +7,8 @@
 	border-radius: 10px;
 	text-align: center;
 }
+
+#progress_bar
+{
+	width: 100%;
+}
