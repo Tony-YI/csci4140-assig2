@@ -39,10 +39,23 @@ function drop_db()
 {
 	global $db_host, $db_name, $db_username, $db_password;
 	$db_source = "mysql:host=$db_host;";
-	$db_obj = new PDO($db_source, $db_username, $db_password);
+	
+	try
+	{
+		$db_obj = new PDO($db_source, $db_username, $db_password);
 
-	$query = $db_obj->prepare("CREATE DATABASE $db_name;");
-	$query->execute();
+		$db_boj->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		$query = $db_obj->prepare("CREATE DATABASE $db_name;");
+		$query->execute();
+	}
+
+	catch(PDOException $err)
+	{
+  		echo $e->getMessage();
+	} 
+
+
 	$db_obj = NULL;
 }
 
