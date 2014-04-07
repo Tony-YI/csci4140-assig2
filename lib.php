@@ -113,6 +113,8 @@ $temp_dir = "_temp";
 
 function show_dir()
 {
+	global $data_dir, $img_dir, $shortcut_dir, $temp_dir;
+
 	try
 	{
 		$result = `cd "$data_dir" && ls -a`;
@@ -126,6 +128,8 @@ function show_dir()
 
 function init_storage()
 {
+	global $data_dir, $img_dir, $shortcut_dir, $temp_dir;
+
 	try
 	{
 		$result = `cd "$data_dir" && mkdir "$temp_dir" && mkdir "$img_dir" && mkdir "$shortcut_dir"`;
@@ -140,6 +144,8 @@ function init_storage()
 
 function clean_storage()
 {
+	global $data_dir, $img_dir, $shortcut_dir, $temp_dir;
+	
 	try
 	{
 		$result = `cd "$data_dir" && ls`;
