@@ -30,5 +30,13 @@
 	}
 
 	$response = json_encode($array);
-	echo ($response);
+	//echo ($response);
+
+	$haha = array();
+	$haha['file_name'] = "1";
+	$haha['$file_size_flag'] = "2";
+	$haha['file_type_flag'] = "3";
+	$haha['mysql_error'] = "4";
+	$response1 = json_encode($haha);
+	echo ($response1);
 ?>

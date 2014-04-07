@@ -77,14 +77,6 @@ function handleReaderLoadEnd(e, file)
 				{
 					document.getElementById('file_name').innerHTML = null;
 				}
-				if(response.file_size_flag)
-				{
-					document.getElementById('file_size_flag').innerHTML = response.file_size_flag;
-				}
-				else
-				{
-					document.getElementById('file_size_flag').innerHTML = null;
-				}
 				if(response.file_type_flag)
 				{
 					document.getElementById('file_type_flag').innerHTML = response.file_type_flag;
@@ -92,6 +84,14 @@ function handleReaderLoadEnd(e, file)
 				else
 				{
 					document.getElementById('file_type_flag').innerHTML = null;
+				}
+				if(response.file_size_flag)
+				{
+					document.getElementById('file_size_flag').innerHTML = response.file_size_flag;
+				}
+				else
+				{
+					document.getElementById('file_size_flag').innerHTML = null;
 				}
 				if(response.mysql_error)
 				{
