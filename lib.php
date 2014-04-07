@@ -54,7 +54,7 @@ function drop_db()
 		$db_obj->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		echo "5";
-		$query = $db_obj->prepare("CREATE DATABASE $db_name;");
+		$query = $db_obj->prepare("DROP DATABASE $db_name;");
 		$query->execute();
 
 		echo "6";
