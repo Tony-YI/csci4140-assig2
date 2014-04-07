@@ -31,4 +31,5 @@
 
 	$response = json_encode($array);
 	echo ($response);
+	echo ($response);
 ?>
