@@ -62,7 +62,7 @@ function drop_db()
 
 	catch(PDOException $e)
 	{
-		echo "$e->getMessage()";
+		echo "haha";
 	}
 
 	echo "7";
