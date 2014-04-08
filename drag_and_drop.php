@@ -64,8 +64,9 @@
 		//TODO: remove file in temp
 	}
 
-	$q = $data_dir.$temp_dir.'/';
-	echo (`cd "$q" && ls && rm "$file_name"`);
+	`rm -f "$file_dir"`;
+
+	show();
 
 	$response = json_encode($array);
 	echo ($response);
