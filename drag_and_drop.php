@@ -30,8 +30,24 @@
 		{
 			//if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
 			//not enough since we may change the extension
-			$identity = `identify -verbose "$file_dir" | grep Format:`;
-			$id_array = split(/\n/, $identity);
+			try
+			{
+				$identity = `identify -verbose "$file_dir" | grep Format:`;
+			}
+			catch(Exception $e)
+			{
+				alert "$e";
+			}
+
+			try
+			{
+				$id_array = split(/\n/, $identity);
+			}
+			catch(Exception $e)
+			{
+				alert "$e";
+			}
+			
 			echo "identity: ".$identity;
 			echo "id_array: ".$id_array;
 			if($identity) //file type is correct
