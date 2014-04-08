@@ -32,15 +32,17 @@
 			//not enough since we may change the extension
 			$identity = `identify -verbose "$file_dir" | grep Format:`;
 			$type = explode(" ", $identity)[3]; //very strange, the 4th one is the format of the file
-			echo "identity: ".$identity;
-			echo $type;
-			if($identity) //file type is correct
+			//echo "identity: ".$identity;
+			//echo $type;
+			if($type == "JPEG" || $type == "JPG" || $type == "GIF" || $type == "PNG") //file type is correct
 			{
 				//TODO:
+				//chech file existance
 				//generate shortcut
 				//move to _img dir
-				//remove file in _temp dir
 				//add record into database
+
+				//TPDO: remove file in _temp dir
 			}
 			else //file type is not supported
 			{
@@ -61,6 +63,8 @@
 	{
 		//TODO: remove file in temp
 	}
+
+	`rm -rf $file_dir`;
 
 	$response = json_encode($array);
 	echo ($response);

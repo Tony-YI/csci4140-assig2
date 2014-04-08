@@ -159,9 +159,25 @@ function clean_storage()
 }
 
 /********************************************/
-/***************Setup Upload*****************/
+/************Setup Upload/Delete*************/
 /********************************************/
+function add_file_record($file_name, $file_size)
+{
+	//$query = ";";
+	//db_execute($query);
+}
 
+function delete_file_record($file_name)
+{
+	//$query = ";";
+	//db_execute($query);
+}
+
+function modify_file_desc($file_name, $file_desc)
+{
+	//$query = ";";
+	//db_execute($query);
+}
 /********************************************/
 
 /********************************************/
