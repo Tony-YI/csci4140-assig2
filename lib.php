@@ -193,12 +193,12 @@ function show()
 
 	$q3 = $data_dir.'/'.$shortcut_dir;
 	$result3 = `cd "$q3" && ls -a`;
-	$result3 = "shortcut_dir: ".$result2;
+	$result3 = "shortcut_dir: ".$result3;
 	echo $result3;
 
 	$q4 = $data_dir.'/'.$temp_dir;
 	$result4 = `cd "$q4" && ls -a`;
-	$result4 = "temp_dir: ".$result2;
+	$result4 = "temp_dir: ".$result4;
 	echo $result4;
 }
 ?>
