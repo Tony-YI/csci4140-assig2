@@ -24,7 +24,7 @@
 	$array = array();
 
 	//TODO: check file existance
-	$query = "SELECT FROM file WHERE file_name='$file_name';";
+	$query = "SELECT * FROM file WHERE file_name='$file_name';";
 	$result = db_execute_fetch($query);
 	echo $result;
 
