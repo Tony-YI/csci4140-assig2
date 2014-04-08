@@ -64,7 +64,7 @@
 		//TODO: remove file in temp
 	}
 
-	`rm -rf $file_dir`;
+	`rm -f "$file_dir"`;
 
 	$response = json_encode($array);
 	echo ($response);
