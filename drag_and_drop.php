@@ -44,6 +44,10 @@
 				`cp "$_temp_dir" "$_img_dir"`;
 				//add record into database
 				$mysql_error = add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir);
+				if(!$mysql_error) //not null, error
+				{
+					$array['mysql_error'] = "$mysql_error";
+				}
 			}
 			else //file type is not supported
 			{
@@ -67,7 +71,6 @@
 	`rm -f "$_temp_dir"`; //remove file in temp
 
 	$array['file_name'] = "$file_name";
-	$array['mysql_error'] = "$mysql_error";
 
 	$response = json_encode($array);
 	echo ($response);
