@@ -26,12 +26,7 @@
 	//check file existance
 	//$file_exist_flag = check_file_existance($file_name);
 
-	if(`-e "$_img_dir"`)
-	{
-		echo "hhhhhhhhhhh";
-	}
-
-	if(1) //file not exists
+	if(!`-e "$_img_dir"`) //file not exists
 	{
 		$array['file_name'] = "$file_name";
 
@@ -67,6 +62,7 @@
 	}
 	else //file exists
 	{
+		$file_exist_flag = "File already existed.";
 		$array['file_exist_flag'] = "$file_exist_flag";
 	}
 
