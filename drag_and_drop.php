@@ -31,9 +31,9 @@
 			//if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
 			//not enough since we may change the extension
 			$identity = `identify -verbose "$file_dir" | grep Format:`;
-			$id_array = split("/\n/", $identity);
+			$type = split("/\n/", $identity)[0];
 			echo "identity: ".$identity;
-			echo "id_array: ".$id_array;
+			echo "id: ".$id;
 			if($identity) //file type is correct
 			{
 				//TODO:
