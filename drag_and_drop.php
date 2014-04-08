@@ -65,7 +65,7 @@
 	}
 
 	$q = $data_dir.$temp_dir.'/';
-	echo (`cd "$q" && ls && rm -f "$file_name"`);
+	echo (`cd "$q" && ls && rm "$file_name"`);
 
 	$response = json_encode($array);
 	echo ($response);
