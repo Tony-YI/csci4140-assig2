@@ -1,6 +1,17 @@
+body
+{
+	margin: auto;
+}
+
+#display
+{
+	width: 90%;
+	height: auto;
+	margin-left: 5%;
+}
+
 #dropbox
 {
-	margin-right: 5%;
 	margin-left: 5%;
 	width: 90%%;
 	height: 70px;
@@ -15,9 +26,4 @@
 	margin-left: 5%;
 	margin-right: 5%;
 	width: 90%;
-}
-
-body
-{
-	margin: auto;
 }
