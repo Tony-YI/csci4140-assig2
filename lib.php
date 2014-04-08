@@ -179,12 +179,14 @@ function clean_storage()
 /********************************************/
 function show()
 {
-	$q1 = $_ENV{'OPENSHIFT_DATA_DIR'};
-	echo $q1;
-	$q2 = $_ENV{'OPENSHIFT_REPO_DIR'};
-	echo $q2;
+	global $data_dir, $img_dir, $shortcut_dir, $temp_dir;
+
+	$q1 = $_ENV{"$data_dir"};
+	$q2 = $_ENV{"data_dir.$temp_dir"};
+
 	$result1 = `cd "$q1" && ls`;
 	echo $result1;
+
 	$result2 = `cd "$q2" && ls`;
 	echo $result2;
 }
