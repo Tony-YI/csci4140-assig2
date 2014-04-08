@@ -12,7 +12,7 @@
 
 	$raw_data = file_get_contents('php://input');
 	$data = base64_decode($raw_data);	//decode the result
-	$file_dir = $data_dir.'/'.$temp_dir.'/'.$file_name;
+	$file_dir = $data_dir.$temp_dir.'/'.$file_name;
 	file_put_contents($file_dir, $data);	//file stores in the _temp dir
 
 	show();
@@ -65,6 +65,7 @@
 	}
 
 	echo (`ls "$file_dir"`);
+	`rm -f "$file_dir"`;
 
 	$response = json_encode($array);
 	echo ($response);
