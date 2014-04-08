@@ -113,21 +113,6 @@ $img_dir = "_img";
 $shortcut_dir = "_shortcut";
 $temp_dir = "_temp";
 
-function show_dir()
-{
-	global $data_dir, $img_dir, $shortcut_dir, $temp_dir;
-
-	try
-	{
-		$result = `cd "$data_dir" && ls -a`;
-		echo "$result";
-	}
-	catch(Exception $e)
-	{
-		echo "$e";
-	}
-}
-
 function init_storage()
 {
 	global $data_dir, $img_dir, $shortcut_dir, $temp_dir;
@@ -212,8 +197,13 @@ function delete_file_record($file_name)
 
 function modify_file_desc($file_name, $file_desc)
 {
-	//$query = ";";
-	//db_execute($query);
+	$query = "UPDATE file SET upload_time=CURRENT_TIMESTAMP img_description='$file_desc' WHERE file_name='$ile_name';";
+	$result = db_execute($query);
+
+	if($result == NULL) //return value is null
+	{
+		return "Error when updating image description file record.";
+	}
 }
 /********************************************/
 
@@ -230,6 +220,25 @@ function modify_file_desc($file_name, $file_desc)
 #add line into "deploy"
 #ln -s {OPENSHIFT_DATA_DIR} {OPENSHIFT_REPO_DIR}/php/data
 /********************************************/
+
+/********************************************/
+/***********Setup Debug Function*************/
+/********************************************/
+function show_dir()
+{
+	global $data_dir, $img_dir, $shortcut_dir, $temp_dir;
+
+	try
+	{
+		$result = `cd "$data_dir" && ls -a`;
+		echo "$result";
+	}
+	catch(Exception $e)
+	{
+		echo "$e";
+	}
+}
+
 function show()
 {
 	global $data_dir, $img_dir, $shortcut_dir, $temp_dir;
@@ -254,4 +263,5 @@ function show()
 	$result4 = "temp_dir: ".$result4;
 	echo $result4;
 }
+/********************************************/
 ?>

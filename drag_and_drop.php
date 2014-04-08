@@ -19,7 +19,7 @@
 
 	file_put_contents($_temp_dir, $data);	//file stores in the _temp dir
 
-	show();
+	//show();
 
 	$array = array();
 
@@ -107,5 +107,5 @@
 	$response = json_encode($array);
 	echo ($response);
 
-	show();
+	//show();
 ?>
