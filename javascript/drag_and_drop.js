@@ -34,10 +34,6 @@ function handleReaderLoadEnd(e, file)
 	xhr.setRequestHeader('FILE_TYPE', file.type);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); //this is required in order to pretend to be a form submittion
 
-	console.log(file.name);
-	console.log(file.size);
-	console.log(file.type);
-
 	xhr.send(data);
 
 	xhr.onreadystatechange = function ()
