@@ -175,7 +175,7 @@ function check_file_existance($file_name)
     //[0] => 0
 	//)
 
-	if(($result->fetch()).COUNT(*) != 0) //file exists. $result->fetch() is an obj
+	if(($result->fetch()).'COUNT(*)' != 0) //file exists. $result->fetch() is an object
 	{
 		return "File already exist.";
 	}

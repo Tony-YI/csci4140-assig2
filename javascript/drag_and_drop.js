@@ -97,6 +97,14 @@ function handleReaderLoadEnd(e, file)
 				{
 					document.getElementById('mysql_error').innerHTML = null;
 				}
+				if(response.file_exist_flag)
+				{
+					document.getElementById('file_exist_flag').innerHTML = response.file_exist_flag;
+				}
+				else
+				{
+					document.getElementById('file_exist_flag').innerHTML = null;
+				}
 
 				//TODO: update_album();
 			}
