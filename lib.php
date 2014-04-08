@@ -185,7 +185,7 @@ function clean_storage()
 /********************************************/
 function check_file_existance($file_name)
 {
-	$query = "SELECT COUNT(*) FROM file WHERE file_name='$file_name';";
+	$query = "SELECT FROM file WHERE file_name='$file_name';";
 	$result = "";
 	db_execute_fetch($query, $result);
 
