@@ -32,7 +32,7 @@
 			//not enough since we may change the extension
 			try
 			{
-				$identity = `identify -verbose "$file_dir" | grep Format:`;
+				$identity = `identif -verbose "$file_dir" | grep Format:`;
 			}
 			catch(Exception $e)
 			{
