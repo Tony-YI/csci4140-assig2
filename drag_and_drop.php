@@ -24,9 +24,7 @@
 	$array = array();
 
 	//TODO: check file existance
-	//$result;
-	//check_file_existance($file_name, $result);
-	//echo "result: ".$result;
+	check_file_existance($file_name);
 
 	if($file_name) //file not exists
 	{
