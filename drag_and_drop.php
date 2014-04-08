@@ -31,15 +31,22 @@
 			//if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
 			//not enough since we may change the extension
 			$identity = `identify -verbose "$file_dir" | grep Format:`;
+			$id_array = split(/\n/, $identity);
 			echo "identity: ".$identity;
-			if($identity)
+			echo "id_array: ".$id_array;
+			if($identity) //file type is correct
+			{
+				//TODO:
+				//generate shortcut
+				//move to _img dir
+				//remove file in _temp dir
+				//add record into database
+			}
+			else //file type is not supported
 			{
 				$file_type_flag = "File should be jpeg/jpg/png/gif.";
 				$array['file_type_flag'] = "$file_type_flag";
-			}
-			else
-			{
-
+				//TODO: remove file in temp
 			}
 		}
 		else
