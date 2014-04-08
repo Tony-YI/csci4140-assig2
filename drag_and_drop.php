@@ -25,7 +25,9 @@
 
 	//TODO: check file existance
 	$query = "SELECT COUNT(*) FROM file WHERE file_name='$file_name';";
-	db_execute($query);
+	$result = "";
+	db_execute_fetch($query, $result);
+	echo $result;
 
 	if($file_name) //file not exists
 	{
