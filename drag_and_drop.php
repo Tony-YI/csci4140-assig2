@@ -31,13 +31,9 @@
 			//if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
 			//not enough since we may change the extension
 			$identity = `identify -verbose "$file_dir" | grep Format:`;
-			$type = explode(" ", $identity);
+			$type = explode(" ", $identity)[4]; //very strange, the 4th one is the format of the file
 			echo "identity: ".$identity;
-			echo $type[0];
-			echo $type[1];
-			echo $type[2];
-			echo $type[3];
-			echo $type[4];
+			echo $type;
 			if($identity) //file type is correct
 			{
 				//TODO:
