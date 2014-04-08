@@ -26,7 +26,7 @@
 	//check file existance
 	//$file_exist_flag = check_file_existance($file_name);
 
-	if(1) //file not exists
+	if(!file_exists("$_img_dir")) //file not exists
 	{
 		if(1000000 >= $file_size) //file size is not larger than 1MB
 		{
