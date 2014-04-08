@@ -175,13 +175,13 @@ function check_file_existance($file_name)
     //[0] => 0
 	//)
 
-	if($result->fetch())[COUNT(*)] != 0)
+	if($result->fetch())[COUNT(*)] != 0) //file exists
 	{
-		echo "File already exist.";
+		return "File already exist.";
 	}
-	else //file not exist
+	else //file not exists
 	{
-		echo 'NULL';
+		return NULL;
 	}
 }
 
