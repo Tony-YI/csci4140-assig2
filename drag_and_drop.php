@@ -62,10 +62,42 @@
 		}
 
 	}
-	else //file exists
+	else //file exists, just overwrite it
 	{
 		$file_exist_flag = "File already existed.";
 		$array['file_exist_flag'] = "$file_exist_flag";
+
+		if(1000000 >= $file_size)
+		{
+			$identity = `identify -verbose "$_temp_dir" | grep Format:`;
+			$type = explode(" ", $identity)[3];
+
+			if($type == "JPEG" || $type == "JPG" || $type == "GIF" || $type == "PNG") //file type is correct
+			{
+				//generate shortcut
+				`convert "$_temp_dir" -resize 100x100 "$_shortcut_dir"`;
+				//move to _img dir
+				`cp "$_temp_dir" "$_img_dir"`;
+				//delete old record
+				$mysql_error = delete_file_record($file_name);
+				//add record into database
+				$mysql_error .= add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir);
+				if($mysql_error) //not null, error
+				{
+					$array['mysql_error'] = "$mysql_error";
+				}
+			}
+			else
+			{
+				$file_type_flag = "File should be jpeg/jpg/png/gif.";
+				$array['file_type_flag'] = "$file_type_flag";
+			}
+		}
+		else
+		{
+			$file_size_flag = "File size too large. Should be less than 1MB.";
+			$array['file_size_flag'] = "$file_size_flag";
+		}
 	}
 
 	`rm -f "$_temp_dir"`; //remove file in temp

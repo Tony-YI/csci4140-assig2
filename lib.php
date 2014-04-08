@@ -201,8 +201,13 @@ function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir)
 
 function delete_file_record($file_name)
 {
-	//$query = ";";
-	//db_execute($query);
+	$query = "DELETE FROM file WHERE file_name='$file_name';";
+	$result = db_execute($query);
+
+	if($result == NULL) //return value is null
+	{
+		return "Error when deleting file record.";
+	}
 }
 
 function modify_file_desc($file_name, $file_desc)
