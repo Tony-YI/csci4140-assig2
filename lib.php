@@ -102,7 +102,7 @@ function db_execute($query)
 	$db_obj = NULL;
 }
 
-function db_execute_fetch($query, &$q)
+function db_execute_fetch($query)
 {
 	global $db_host, $db_name, $db_username, $db_password;
 	$db_source = "mysql:host=$db_host;dbname=$db_name";
@@ -115,12 +115,13 @@ function db_execute_fetch($query, &$q)
 
 		$q = $db_obj->prepare($query);
 		$q->execute();
+		$db_obj = NULL;
+		return $q;
 	}
 	catch(PDOException $e)
 	{
 		echo "$e";
 	}
-	$db_obj = NULL;
 }
 /********************************************/
 
