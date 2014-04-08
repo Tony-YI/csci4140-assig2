@@ -64,8 +64,7 @@
 		//TODO: remove file in temp
 	}
 
-	$hehe = `rm -f "$file_dir"`;
-	echo $hehe;
+	`cd "$data_dir.'/'.$temp_dir" && rm -f "$file_name"`;
 
 	$response = json_encode($array);
 	echo ($response);
