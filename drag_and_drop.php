@@ -33,7 +33,7 @@
 			$identity = `identify -verbose "$file_dir" | grep Format:`;
 			$type = split(" ", $identity)[1];
 			echo "identity: ".$identity;
-			echo "type: ".$type;
+			echo "type: ".$type[1];
 			if($identity) //file type is correct
 			{
 				//TODO:
