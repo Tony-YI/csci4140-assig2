@@ -12,8 +12,11 @@
 
 	$raw_data = file_get_contents('php://input');
 	$data = base64_decode($raw_data);	//decode the result
-	$file_dir = $data_dir.$temp_dir.'/'.$file_name;
-	file_put_contents($file_dir, $data);	//file stores in the _temp dir
+	$_temp_dir = $data_dir.$temp_dir.'/'.$file_name;
+	$_img_dir = $data_dir.$img_dir.'/'.$file_name;
+	$_shortcut_dir = $data_dir.$shortcut_dir.'/'.$file_name;
+
+	file_put_contents($_temp_dir, $data);	//file stores in the _temp dir
 
 	show();
 
@@ -30,7 +33,7 @@
 		{
 			//if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
 			//not enough since we may change the extension
-			$identity = `identify -verbose "$file_dir" | grep Format:`;
+			$identity = `identify -verbose "$_temp_dir" | grep Format:`;
 			$type = explode(" ", $identity)[3]; //very strange, the 4th one is the format of the file
 			//echo "identity: ".$identity;
 			//echo $type;
@@ -39,16 +42,18 @@
 				//TODO:
 				//chech file existance
 				//generate shortcut
+				`convert "$_temp_dir" -resize 100x100 "$shortcut_dir"`;
 				//move to _img dir
+				`cp "$_temp_dir" "$_img_dir"`;
 				//add record into database
 
-				//TPDO: remove file in _temp dir
+				//emove file in _temp dir
 			}
 			else //file type is not supported
 			{
 				$file_type_flag = "File should be jpeg/jpg/png/gif.";
 				$array['file_type_flag'] = "$file_type_flag";
-				//TODO: remove file in temp
+				//remove file in temp
 			}
 		}
 		else
@@ -56,15 +61,15 @@
 			$file_size_flag = "File size too large. Should be less than 1MB.";
 			$array['file_size_flag'] = "$file_size_flag";
 
-			//TODO: remove file in temp
+			//remove file in temp
 		}
 	}
 	else
 	{
-		//TODO: remove file in temp
+		//remove file in temp
 	}
 
-	`rm -f "$file_dir"`;
+	`rm -f "$_temp_dir"`; //remove file in temp
 
 	show();
 
