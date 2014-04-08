@@ -167,25 +167,22 @@ function check_file_existance($file_name)
 	$query = "SELECT COUNT(*) FROM file WHERE file_name='$file_name';";
 	$result = db_execute($query);
 
-	//$result = $result->fetch(); //result is an array, a row
-
-	print_r($result);
+	//$result = $result->fetch(); //result is an array/object, a row
+	//print_r($result);
 	//Array
 	//(
     //[COUNT(*)] => 0
     //[0] => 0
 	//)
 
-/*
 	if($result->fetch())[COUNT(*)] != 0)
 	{
-		return "File already exist.";
+		echo "File already exist.";
 	}
 	else //file not exist
 	{
-		return NULL;
+		echo 'NULL';
 	}
-*/
 }
 
 function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir)
