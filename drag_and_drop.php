@@ -27,7 +27,7 @@
 	//$file_exist_flag = check_file_existance($file_name);
 
 	$result = `-e "$_img_dir"`;
-	alert("$result");
+	echo("$result");
 
 	if(!`-e "$_img_dir"`) //file not exists
 	{
