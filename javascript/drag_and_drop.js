@@ -67,7 +67,7 @@ function handleReaderLoadEnd(e, file)
 
 				if(response.file_name)
 				{
-					document.getElementById('file_name').innerHTML = response.file_name;
+					document.getElementById('file_name').innerHTML = 'file_name'+response.file_name;
 				}
 				else //clear the old data
 				{

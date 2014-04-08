@@ -1,7 +1,10 @@
 <html>
 	<head>
+		<!--album display script-->
+		<script language="javascript" type="text/javascript" src="./javascript/album_display.js"></script>
 		<!--drag_and_drop upload-->
 		<script language="javascript" type="text/javascript" src="./javascript/drag_and_drop.js"></script>
+		<!--init script-->
 		<script language="javascript" type="text/javascript" src="./javascript/init.js"></script>
 		<link href="./css/style.css" rel="stylesheet" type="text/css"/>
 		<title>CSCI4140 Assignment 2</title>
@@ -18,7 +21,7 @@
 		<progress id="progress_bar" value="0" max="100"></progress>
 
 		<div>
-			<h3>Console</h3>
+			<p>Console</p>
 			<p id="file_name"></p>
 			<p id="file_exist_flag"></p>
 			<p id="file_type_flag"></p>
