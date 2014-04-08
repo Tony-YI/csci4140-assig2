@@ -30,7 +30,7 @@
 	}
 	//if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
 	//not enough since we may change the extension
-	if()
+	if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
 	{
 		$file_type_flag = "File should be jpeg/jpg/png/gif.";
 		$array['file_type_flag'] = "$file_type_flag";
