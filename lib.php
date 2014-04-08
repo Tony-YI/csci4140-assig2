@@ -28,7 +28,7 @@ function create_db()
 		$query1 = $db_obj->prepare("CREATE DATABASE $db_name;");
 		$query1->execute();
 
-		$query2 = $db_obj->prepare("SET GLOBAL time_zone = '-5:00';");
+		$query2 = $db_obj->prepare("SET GLOBAL time_zone = '+8:00';");
 		$query2->execute();
 	}
 	catch(PDOException $e)
@@ -81,9 +81,7 @@ function create_table()
 	$db_obj = NULL;
 }
 
-//$query is the query, $q is the query result and pass by reference
-//usage: db_execute($query, $q);
-function db_execute($query, &$q)
+function db_execute($query)
 {
 	global $db_host, $db_name, $db_username, $db_password;
 	$db_source = "mysql:host=$db_host;dbname=$db_name";
@@ -163,25 +161,25 @@ function clean_storage()
 /********************************************/
 /************Setup Upload/Delete*************/
 /********************************************/
-function check_file_existance($file_name, &$q)
+function check_file_existance($file_name)
 {
 	$query = "SELECT COUNT(*) FROM file WHERE file_name='$file_name';";
-	return db_execute($query, $q);
+	return db_execute($query);
 }
 
-function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir, &$q)
+function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir)
 {
-	$query = "INSERT INTO file (file_name, file_size, upload_time, img_description, img_path, shortcut_path) VALUES ('$file_name', '$file_size', CURRENT_TIMESTAMP, '', '$_img_path', '$_shortcut_path');";
+	$query = "INSERT INTO file (file_name, file_size, upload_time, img_description, img_path, shortcut_path) VALUES ('$file_name', '$file_size', CURRENT_TIMESTAMP, '', '$_img_dir', '$_shortcut_dir');";
 	db_execute($query, $q);
 }
 
-function delete_file_record($file_name, &$q)
+function delete_file_record($file_name)
 {
 	//$query = ";";
 	//db_execute($query, $q);
 }
 
-function modify_file_desc($file_name, $file_desc, &$q)
+function modify_file_desc($file_name, $file_desc)
 {
 	//$query = ";";
 	//db_execute($query, $q);
