@@ -199,7 +199,7 @@ function show()
 
 	$q1 = $data_dir;
 	$result1 = `cd "$q1" && ls -a`;
-	$result1 = "data_dit: ".$result1;
+	$result1 = "data_dir: ".$result1;
 	echo $result1;
 
 	$q2 = $data_dir.'/'.$img_dir;

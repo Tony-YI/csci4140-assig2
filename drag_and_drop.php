@@ -12,6 +12,7 @@
 
 	$raw_data = file_get_contents('php://input');
 	$data = base64_decode($raw_data);	//decode the result
+
 	$_temp_dir = $data_dir.$temp_dir.'/'.$file_name;
 	$_img_dir = $data_dir.$img_dir.'/'.$file_name;
 	$_shortcut_dir = $data_dir.$shortcut_dir.'/'.$file_name;
@@ -42,7 +43,7 @@
 				//TODO:
 				//chech file existance
 				//generate shortcut
-				`convert "$_temp_dir" -resize 100x100 "$shortcut_dir"`;
+				`convert "$_temp_dir" -resize 100x100 "$_shortcut_dir"`;
 				//move to _img dir
 				`cp "$_temp_dir" "$_img_dir"`;
 				//add record into database
