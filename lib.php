@@ -190,7 +190,4 @@ function show()
 	$result2 = `cd "$q2" && ls -a`;
 	echo $result2;
 }
-
-
-
 ?>
