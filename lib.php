@@ -219,6 +219,9 @@ function modify_file_desc($file_name, $file_desc)
 #the file name must be "deploy"
 #add line into "deploy"
 #ln -s {OPENSHIFT_DATA_DIR} {OPENSHIFT_REPO_DIR}/php/data
+function get_images()
+{
+}
 /********************************************/
 
 /********************************************/
