@@ -21,12 +21,13 @@
 
 	show();
 
-	//check the file avaliability
-	//move it to the destination when avaliable
-	//add a record in the database when avaliable
 	$array = array();
 
-	if($file_name) //file name is avaliable
+	//TODO: check file existance
+	$result = check_file_existance($file_name);
+	echo "result: ".$result;
+
+	if($file_name) //file not exists
 	{
 		$array['file_name'] = "$file_name";
 
@@ -40,40 +41,34 @@
 			//echo $type;
 			if($type == "JPEG" || $type == "JPG" || $type == "GIF" || $type == "PNG") //file type is correct
 			{
-				//TODO:
-				//chech file existance
 				//generate shortcut
 				`convert "$_temp_dir" -resize 100x100 "$_shortcut_dir"`;
 				//move to _img dir
 				`cp "$_temp_dir" "$_img_dir"`;
 				//add record into database
-
-				//emove file in _temp dir
+				add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir);
 			}
 			else //file type is not supported
 			{
 				$file_type_flag = "File should be jpeg/jpg/png/gif.";
 				$array['file_type_flag'] = "$file_type_flag";
-				//remove file in temp
 			}
 		}
 		else
 		{
 			$file_size_flag = "File size too large. Should be less than 1MB.";
 			$array['file_size_flag'] = "$file_size_flag";
-
-			//remove file in temp
 		}
+
+		$response = json_encode($array);
+		echo ($response);
 	}
-	else
+	else //file exists
 	{
-		//remove file in temp
+
 	}
 
 	`rm -f "$_temp_dir"`; //remove file in temp
 
 	show();
-
-	$response = json_encode($array);
-	echo ($response);
 ?>

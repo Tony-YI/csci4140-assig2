@@ -94,12 +94,13 @@ function db_execute($query)
 
 		$q = $db_obj->prepare($query);
 		$q->execute();
+		$db_obj = NULL;
+		return $q;
 	}
 	catch(PDOException $e)
 	{
 		echo "$e";
 	}
-	$db_obj = NULL;
 }
 /********************************************/
 
@@ -161,10 +162,16 @@ function clean_storage()
 /********************************************/
 /************Setup Upload/Delete*************/
 /********************************************/
-function add_file_record($file_name, $file_size)
+function check_file_existance($file_name)
 {
-	//$query = ";";
-	//db_execute($query);
+	$query = "SELECT COUNT(*) FROM file WHERE file_name='$file_name';";
+	return db_execute($query);
+}
+
+function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir)
+{
+	$query = "INSERT INTO file (file_name, file_size, upload_time, img_description, img_path, shortcut_path) VALUES ('$file_name', '$file_size', CURRENT_TIMESTAMP, '', '$_img_path', '$_shortcut_path');";
+	db_execute($query);
 }
 
 function delete_file_record($file_name)
