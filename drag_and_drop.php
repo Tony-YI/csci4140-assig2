@@ -26,7 +26,7 @@
 	//TODO: check file existance
 	$query = "SELECT * FROM file;";
 	$result = db_execute_fetch($query);
-	echo $result;
+	//echo $result;
 
 	if($file_name) //file not exists
 	{
