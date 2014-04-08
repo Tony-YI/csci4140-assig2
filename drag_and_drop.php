@@ -28,8 +28,6 @@
 
 	if(!file_exists("$_img_dir")) //file not exists
 	{
-		$array['file_name'] = "$file_name";
-
 		if(1000000 >= $file_size) //file size is not larger than 1MB
 		{
 			//if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
@@ -45,7 +43,7 @@
 				//move to _img dir
 				`cp "$_temp_dir" "$_img_dir"`;
 				//add record into database
-				add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir);
+				$mysql_error = add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir);
 			}
 			else //file type is not supported
 			{
@@ -67,6 +65,9 @@
 	}
 
 	`rm -f "$_temp_dir"`; //remove file in temp
+
+	$array['file_name'] = "$file_name";
+	$array['mysql_error'] = "$mysql_error";
 
 	$response = json_encode($array);
 	echo ($response);
