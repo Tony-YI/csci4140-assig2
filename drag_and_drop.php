@@ -59,8 +59,6 @@
 			$array['file_size_flag'] = "$file_size_flag";
 		}
 
-		$response = json_encode($array);
-		echo ($response);
 	}
 	else //file exists
 	{
@@ -68,6 +66,9 @@
 	}
 
 	`rm -f "$_temp_dir"`; //remove file in temp
+
+	$response = json_encode($array);
+	echo ($response);
 
 	show();
 ?>
