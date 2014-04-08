@@ -190,19 +190,19 @@ function check_file_existance($file_name)
 function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir)
 {
 	$query = "INSERT INTO file (file_name, file_size, upload_time, img_description, img_path, shortcut_path) VALUES ('$file_name', '$file_size', CURRENT_TIMESTAMP, '', '$_img_dir', '$_shortcut_dir');";
-	db_execute($query, $q);
+	db_execute($query);
 }
 
 function delete_file_record($file_name)
 {
 	//$query = ";";
-	//db_execute($query, $q);
+	//db_execute($query);
 }
 
 function modify_file_desc($file_name, $file_desc)
 {
 	//$query = ";";
-	//db_execute($query, $q);
+	//db_execute($query);
 }
 /********************************************/
 
