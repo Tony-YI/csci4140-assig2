@@ -36,18 +36,18 @@
 			}
 			catch(Exception $e)
 			{
-				alert "$e";
+				alert("$e");
 			}
 
 			try
 			{
-				$id_array = split(/\n/, $identity);
+				$id_array = split("/\n/", $identity);
 			}
 			catch(Exception $e)
 			{
-				alert "$e";
+				alert("$e");
 			}
-			
+
 			echo "identity: ".$identity;
 			echo "id_array: ".$id_array;
 			if($identity) //file type is correct
