@@ -182,12 +182,23 @@ function show()
 	global $data_dir, $img_dir, $shortcut_dir, $temp_dir;
 
 	$q1 = $data_dir;
-	$q2 = $data_dir.'/'.$temp_dir;
-
 	$result1 = `cd "$q1" && ls -a`;
+	$result1 = "data_dit: ".$result1;
 	echo $result1;
 
+	$q2 = $data_dir.'/'.$img_dir;
 	$result2 = `cd "$q2" && ls -a`;
+	$result2 = "img_dir: ".$result2;
 	echo $result2;
+
+	$q3 = $data_dir.'/'.$shortcut_dir;
+	$result3 = `cd "$q3" && ls -a`;
+	$result3 = "shortcut_dir: ".$result2;
+	echo $result3;
+
+	$q4 = $data_dir.'/'.$temp_dir;
+	$result4 = `cd "$q4" && ls -a`;
+	$result4 = "temp_dir: ".$result2;
+	echo $result4;
 }
 ?>
