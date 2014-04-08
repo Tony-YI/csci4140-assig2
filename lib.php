@@ -99,7 +99,8 @@ function db_execute($query)
 	}
 	catch(PDOException $e)
 	{
-		echo "$e";
+		//echo "$e";
+		return NULL;
 	}
 }
 /********************************************/
@@ -190,7 +191,12 @@ function check_file_existance($file_name)
 function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir)
 {
 	$query = "INSERT INTO file (file_name, file_size, upload_time, img_description, img_path, shortcut_path) VALUES ('$file_name', '$file_size', CURRENT_TIMESTAMP, '', '$_img_dir', '$_shortcut_dir');";
-	db_execute($query);
+	$result = db_execute($query);
+
+	if(!$result) //return value is null
+	{
+		return "Error when adding file record.";
+	}
 }
 
 function delete_file_record($file_name)
