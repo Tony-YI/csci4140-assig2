@@ -32,7 +32,7 @@
 			//not enough since we may change the extension
 			$identity = `identify -verbose "$file_dir" | grep Format:`;
 			echo "identify: ".$identify;
-			if()
+			if($identity)
 			{
 				$file_type_flag = "File should be jpeg/jpg/png/gif.";
 				$array['file_type_flag'] = "$file_type_flag";
