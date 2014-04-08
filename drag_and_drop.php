@@ -44,7 +44,7 @@
 				`cp "$_temp_dir" "$_img_dir"`;
 				//add record into database
 				$mysql_error = add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir);
-				if($mysql_error != NULL) //not null, error
+				if($mysql_error) //not null, error
 				{
 					$array['mysql_error'] = "$mysql_error";
 				}
