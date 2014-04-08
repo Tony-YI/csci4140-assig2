@@ -12,28 +12,47 @@
 
 	$raw_data = file_get_contents('php://input');
 	$data = base64_decode($raw_data);	//decode the result
-	$file_dir = $data_dir.'/'.$temp_dir;
-	file_put_contents($file_dir.'/'.$file_name, $data);	//file stores in the _temp dir
+	$file_dir = $data_dir.'/'.$temp_dir.'/'.$file_name;
+	file_put_contents($file_dir, $data);	//file stores in the _temp dir
 
 	show();
 
+	//check the file avaliability
+	//move it to the destination when avaliable
+	//add a record in the database when avaliable
 	$array = array();
 
-	if($file_name)
+	if($file_name) //file name is avaliable
 	{
 		$array['file_name'] = "$file_name";
+
+		if(1000000 >= $file_size) //file size is not larger than 1MB
+		{
+			//if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
+			//not enough since we may change the extension
+			$identity = `identify -verbose "$file_dir" | grep Format:`;
+			echo "identify: ".$identify;
+			if()
+			{
+				$file_type_flag = "File should be jpeg/jpg/png/gif.";
+				$array['file_type_flag'] = "$file_type_flag";
+			}
+			else
+			{
+
+			}
+		}
+		else
+		{
+			$file_size_flag = "File size too large. Should be less than 1MB.";
+			$array['file_size_flag'] = "$file_size_flag";
+
+			//TODO: remove file in temp
+		}
 	}
-	if(1000000 < $file_size)
+	else
 	{
-		$file_size_flag = "File size too large. Should be less than 1MB.";
-		$array['file_size_flag'] = "$file_size_flag";
-	}
-	//if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
-	//not enough since we may change the extension
-	if($file_type != "image/jpeg" && $file_type != "image/jpg" && $file_type != "image/gif" && $file_type != "image/png")
-	{
-		$file_type_flag = "File should be jpeg/jpg/png/gif.";
-		$array['file_type_flag'] = "$file_type_flag";
+		//TODO: remove file in temp
 	}
 
 	$response = json_encode($array);
