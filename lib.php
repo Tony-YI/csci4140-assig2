@@ -169,7 +169,7 @@ function check_file_existance($file_name)
 
 	$result = $result->fetch();
 
-	echo ($result);
+	print_r($result);
 /*
 	if($result->fetch())
 	{
