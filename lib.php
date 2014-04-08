@@ -167,9 +167,9 @@ function check_file_existance($file_name)
 	$query = "SELECT COUNT(*) FROM file WHERE file_name='$file_name';";
 	$result = db_execute($query);
 
-	echo ($result->fetchAll());
+	echo ($result->fetch());
 
-	if($result->fetchAll())
+	if($result->fetch())
 	{
 		return "File already exist.";
 	}
