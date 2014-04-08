@@ -17,6 +17,7 @@
 		<div>
 			<h3>Console</h3>
 			<p id="file_name"></p>
+			<p id="file_exist_flag"></p>
 			<p id="file_type_flag"></p>
 			<p id="file_size_flag"></p>
 			<p id="mysql_error"></p>

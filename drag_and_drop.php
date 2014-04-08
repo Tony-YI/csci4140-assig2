@@ -23,12 +23,10 @@
 
 	$array = array();
 
-	//TODO: check file existance
-	$query = "SELECT * FROM file;";
-	$result = db_execute_fetch($query);
-	//echo $result;
+	//check file existance
+	$file_exist_flag = check_file_existance($file_name);
 
-	if($file_name) //file not exists
+	if(!$file_exist_flag) //file not exists
 	{
 		$array['file_name'] = "$file_name";
 
@@ -66,7 +64,7 @@
 	}
 	else //file exists
 	{
-
+		$array['file_exist_flag'] = "$file_exist_flag";
 	}
 
 	`rm -f "$_temp_dir"`; //remove file in temp

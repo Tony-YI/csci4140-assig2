@@ -94,27 +94,6 @@ function db_execute($query)
 
 		$q = $db_obj->prepare($query);
 		$q->execute();
-	}
-	catch(PDOException $e)
-	{
-		echo "$e";
-	}
-	$db_obj = NULL;
-}
-
-function db_execute_fetch($query)
-{
-	global $db_host, $db_name, $db_username, $db_password;
-	$db_source = "mysql:host=$db_host;dbname=$db_name";
-
-	try
-	{
-		$db_obj = new PDO($db_source, $db_username, $db_password);
-		
-		$db_obj->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-		$q = $db_obj->prepare($query);
-		$q->execute();
 		$db_obj = NULL;
 		return $q;
 	}
@@ -185,11 +164,17 @@ function clean_storage()
 /********************************************/
 function check_file_existance($file_name)
 {
-	$query = "SELECT FROM file WHERE file_name='$file_name';";
-	$result = "";
-	db_execute_fetch($query, $result);
+	$query = "SELECT COUNT(*) FROM file WHERE file_name='$file_name';";
+	$result = db_execute($query);
 
-	echo $result;
+	if($result->fetchAll())
+	{
+		return "File already exist.";
+	}
+	else //file not exist
+	{
+		return NULL;
+	}
 }
 
 function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir)
