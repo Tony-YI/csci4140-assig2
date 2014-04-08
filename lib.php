@@ -167,8 +167,10 @@ function check_file_existance($file_name)
 	$query = "SELECT COUNT(*) FROM file WHERE file_name='$file_name';";
 	$result = db_execute($query);
 
-	echo ($result->fetch());
+	$result = $result->fetch();
 
+	echo ($result);
+/*
 	if($result->fetch())
 	{
 		return "File already exist.";
@@ -177,6 +179,7 @@ function check_file_existance($file_name)
 	{
 		return NULL;
 	}
+*/
 }
 
 function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir)
