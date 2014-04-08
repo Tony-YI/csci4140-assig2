@@ -64,7 +64,7 @@
 	}
 	else //file exists, just overwrite it
 	{
-		$file_exist_flag = "File already existed.";
+		$file_exist_flag = "File overwrited.";
 		$array['file_exist_flag'] = "$file_exist_flag";
 
 		if(1000000 >= $file_size)

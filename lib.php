@@ -193,7 +193,7 @@ function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir)
 	$query = "INSERT INTO file (file_name, file_size, upload_time, img_description, img_path, shortcut_path) VALUES ('$file_name', '$file_size', CURRENT_TIMESTAMP, '', '$_img_dir', '$_shortcut_dir');";
 	$result = db_execute($query);
 
-	if(1) //return value is null
+	if($result == NULL) //return value is null
 	{
 		return "Error when adding file record.";
 	}
@@ -204,7 +204,7 @@ function delete_file_record($file_name)
 	$query = "DELETE FROM file WHERE file_name='$file_name';";
 	$result = db_execute($query);
 
-	if(1) //return value is null
+	if($result == NULL) //return value is null
 	{
 		return "Error when deleting file record.";
 	}
