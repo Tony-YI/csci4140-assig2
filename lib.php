@@ -182,7 +182,7 @@ function show()
 	global $data_dir, $img_dir, $shortcut_dir, $temp_dir;
 
 	$q1 = $_ENV{"$data_dir"};
-	$q2 = $_ENV{"data_dir.$temp_dir"};
+	$q2 = $_ENV{"$data_dir.$temp_dir"};
 
 	$result1 = `cd "$q1" && ls`;
 	echo $result1;
