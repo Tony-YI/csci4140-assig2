@@ -67,7 +67,7 @@ function handleReaderLoadEnd(e, file)
 
 				if(response.file_name)
 				{
-					document.getElementById('file_name').innerHTML = 'file_name'+response.file_name;
+					document.getElementById('file_name').innerHTML = 'File Name: '+response.file_name;
 				}
 				else //clear the old data
 				{
@@ -75,7 +75,7 @@ function handleReaderLoadEnd(e, file)
 				}
 				if(response.file_type_flag)
 				{
-					document.getElementById('file_type_flag').innerHTML = response.file_type_flag;
+					document.getElementById('file_type_flag').innerHTML = 'File Type Flag: '+response.file_type_flag;
 				}
 				else
 				{
@@ -83,7 +83,7 @@ function handleReaderLoadEnd(e, file)
 				}
 				if(response.file_size_flag)
 				{
-					document.getElementById('file_size_flag').innerHTML = response.file_size_flag;
+					document.getElementById('file_size_flag').innerHTML = 'File Size Flag: '+response.file_size_flag;
 				}
 				else
 				{
@@ -91,7 +91,7 @@ function handleReaderLoadEnd(e, file)
 				}
 				if(response.mysql_error)
 				{
-					document.getElementById('mysql_error').innerHTML = response.mysql_error;
+					document.getElementById('mysql_error').innerHTML = 'MYSQL Error Flag: '+response.mysql_error;
 				}
 				else
 				{
@@ -99,7 +99,7 @@ function handleReaderLoadEnd(e, file)
 				}
 				if(response.file_exist_flag)
 				{
-					document.getElementById('file_exist_flag').innerHTML = response.file_exist_flag;
+					document.getElementById('file_exist_flag').innerHTML = 'File Existance Flag: '+response.file_exist_flag;
 				}
 				else
 				{
