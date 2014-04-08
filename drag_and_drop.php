@@ -26,6 +26,9 @@
 	//check file existance
 	//$file_exist_flag = check_file_existance($file_name);
 
+	$result = `-e "$_img_dir"`;
+	alert("$result");
+
 	if(!`-e "$_img_dir"`) //file not exists
 	{
 		$array['file_name'] = "$file_name";
