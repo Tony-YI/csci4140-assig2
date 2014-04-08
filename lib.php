@@ -184,10 +184,10 @@ function show()
 	$q1 = $data_dir;
 	$q2 = $data_dir.'/'.$temp_dir;
 
-	$result1 = `cd "$q1" && ls`;
+	$result1 = `cd "$q1" && ls -a`;
 	echo $result1;
 
-	$result2 = `cd "$q2" && ls`;
+	$result2 = `cd "$q2" && ls -a`;
 	echo $result2;
 }
 
