@@ -24,7 +24,8 @@
 	$array = array();
 
 	//TODO: check file existance
-	check_file_existance($file_name);
+	$query = "SELECT COUNT(*) FROM file WHERE file_name='$file_name';";
+	db_excute($query);
 
 	if($file_name) //file not exists
 	{
