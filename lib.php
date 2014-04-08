@@ -162,6 +162,7 @@ function clean_storage()
 /********************************************/
 /************Setup Upload/Delete*************/
 /********************************************/
+/*
 function check_file_existance($file_name)
 {
 	$query = "SELECT COUNT(*) FROM file WHERE file_name='$file_name';";
@@ -184,6 +185,7 @@ function check_file_existance($file_name)
 		return NULL;
 	}
 }
+*/
 
 function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir)
 {
