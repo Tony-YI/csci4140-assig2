@@ -27,7 +27,7 @@
 				<img class="edit" src="./img/edit.png"/>
 				<img class="delete" src="./img/delete.png">
 				<div class="img">
-					<img src="./img/1.jpg"/>
+					<img class="iamge" src="./img/1.jpg"/>
 				</div>
 			</div>
 
@@ -35,7 +35,7 @@
 				<img class="edit" src="./img/edit.png"/>
 				<img class="delete" src="./img/delete.png">
 				<div class="img">
-					<img src="./img/1.jpg"/>
+					<img class="iamge" src="./img/1.jpg"/>
 				</div>
 			</div>
 
@@ -43,7 +43,7 @@
 				<img class="edit" src="./img/edit.png"/>
 				<img class="delete" src="./img/delete.png">
 				<div class="img">
-					<img src="./img/1.jpg"/>
+					<img class="iamge" src="./img/1.jpg"/>
 				</div>
 			</div>
 
@@ -51,7 +51,7 @@
 				<img class="edit" src="./img/edit.png"/>
 				<img class="delete" src="./img/delete.png">
 				<div class="img">
-					<img src="./img/1.jpg"/>
+					<img class="iamge" src="./img/1.jpg"/>
 				</div>
 			</div>
 
@@ -59,7 +59,7 @@
 				<img class="edit" src="./img/edit.png"/>
 				<img class="delete" src="./img/delete.png">
 				<div class="img">
-					<img src="./img/1.jpg"/>
+					<img class="iamge" src="./img/1.jpg"/>
 				</div>
 			</div>
 		</div>

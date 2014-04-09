@@ -25,6 +25,14 @@ div.img
 	min-width: 200px;
 	width: 100%;
 	min-height: 200px;
+
+	padding: 0 auto;
+}
+
+img.image
+{
+	max-width: 100%;
+	min-width: 100%;
 	border: solid 1px red;
 	border-radius: 5px;
 }
