@@ -17,8 +17,8 @@ div.img_slot
 	width: 22.5%;
 	min-width: 200px;
 	height: auto;
-
 	position: relative;
+	float: left;
 }
 
 div.img
