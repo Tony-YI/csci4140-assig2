@@ -197,7 +197,7 @@ function delete_file_record($file_name)
 
 function modify_file_desc($file_name, $file_desc)
 {
-	$query = "UPDATE file SET upload_time=CURRENT_TIMESTAMP, img_description='$file_desc' WHERE file_name='$ile_name';";
+	$query = "UPDATE file SET upload_time=CURRENT_TIMESTAMP, img_description='$file_desc' WHERE file_name='$file_name';";
 	$result = db_execute($query);
 
 	if($result == NULL) //return value is null
