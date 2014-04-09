@@ -13,20 +13,13 @@
 	<body>
 
 		<div id="display">
+
 		<?php
 			require './lib.php';
 
 			echo "<a href='./reinit.php'>Reinint</a>";
-			//display_all_img();
+			display_all_img();
 		?>
-
-		<div class="img_slot">
-			<img class="edit" src="./img/edit.png"/>
-			<img class="delete" src="./img/delete.png"/>
-				<div class="img">
-					<img class="image" src="./img/1.jpg" filename="1.jpg"/>
-				</div>
-		</div>
 
 		</div>
 
