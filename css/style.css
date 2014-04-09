@@ -13,9 +13,10 @@ body
 
 div.img_slot
 {
+	margin-top: 10px;
 	width: 25%;
 	min-width: 200px;
-	height: auto;
+	height: 200px;
 	position: relative;
 	float: left;
 }
