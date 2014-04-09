@@ -16,7 +16,7 @@
 		<?php 
 			require './lib.php';
 
-			header("Content-type: text/plaintext");
+			header("Content-type: text/plain");
 			echo "<a href='./reinit.php'>Reinint</a>";
 			//display_all_img();
 		?>
