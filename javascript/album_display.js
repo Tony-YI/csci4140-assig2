@@ -144,7 +144,7 @@ function delete_click(e)
 
 	console.log("delete_option: " + delete_option);
 
-	if(delete_option == null)
+	if(!delete_option)
 	{
 		console.log("delete_option: Cancel");
 		return;
