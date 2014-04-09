@@ -219,10 +219,12 @@ function modify_file_desc($file_name, $file_desc)
 #the file name must be "deploy"
 #add line into "deploy"
 #ln -s {OPENSHIFT_DATA_DIR} {OPENSHIFT_REPO_DIR}/php/data
-
+$repo_dir = $_ENV{"OPENSHIFT_REPO_DIR"};
 //display all the images in the database
 function display_all_img()
 {
+	global $repo_dir, $data_dir, $img_dir, $shortcut_dir, $temp_dir;
+
 	$query = "SELECT * FROM file;";
 	$result = db_execute($query);
 
@@ -238,11 +240,13 @@ function display_all_img()
 
 	while($row = $result->fetch())	//array
 	{
+		$ln_shortcut_path = $repo_dir.'php/data/'.$shortcut_dir.$row['file_name'];
+
 		echo '<div class="img_slot">';
 		echo '<img class="edit" src="./img/edit.png"/>';
 		echo '<img class="delete" src="./img/delete.png"/>';
 		echo '<div class="img">';
-		echo "<img class='image' src=$row[shortcut_path] filename=$row[file_name] title=$row[img_description]/>";
+		echo "<img class='image' src=$ln_shortcut_path filename=$row[file_name] title=$row[img_description]/>";
 		echo "</div>";
 	}
 }
