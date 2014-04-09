@@ -35,8 +35,8 @@ div.img
 
 img.image
 {
-	width: 198px;
-	height: auto;
+	max-width: 198px;
+	max-height: 180px;
 	border-radius: 5px;
 }
 
