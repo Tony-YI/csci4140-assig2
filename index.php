@@ -30,6 +30,38 @@
 					<img src="./img/1.jpg"/>
 				</div>
 			</div>
+
+			<div class="img_slot">
+				<img class="edit" src="./img/edit.png"/>
+				<img class="delete" src="./img/delete.png">
+				<div class="img">
+					<img src="./img/1.jpg"/>
+				</div>
+			</div>
+
+			<div class="img_slot">
+				<img class="edit" src="./img/edit.png"/>
+				<img class="delete" src="./img/delete.png">
+				<div class="img">
+					<img src="./img/1.jpg"/>
+				</div>
+			</div>
+
+			<div class="img_slot">
+				<img class="edit" src="./img/edit.png"/>
+				<img class="delete" src="./img/delete.png">
+				<div class="img">
+					<img src="./img/1.jpg"/>
+				</div>
+			</div>
+
+			<div class="img_slot">
+				<img class="edit" src="./img/edit.png"/>
+				<img class="delete" src="./img/delete.png">
+				<div class="img">
+					<img src="./img/1.jpg"/>
+				</div>
+			</div>
 		</div>
 
 		<div id="dropbox">Drop file here. One file at a time...</div>
