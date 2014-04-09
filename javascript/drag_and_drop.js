@@ -49,6 +49,7 @@ function handleReaderLoadEnd(e, file)
 				document.getElementById('progress_bar').value = 0; //upload finished, reset it to 0
 				document.getElementById('dropbox').style.background = "white";
 
+				console.log(xhr.responseText);
 				try
 				{
 					var response = JSON.parse(xhr.responseText);

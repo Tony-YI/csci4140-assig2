@@ -219,8 +219,23 @@ function modify_file_desc($file_name, $file_desc)
 #the file name must be "deploy"
 #add line into "deploy"
 #ln -s {OPENSHIFT_DATA_DIR} {OPENSHIFT_REPO_DIR}/php/data
-function get_images()
+
+//display all the images in the database
+function display_all_img()
 {
+
+}
+
+//udate the image display after upload
+function update_img()
+{
+
+}
+
+//periodically update image display
+function periodic_update_img()
+{
+	
 }
 /********************************************/
 
