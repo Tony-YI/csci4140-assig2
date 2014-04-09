@@ -67,4 +67,6 @@ function img_click(e)
 {
 	e.preventDefault();
 	e.stopPropagation();
+
+	alert("IMAGE");
 }
