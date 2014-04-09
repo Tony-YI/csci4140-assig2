@@ -287,7 +287,7 @@ function update_img()
 	image.src = "./img/1.jpg"; //TODO
 	image.setAttribute("filename", '1.jpg'); //TODO
 	image.setAttribute("title", "HAHA"); //TODO
-	num_of_img[i].addEventListener("click", img_click, false);
+	image.addEventListener("click", img_click, false);
 
 	document.getElementById('display').appendChild(img_slot);
 	img_slot.appendChild(_edit);
