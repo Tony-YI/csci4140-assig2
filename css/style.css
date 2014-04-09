@@ -31,12 +31,10 @@ div.img
 img.edit
 {
 	display: none;
-
-	border: solid 1px black;
-
-	height: 20px;
+	border-radius: 3px;
+	height: 30px;
 	width: 30px;
-	margin: 1px;
+	margin: 0px;
 	position: absolute;
 	left: 0px;
 	top: 0px;
@@ -47,12 +45,10 @@ img.edit
 img.delete
 {
 	display: none;
-
-	border: solid 1px black;
-
-	height: 20px;
+	border-radius: 3px;
+	height: 30px;
 	width: 30px;
-	margin: 1px;
+	margin: 0px;
 	position: absolute;
 	left: 30px;
 	top: 0px;
