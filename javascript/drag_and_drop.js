@@ -66,7 +66,46 @@ function handleReaderLoadEnd(e, file)
 				console.log(response.file_size_flag);
 				console.log(response.mysql_error);
 
-				var t = console(response);
+				if(response.file_name)
+				{
+					document.getElementById('file_name').innerHTML = 'File Name: '+response.file_name;
+				}
+				else //clear the old data
+				{
+					document.getElementById('file_name').innerHTML = null;
+				}
+				if(response.file_type_flag)
+				{
+					document.getElementById('file_type_flag').innerHTML = 'File Type Flag: '+response.file_type_flag;
+				}
+				else
+				{
+					document.getElementById('file_type_flag').innerHTML = null;
+				}
+				if(response.file_size_flag)
+				{
+					document.getElementById('file_size_flag').innerHTML = 'File Size Flag: '+response.file_size_flag;
+				}
+				else
+				{
+					document.getElementById('file_size_flag').innerHTML = null;
+				}
+				if(response.mysql_error)
+				{
+					document.getElementById('mysql_error').innerHTML = 'MYSQL Error Flag: '+response.mysql_error;
+				}
+				else
+				{
+					document.getElementById('mysql_error').innerHTML = null;
+				}
+				if(response.file_exist_flag)
+				{
+					document.getElementById('file_exist_flag').innerHTML = 'File Existance Flag: '+response.file_exist_flag;
+				}
+				else
+				{
+					document.getElementById('file_exist_flag').innerHTML = null;
+				}
 
 				//TODO: update_album();
 			}
