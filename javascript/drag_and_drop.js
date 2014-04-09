@@ -66,7 +66,7 @@ function handleReaderLoadEnd(e, file)
 				console.log(response.file_size_flag);
 				console.log(response.mysql_error);
 
-				console(response);
+				var t = console(response);
 
 				//TODO: update_album();
 			}
