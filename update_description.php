@@ -9,6 +9,7 @@
 	$array = array(); //xhr response array
 
 	global $data_dir, $img_dir, $shortcut_dir, $temp_dir;
+	$_img_dir = $data_dir.$img_dir.'/'.$file_name;
 
 	if(!file_exists("$_img_dir")) //file not exist
 	{
