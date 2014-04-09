@@ -18,7 +18,9 @@ div.img_slot
 	height: 200px;
 	position: relative;
 	float: left;
-	text-align: center;
+
+	border: solid 1px red;
+	border-radius: 5px;
 }
 
 div.img
@@ -34,8 +36,6 @@ img.image
 {
 	width: 200px;
 	height: auto;
-	border: solid 1px red;
-	border-radius: 5px;
 }
 
 img.edit
