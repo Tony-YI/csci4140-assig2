@@ -262,5 +262,6 @@ function img_click(e)
 //update album after upload
 function update_img()
 {
-	alert("Update image after upload.");
+	console.log("Update image after upload.");
+	document.getElementById(display).innerHTML = "<p>hahahaha</p>";
 }
