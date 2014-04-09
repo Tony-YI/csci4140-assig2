@@ -225,7 +225,7 @@ function display_all_img()
 {
 	global $repo_dir, $data_dir, $img_dir, $shortcut_dir, $temp_dir;
 
-	$query = "SELECT * FROM file;";
+	$query = "SELECT * FROM file ORDER BY upload_time DESC;";
 	$result = db_execute($query);
 
 	/*
