@@ -26,6 +26,11 @@ function init()
 	{
 		num_of_delete[i].addEventListener("click", delete_click, false);
 	}
+
+	//init the height of the page
+	var num_of_image = document.getElementsByClassName("image");
+	var display_height = document.getElementById("display");
+	display_height.target.style.height = (num_of_image.length * 210) + "px";
 }
 
 window.addEventListener("load", init, false); //load means after the whole html file is received by the client
