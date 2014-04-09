@@ -69,7 +69,7 @@ function edit_click(e)
 
 	//replace the special characters
 	var final_img_des = new String;
-	for(var i = 0; i < 50 || i < img_des.length; i++)
+	for(var i = 0; i < 50 && i < img_des.length; i++)
 	{
 		final_img_des += img_des[i];
 	}
