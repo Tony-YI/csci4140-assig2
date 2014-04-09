@@ -11,13 +11,12 @@
 	</head>
 
 	<body>
+		<?php echo "<a href='./reinit.php'>Reinint</a>"?>;
 
 		<div id="display">
 
 		<?php
 			require './lib.php';
-
-			echo "<a href='./reinit.php'>Reinint</a>";
 			display_all_img();
 		?>
 
