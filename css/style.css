@@ -31,9 +31,9 @@ div.img
 
 img.image
 {
-	max-width: 100%;
-	min-width: 100%;
-	border: solid 1px red;
+	max-width: 98%;
+	max-height: 98%;
+	border: solid 1% red;
 	border-radius: 5px;
 }
 
