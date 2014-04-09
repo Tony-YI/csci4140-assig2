@@ -258,3 +258,9 @@ function img_click(e)
 
 	alert("IMAGE");
 }
+
+//update album after upload
+function update_img()
+{
+	alert("Update image after upload.");
+}

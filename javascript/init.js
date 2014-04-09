@@ -1,5 +1,10 @@
 function init()
 {
+	//init the height of the page
+	var num_of_image = document.getElementsByClassName("image");
+	var display_height = document.getElementById("display");
+	display_height.style.height = Math.ceil(num_of_image.length / 4) * 210 + "px";
+	
 	document.getElementById('dropbox').addEventListener("drop", drop, false); //drop means some file is drop into the div called dropbox
 	document.getElementById('dropbox').addEventListener("dragover", dragOver, false); //dragover means there is a file over the div
 	document.getElementById('dropbox').addEventListener("dragleave", dragLeave, false); //file is leaved
@@ -33,11 +38,6 @@ function init()
 	{
 		num_of_delete[i].addEventListener("click", delete_click, false);
 	}
-
-	//init the height of the page
-	var num_of_image = document.getElementsByClassName("image");
-	var display_height = document.getElementById("display");
-	display_height.style.height = Math.ceil(num_of_image.length / 4) * 210 + "px";
 }
 
 window.addEventListener("load", init, false); //load means after the whole html file is received by the client

@@ -61,6 +61,8 @@ function handleReaderLoadEnd(e, file)
 					return; //exit the function
 				}
 
+				update_img();
+
 				console.log(response.file_name);
 				console.log(response.file_type_flag);
 				console.log(response.file_size_flag);
@@ -106,8 +108,6 @@ function handleReaderLoadEnd(e, file)
 				{
 					document.getElementById('file_exist_flag').innerHTML = null;
 				}
-
-				//TODO: update_album();
 			}
 		}
 	};
