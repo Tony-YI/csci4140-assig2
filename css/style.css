@@ -11,6 +11,47 @@ body
 	margin-left: 5%;
 }
 
+div.img_slot
+{
+	margin: 0 auto;
+	width: 22.5%;
+	min-width: 200px;
+	height: auto;
+}
+
+div.img
+{
+
+}
+
+img.edit
+{
+	display: none;
+
+	height: 20px;
+	width: 30px;
+	margin: 1px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+img.delete
+{
+	display: none;
+	
+	height: 20px;
+	width: 30px;
+	margin: 1px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 1;
+	cursor: pointer;
+}
+
 #dropbox
 {
 	margin-left: 5%;

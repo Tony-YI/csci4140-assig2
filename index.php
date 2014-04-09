@@ -14,6 +14,22 @@
 		<?php echo "<a href='./reinit.php'>Reinint</a>";?>
 
 		<div id="display">
+
+			<div class="img_slot">
+				<img class="edit"/>
+				<img class="delete">
+				<div class="img">
+					<img/>
+				</div>
+			</div>
+
+			<div class="img_slot">
+				<img class="edit"/>
+				<img class="delete">
+				<div class="img">
+					<img/>
+				</div>
+			</div>
 		</div>
 
 		<div id="dropbox">Drop file here. One file at a time...</div>
