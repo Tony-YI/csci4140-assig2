@@ -13,10 +13,9 @@
 	<body>
 
 		<div id="display">
-		<?php 
+		<?php
 			require './lib.php';
 
-			header("Content-type: text/plain");
 			echo "<a href='./reinit.php'>Reinint</a>";
 			//display_all_img();
 		?>
@@ -25,8 +24,8 @@
 			<img class="edit" src="./img/edit.png"/>
 			<img class="delete" src="./img/delete.png"/>
 				<div class="img">
-				<img class="image" src="./img/1.jpg" filename="1.jpg"/>
-			</div>
+					<img class="image" src="./img/1.jpg" filename="1.jpg"/>
+				</div>
 		</div>
 
 		</div>

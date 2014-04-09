@@ -244,7 +244,7 @@ function display_all_img()
 		echo '<img class="edit" src="./img/edit.png"/>';
 		echo '<img class="delete" src="./img/delete.png"/>';
 		echo '<div class="img">';
-		echo "<img class="image" src="$row['shortcut_path']" filename="$row['file_name']" title="$row['img_description']"/>";
+		echo "<img class='image' src=$row[shortcut_path] filename=$row[file_name] title=$row[img_description]/>";
 		echo "</div>";
 	}
 }
