@@ -1,4 +1,4 @@
-function console($response)
+function console(response)
 {
 	if(response.file_name)
 	{
