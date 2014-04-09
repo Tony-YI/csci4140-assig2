@@ -68,10 +68,10 @@ function edit_click(e)
 	console.log("New image description is received." + img_des);
 
 	//replace the special characters
-	var final_img_des = new Array;
+	var final_img_des = new String;
 	for(var i = 0; i < 50; i++)
 	{
-		final_img_des[i] = img_des[i];
+		final_img_des += img_des[i];
 	}
 
 	final_img_des = final_img_des.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
