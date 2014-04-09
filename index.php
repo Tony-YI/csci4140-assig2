@@ -11,57 +11,15 @@
 	</head>
 
 	<body>
-		<?php echo "<a href='./reinit.php'>Reinint</a>";?>
 
 		<div id="display">
+		<?php
+			require "./lib.php";
 
-			<div class="img_slot">
-				<img class="edit" src="./img/edit.png"/>
-				<img class="delete" src="./img/delete.png">
-				<div class="img">
-					<img class="image" src="./img/1.jpg" filename="1.jpg"/>
-				</div>
-			</div>
+			echo "<a href='./reinit.php'>Reinint</a>";
 
-			<div class="img_slot">
-				<img class="edit" src="./img/edit.png"/>
-				<img class="delete" src="./img/delete.png">
-				<div class="img">
-					<img class="image" src="./img/1.jpg"/>
-				</div>
-			</div>
-
-			<div class="img_slot">
-				<img class="edit" src="./img/edit.png"/>
-				<img class="delete" src="./img/delete.png">
-				<div class="img">
-					<img class="image" src="./img/1.jpg"/>
-				</div>
-			</div>
-
-			<div class="img_slot">
-				<img class="edit" src="./img/edit.png"/>
-				<img class="delete" src="./img/delete.png">
-				<div class="img">
-					<img class="image" src="./img/1.jpg"/>
-				</div>
-			</div>
-
-			<div class="img_slot">
-				<img class="edit" src="./img/edit.png"/>
-				<img class="delete" src="./img/delete.png">
-				<div class="img">
-					<img class="image" src="./img/1.jpg"/>
-				</div>
-			</div>
-
-			<div class="img_slot">
-				<img class="edit" src="./img/edit.png"/>
-				<img class="delete" src="./img/delete.png">
-				<div class="img">
-					<img class="image" src="./img/1.jpg"/>
-				</div>
-			</div>
+			display_all_img();
+		?>
 		</div>
 
 		<div id="dropbox">Drop file here. One file at a time...</div>

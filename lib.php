@@ -223,7 +223,28 @@ function modify_file_desc($file_name, $file_desc)
 //display all the images in the database
 function display_all_img()
 {
+	$query = "SELECT * FROM file;";
+	$result = db_execute($query);
 
+	/*
+	<div class="img_slot">
+		<img class="edit" src="./img/edit.png"/>
+		<img class="delete" src="./img/delete.png"/>
+			<div class="img">
+			<img class="image" src="./img/1.jpg" filename="1.jpg"/>
+		</div>
+	</div>
+	*/
+
+	while($row = $result->fetch())	//array
+	{
+		echo '<div class="img_slot">';
+		echo '<img class="edit" src="./img/edit.png"/>';
+		echo '<img class="delete" src="./img/delete.png"/>';
+		echo '<div class="img">';
+		echo "<img class="image" src="$row['shortcut_path']" filename="$row['file_name']" title="$row['img_description']"/>";
+		echo "</div>";
+	}
 }
 
 //udate the image display after upload
