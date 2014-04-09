@@ -18,12 +18,14 @@ div.img_slot
 	height: 200px;
 	position: relative;
 	float: left;
+
+	text-align: center;
 }
 
 div.img
 {
-	min-width: 200px;
-	width: 100%;
+	min-width: 198px;
+	width: 90%;
 	height: 200px;
 
 	text-align: center;
@@ -33,7 +35,7 @@ div.img
 
 img.image
 {
-	width: 200px;
+	width: 198px;
 	height: auto;
 }
 
