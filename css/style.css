@@ -13,7 +13,7 @@ body
 
 div.img_slot
 {
-	margin: 0 auto;
+	margin: 10% auto;
 	width: 22.5%;
 	min-width: 200px;
 	height: auto;
@@ -25,7 +25,8 @@ div.img
 {
 	width: 200px;
 	height: 200px;
-	border: solid 1px black;
+	border: solid 1px red;
+	border-radius: 5px;
 }
 
 img.edit
