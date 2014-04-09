@@ -65,7 +65,7 @@ function edit_click(e)
 	}
 	
 	//new image description is not empty
-	console.log("New image description is received." + img_des);
+	console.log("New image description is received: " + img_des);
 
 	//replace the special characters
 	var final_img_des = new String;
@@ -75,7 +75,7 @@ function edit_click(e)
 	}
 
 	final_img_des = final_img_des.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-	console.log("New description converted." + final_img_des);
+	console.log("New description converted: " + final_img_des);
 
 	//send to the server
 	var xhr = new XMLHttpRequest();
@@ -105,8 +105,8 @@ function edit_click(e)
 				return; //exit the function
 			}
 
-			console.log(response.file_name);
-			console.log(response.mysql_error);
+			console.log("File Name: " + response.file_name);
+			console.log("MYSQL ERROR: " + response.mysql_error);
 
 			if(response.file_name)
 			{
