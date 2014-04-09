@@ -16,18 +16,18 @@
 		<div id="display">
 
 			<div class="img_slot">
-				<img class="edit"/>
-				<img class="delete">
+				<img class="edit" src="./img/edit.png"/>
+				<img class="delete" src="./img/delete.png">
 				<div class="img">
-					<img/>
+					<img ./img/1/jpg/>
 				</div>
 			</div>
 
 			<div class="img_slot">
-				<img class="edit"/>
-				<img class="delete">
+				<img class="edit" src="./img/edit.png"/>
+				<img class="delete" src="./img/delete.png">
 				<div class="img">
-					<img/>
+					<img ./img/1/jpg/>
 				</div>
 			</div>
 		</div>

@@ -26,7 +26,7 @@ function img_slot_mouse_on(e)
 	e.preventDefault();
 	e.stopPropagation();
 
-	console.log(e.type +": "+ e.target);
+	//console.log(e.type +": "+ e.target);
 	e.target.children[0].style.display = "inline";
 	e.target.children[1].style.display = "inline";
 	return null;
@@ -38,7 +38,7 @@ function img_slot_mouse_off(e)
 	e.preventDefault();
 	e.stopPropagation();
 
-	console.log(e.type +": "+ e.target);
+	//console.log(e.type +": "+ e.target);
 	e.target.children[0].style.display = "none";
 	e.target.children[1].style.display = "none";
 	return null;
