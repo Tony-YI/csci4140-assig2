@@ -108,22 +108,7 @@ function edit_click(e)
 			console.log("File Name: " + response.file_name);
 			console.log("MYSQL ERROR: " + response.mysql_error);
 
-			if(response.file_name)
-			{
-				document.getElementById('file_name').innerHTML = 'File Name: ' + response.file_name;
-			}
-			else //clear the old data
-			{
-				document.getElementById('file_name').innerHTML = null;
-			}
-			if(response.mysql_error)
-			{
-				document.getElementById('mysql_error').innerHTML = 'MYSQL Error Flag: ' + response.mysql_error;
-			}
-			else
-			{
-				document.getElementById('mysql_error').innerHTML = null;
-			}
+			console(response);
 		}
 	};
 }
