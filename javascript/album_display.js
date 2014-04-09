@@ -93,7 +93,7 @@ function edit_click(e)
 	{
 		if(xhr.status == 200 && xhr.readyState == 4) //200OK and send XHR successfully
 		{
-			console.log("XHR: " + xhr.responseText);
+			console.log("XHR response: " + xhr.responseText);
 
 			try
 			{
@@ -167,7 +167,7 @@ function delete_click(e)
 	{
 		if(xhr.status == 200 && xhr.readyState == 4) //200OK and send XHR successfully
 		{
-			console.log("XHR: " + xhr.responseText);
+			console.log("XHR response: " + xhr.responseText);
 
 			try
 			{
