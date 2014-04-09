@@ -56,7 +56,7 @@ function edit_click(e)
 	var img = parent.children[2].children[0];
 	var file_name = img.getAttribute('filename'); //filename is the attribute predefined	
 
-	var img_des = prompt("Please enter the new description here. Should be less than 50 characters.");
+	var img_des = window.prompt("Please enter the new description here. Should be less than 50 characters.");
 
 	if(img_des == null)
 	{
@@ -164,7 +164,7 @@ function delete_click(e)
 	var img = parent.children[2].children[0];
 	var file_name = img.getAttribute('filename'); //filename is the attribute predefined	
 
-	var delete_option = confirm("Are you sure to DELETE this image?");
+	var delete_option = window.confirm("Are you sure to DELETE this image?");
 
 	console.log("delete_option: " + delete_option);
 
