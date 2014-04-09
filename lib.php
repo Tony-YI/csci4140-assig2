@@ -236,6 +236,8 @@ function display_all_img()
 	</div>
 	*/
 
+	print_r($result);
+
 	while($row = $result->fetch())	//array
 	{
 		echo '<div class="img_slot">';
