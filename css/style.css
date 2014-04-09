@@ -40,6 +40,11 @@ img.image
 	border-radius: 5px;
 }
 
+img.image:hover
+{
+	cursor: pointer;
+}
+
 img.edit
 {
 	display: none;
