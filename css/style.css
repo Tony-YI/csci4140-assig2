@@ -31,13 +31,13 @@ div.img
 img.edit
 {
 	display: none;
-	border-radius: 3px;
+	border-radius: 5px;
 	height: 30px;
 	width: 30px;
 	margin: 0px;
 	position: absolute;
-	left: 0px;
-	top: 0px;
+	left: 10px;
+	top: 10px;
 	z-index: 1;
 	cursor: pointer;
 	background-color: white;
@@ -46,13 +46,13 @@ img.edit
 img.delete
 {
 	display: none;
-	border-radius: 3px;
+	border-radius: 5px;
 	height: 30px;
 	width: 30px;
 	margin: 0px;
 	position: absolute;
-	left: 30px;
-	top: 0px;
+	left: 50px;
+	top: 10px;
 	z-index: 1;
 	cursor: pointer;
 	background-color: white;
