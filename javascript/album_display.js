@@ -54,13 +54,13 @@ function edit_click(e)
 
 	var parent = e.target.parentNode;
 	var img = parent.children[2].children[0];
-	var file_name = img.getAttribute('filename'); //filename is the attribute predefined	
+	var file_name = img.getAttribute('file_name'); //filename is the attribute predefined	
 
 	var img_des = window.prompt("Please enter the new description here. Should be less than 50 characters.");
 
 	if(img_des == null)
 	{
-		console.log("The new image description is empty.");
+		console.log("Edit image description canceled.");
 		return;
 	}
 	
