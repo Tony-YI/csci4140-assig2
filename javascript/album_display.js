@@ -50,7 +50,7 @@ function edit_click(e)
 	e.preventDefault();
 	e.stopPropagation();
 
-
+	alert("EDIT");
 }
 
 //mouse click on the edit
@@ -59,7 +59,7 @@ function delete_click(e)
 	e.preventDefault();
 	e.stopPropagation();
 
-	
+	alert("DELETE");
 }
 
 //mouse click then show the image
