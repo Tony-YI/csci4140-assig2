@@ -37,7 +37,7 @@ img.edit
 	height: 20px;
 	width: 30px;
 	margin: 1px;
-	position: absolute;
+	position: relative;
 	right: 0px;
 	top: 0px;
 	z-index: 1;
@@ -53,7 +53,7 @@ img.delete
 	height: 20px;
 	width: 30px;
 	margin: 1px;
-	position: absolute;
+	position: relative;
 	right: 0px;
 	top: 0px;
 	z-index: 1;
