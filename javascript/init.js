@@ -5,7 +5,7 @@ function init()
 	document.getElementById('dropbox').addEventListener("dragleave", dragLeave, false); //file is leaved
 
 	//add event listener to the image slots
-	var num_of_img_slot = document.getElementByClassName("img_slot");
+	var num_of_img_slot = document.getElementsByClassName("img_slot");
 	for(var i = 0; i < num_of_img_slot; i++)
 	{
 		num_of_img_slot[i].addEventListener("mouseenter", img_slot_mouse_on, false);//false means top-down.
@@ -14,14 +14,14 @@ function init()
 	}
 
 	//add event listener to the edit
-	var num_of_edit = document.getElementByClassName("edit");
+	var num_of_edit = document.getElementsByClassName("edit");
 	for(var i = 0; i < num_of_edit; i++)
 	{
 		num_of_edit[i].addEventListener("click", edit_click, false);
 	}
 
 	//add event listener to the delete
-	var num_of_delete = document.getElementByClassName("delete");
+	var num_of_delete = document.getElementsByClassName("delete");
 	for(var i = 0; i < num_of_delete; i++)
 	{
 		num_of_delete[i].addEventListener("click", delete_click, false);
