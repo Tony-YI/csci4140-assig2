@@ -13,13 +13,7 @@
 	<body>
 
 		<div id="display">
-		<?php
-			require "./lib.php";
-
-			echo "<a href='./reinit.php'>Reinint</a>";
-
-			display_all_img();
-		?>
+		<?php require "./lib.php";echo "<a href='./reinit.php'>Reinint</a>";display_all_img();?>
 
 		<div class="img_slot">
 			<img class="edit" src="./img/edit.png"/>
