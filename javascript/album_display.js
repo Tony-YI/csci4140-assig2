@@ -277,7 +277,7 @@ function update_img()
 	var _delete = document.createElement("img");
 	_delete.className = "delete";
 	_delete.src = "./img/delete.png"
-	_delete.num_of_delete[i].addEventListener("click", delete_click, false);
+	_delete.addEventListener("click", delete_click, false);
 
 	var img = document.createElement("div");
 	img.className = "img";
