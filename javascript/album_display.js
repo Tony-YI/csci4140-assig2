@@ -93,7 +93,7 @@ function edit_click(e)
 	{
 		if(xhr.status == 200 && xhr.readyState == 4) //200OK and send XHR successfully
 		{
-			console.log(xhr.responseText);
+			console.log("XHR: " + xhr.responseText);
 
 			try
 			{
@@ -140,7 +140,7 @@ function delete_click(e)
 	var img = parent.children[2].children[0];
 	var file_name = img.getAttribute('filename'); //filename is the attribute predefined	
 
-	var delete_option = window.alert("Are you sure to DELETE this image?");
+	var delete_option = window.confirm("Are you sure to DELETE this image?");
 
 	if(delete_option == null)
 	{
@@ -165,7 +165,7 @@ function delete_click(e)
 	{
 		if(xhr.status == 200 && xhr.readyState == 4) //200OK and send XHR successfully
 		{
-			console.log(xhr.responseText);
+			console.log("XHR: " + xhr.responseText);
 
 			try
 			{
