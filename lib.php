@@ -232,7 +232,7 @@ function display_all_img()
 	<div class="img_slot">
 		<img class="edit" src="./img/edit.png"/>
 		<img class="delete" src="./img/delete.png"/>
-			<div class="img">
+		<div class="img">
 			<img class="image" src="./img/1.jpg" filename="1.jpg"/>
 		</div>
 	</div>

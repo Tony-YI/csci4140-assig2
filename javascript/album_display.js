@@ -263,5 +263,35 @@ function img_click(e)
 function update_img()
 {
 	console.log("Update image after upload.");
-	document.getElementById('display').innerHTML = "<p>hahahaha</p>";
+
+	var img_slot = document.getElementById('display').createElement("div");
+	img_slot.className = "img_slot";
+	img_slot.addEventListener("mouseenter", img_slot_mouse_on, false);//false means top-down.
+	img_slot.addEventListener("mouseleave", img_slot_mouse_off, false);
+
+	var _edit = img_slot.createElement("img");
+	_edit.className = "edit";
+	_edit.src = "./img/edit.png";
+	_edit.addEventListener("click", edit_click, false);
+
+	var _delete = img_slot.createElement("img");
+	_delete.className = "delete";
+	_delete.src = "./img/delete.png"
+	_delete.num_of_delete[i].addEventListener("click", delete_click, false);
+
+	var img = img_slot.createElement("div");
+	img.className = "img";
+	
+	var image = img.createElement("img");
+	image.className = "image";
+	image.src = "./img/1.jpg"; //TODO
+	image.setAttribute("filename", '1.jpg'); //TODO
+	image.setAttribute("title", "HAHA"); //TODO
+	num_of_img[i].addEventListener("click", img_click, false);
+
+	document.getElementById('display').appendChild(img_slot);
+	img_slot.appendChild(_edit);
+	img_slot.appendChild(_delete);
+	img_slot.appendChild(img);
+	img.appendChild(image);
 }
