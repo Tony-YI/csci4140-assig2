@@ -11,7 +11,7 @@
 	</head>
 
 	<body>
-		<?php echo "<a href='./reinit.php'>Reinint</a>"?>;
+		<?php echo "<a href='./reinit.php'>Reinint</a>"?>
 
 		<div id="display">
 

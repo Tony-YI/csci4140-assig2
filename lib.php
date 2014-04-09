@@ -248,6 +248,7 @@ function display_all_img()
 		echo '<div class="img">';
 		echo "<img class='image' src=$ln_shortcut_path filename=$row[file_name] title=$row[img_description]/>";
 		echo "</div>";
+		echo "</div>";
 	}
 }
 
