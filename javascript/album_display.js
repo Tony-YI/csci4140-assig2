@@ -263,5 +263,5 @@ function img_click(e)
 function update_img()
 {
 	console.log("Update image after upload.");
-	document.getElementById(display).innerHTML = "<p>hahahaha</p>";
+	document.getElementById('display').innerHTML = "<p>hahahaha</p>";
 }
