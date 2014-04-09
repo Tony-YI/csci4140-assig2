@@ -26,6 +26,8 @@ function img_slot_mouse_on(e)
 	e.preventDefault();
 	e.stopPropagation();
 
+	alert("hahahahaha");
+
 	console.log(e.type +": "+ e.target);
 	e.target.children[0].style.display = "inline";
 	e.target.children[1].style.display = "inline";
