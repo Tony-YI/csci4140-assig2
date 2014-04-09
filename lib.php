@@ -240,7 +240,7 @@ function display_all_img()
 
 	while($row = $result->fetch())	//array
 	{
-		$ln_shortcut_path = $repo_dir.'data/'.$shortcut_dir.'/'.$row['file_name'];
+		$ln_shortcut_path = './data/'.$shortcut_dir.'/'.$row['file_name'];
 
 		echo '<div class="img_slot">';
 		echo '<img class="edit" src="./img/edit.png"/>';
