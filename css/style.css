@@ -36,8 +36,8 @@ img.edit
 	width: 30px;
 	margin: 0px;
 	position: absolute;
-	left: 10px;
-	top: 10px;
+	left: 0px;
+	top: 0px;
 	z-index: 1;
 	cursor: pointer;
 	background-color: white;
@@ -51,8 +51,8 @@ img.delete
 	width: 30px;
 	margin: 0px;
 	position: absolute;
-	left: 50px;
-	top: 10px;
+	left: 35px;
+	top: 0px;
 	z-index: 1;
 	cursor: pointer;
 	background-color: white;
