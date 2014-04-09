@@ -142,6 +142,8 @@ function delete_click(e)
 
 	var delete_option = window.confirm("Are you sure to DELETE this image?");
 
+	console.log("delete_option: " + delete_option);
+
 	if(delete_option == null)
 	{
 		console.log("delete_option: Cancel");
