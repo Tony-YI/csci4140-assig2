@@ -41,7 +41,7 @@ function console(response)
 				document.getElementById('file_exist_flag').innerHTML = null;
 			}
 	return false;
-
+}
 
 function init()
 {
