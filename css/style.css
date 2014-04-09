@@ -18,15 +18,15 @@ div.img_slot
 	height: 200px;
 	position: relative;
 	float: left;
-
-	text-align: center;
 }
 
 div.img
 {
 	min-width: 198px;
 	width: 90%;
-	height: 200px;
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 180px;
 
 	text-align: center;
 	border: solid 1px red;
@@ -37,6 +37,7 @@ img.image
 {
 	width: 198px;
 	height: auto;
+	border-radius: 5px;
 }
 
 img.edit
