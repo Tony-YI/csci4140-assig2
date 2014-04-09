@@ -78,7 +78,7 @@ function edit_click(e)
 	console.log("New description converted." + final_img_des);
 
 	//send to the server
-	var xhr = new XMLHttpRequset();
+	var xhr = new XMLHttpRequest();
 
 	xhr.open('POST', './update_description.php', true); //true means AJAX, open a connection to this php file
 
