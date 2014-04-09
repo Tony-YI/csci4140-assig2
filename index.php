@@ -14,7 +14,9 @@
 
 		<div id="display">
 		<?php 
-			//require './lib.php';
+			require './lib.php';
+
+			header("Content-type: text/plaintext");
 			echo "<a href='./reinit.php'>Reinint</a>";
 			//display_all_img();
 		?>
