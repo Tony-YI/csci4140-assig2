@@ -14,7 +14,7 @@ function init()
 	}
 
 	//add event listener to the image
-	var num_of_img = document.getElementsByClassName("img");
+	var num_of_img = document.getElementsByClassName("image");
 	for(var i = 0; i < num_of_img.length; i++)
 	{
 		num_of_img[i].addEventListener("click", img_click, false);
