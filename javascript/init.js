@@ -37,7 +37,7 @@ function init()
 	//init the height of the page
 	var num_of_image = document.getElementsByClassName("image");
 	var display_height = document.getElementById("display");
-	display_height.style.height = (Math.floor(num_of_image.length / 4) + 1) * 210 + "px";
+	display_height.style.height = Math.ceil(num_of_image.length / 4) * 210 + "px";
 }
 
 window.addEventListener("load", init, false); //load means after the whole html file is received by the client
