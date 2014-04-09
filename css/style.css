@@ -40,6 +40,7 @@ img.edit
 	top: 0px;
 	z-index: 1;
 	cursor: pointer;
+	background-color: white;
 }
 
 img.delete
@@ -54,6 +55,7 @@ img.delete
 	top: 0px;
 	z-index: 1;
 	cursor: pointer;
+	background-color: white;
 }
 
 #dropbox
