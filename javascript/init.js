@@ -10,7 +10,14 @@ function init()
 	{
 		num_of_img_slot[i].addEventListener("mouseenter", img_slot_mouse_on, false);//false means top-down.
 		num_of_img_slot[i].addEventListener("mouseleave", img_slot_mouse_off, false);
-		num_of_img_slot[i].addEventListener("click", img_click, false);
+		//num_of_img_slot[i].addEventListener("click", img_click, false);
+	}
+
+	//add event listener to the image
+	var num_of_img = document.getElementsByClassName("img");
+	for(var i = 0; i < num_of_img.length; i++)
+	{
+		num_of_img[i].addEventListener("click", img_click, false);
 	}
 
 	//add event listener to the edit
