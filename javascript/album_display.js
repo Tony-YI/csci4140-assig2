@@ -248,7 +248,7 @@ function img_click(e)
 	image_background.addEventListener("click", cancle_image_large, false);
 	try
 	{
-		document.body.addEventListener("onmousewheel", disable_scroll, false);
+		document.body.addEventListener("onmousewheel", disable_scroll_1, false);
 		console.log('heh1');
 	}
 	catch(err)
@@ -258,7 +258,7 @@ function img_click(e)
 
 	try
 	{
-		document.body.addEventListener.addEventListener("DOMMouseScroll", disable_scroll, false);
+		document.body.addEventListener.addEventListener("DOMMouseScroll", disable_scroll_1, false);
 		console.log('heh2');
 	}
 	catch(err)
@@ -327,7 +327,7 @@ function img_click(e)
 	document.getElementById('display_large').appendChild(image_background);
 }
 
-function disable_scroll(e)
+function disable_scroll_1(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
