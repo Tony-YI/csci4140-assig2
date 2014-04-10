@@ -248,6 +248,7 @@ function img_click(e)
 	image_background.addEventListener("click", cancle_image_large, false);
 	try
 	{
+		//disable_scroll is predefined, we can't use it 
 		document.body.addEventListener("onmousewheel", disable_scroll_1, false);
 		console.log('heh1');
 	}
@@ -258,7 +259,8 @@ function img_click(e)
 
 	try
 	{
-		document.body.addEventListener.addEventListener("DOMMouseScroll", disable_scroll_1, false);
+		//disable_scroll is predefined, we can't use it 
+		document.body.addEventListener("DOMMouseScroll", disable_scroll_1, false);
 		console.log('heh2');
 	}
 	catch(err)
@@ -327,6 +329,7 @@ function img_click(e)
 	document.getElementById('display_large').appendChild(image_background);
 }
 
+//disable_scroll is predefined, we can't use it 
 function disable_scroll_1(e)
 {
 	e.stopPropagation();
@@ -350,6 +353,7 @@ function cancle_image_large(e)
 
 	try
 	{
+		//disable_scroll is predefined, we can't use it 
 		document.body.removeEventListener("onmousewheel", disable_scroll, false);
 	}
 	catch(error)
@@ -359,6 +363,7 @@ function cancle_image_large(e)
 
 	try
 	{
+		//disable_scroll is predefined, we can't use it 
 		document.body.removeEventListener("DOMMouseScroll", disable_scroll, false);
 	}
 	catch(error)
