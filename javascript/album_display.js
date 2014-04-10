@@ -105,6 +105,8 @@ function edit_click(e)
 				return; //exit the function
 			}
 
+			update_img();
+
 			console.log("File Name: " + response.file_name);
 			console.log("MYSQL ERROR: " + response.mysql_error);
 
@@ -203,6 +205,8 @@ function delete_click(e)
 				return; //exit the function
 			}
 
+			update_img();
+
 			console.log("File Name: " + response.file_name);
 			console.log("MYSQL ERROR: " + response.mysql_error);
 
@@ -289,6 +293,9 @@ function update_img()
 				return; //exit the function
 			}
 
+			//remove all the old element
+			document.getElementById("display").innerHTML = "";
+			
 			//dynamicaly generate html
 			for(var i = 0; i < response.length; i++)
 			{
