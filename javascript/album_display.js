@@ -328,8 +328,9 @@ function img_click(e)
 	table.appendChild(row_3);
 
 	display_large.appendChild(table);
-	document.getElementById('anchor').parentNode.appendChild(image_background);
-	document.getElementById('anchor').parentNode.appendChild(display_large);
+
+	document.getElementById('anchor').appendChild(image_background);
+	document.getElementById('anchor').appendChild(display_large);
 }
 
 //disable_scroll is predefined, we can't use it 
@@ -372,8 +373,8 @@ function cancle_image_large(e)
 		console.log("Cancel image_large: " + error);
 	}
 
-	document.getElementById('anchor').parentNode.removeChild(document.getElementById('display_large'));
-	document.getElementById('anchor').parentNode.removeChild(document.getElementById('image_background'));
+	document.getElementById('anchor').removeChild(document.getElementById('display_large'));
+	document.getElementById('anchor').removeChild(document.getElementById('image_background'));
 }
 
 //init the height of the page
