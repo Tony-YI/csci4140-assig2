@@ -246,6 +246,7 @@ function img_click(e)
 	var image_background = document.createElement('div');
 	image_background.id = ('image_background');
 	var table = document.createElement('table');
+	table.id = ('table');
 
 	//row 1 of table
 	var row_1 = document.createElement('tr');

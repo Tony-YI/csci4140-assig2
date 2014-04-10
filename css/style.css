@@ -103,6 +103,11 @@ img.delete
 {
 }
 
+#table
+{
+	text-align: center;
+}
+
 #nw
 {
 	width: 10px;
