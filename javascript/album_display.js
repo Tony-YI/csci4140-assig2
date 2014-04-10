@@ -318,7 +318,7 @@ function cancle_image_large(e)
 	e.stopPropagation();
 	e.preventDefault();
 
-	document.getElementById(display_large).innerHTML = "";
+	document.getElementById('display_large').innerHTML = "";
 }
 
 //init the height of the page
