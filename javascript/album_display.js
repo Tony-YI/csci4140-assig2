@@ -248,7 +248,7 @@ function img_click(e)
 	image_background.addEventListener("click", cancle_image_large, false);
 	try
 	{
-		document.body.addEventListener("onmousewheel", disable_scroll, false);
+		document.getElementById('anchor').addEventListener("onmousewheel", disable_scroll, false);
 		console.log('heh1');
 	}
 	catch(error)
@@ -258,7 +258,7 @@ function img_click(e)
 
 	try
 	{
-		document.body.addEventListener("DOMMouseScroll", disable_scroll, false);
+		document.getElementById('anchor').addEventListener("DOMMouseScroll", disable_scroll, false);
 		console.log('heh2');
 	}
 	catch(error)
@@ -328,6 +328,8 @@ function img_click(e)
 	table.appendChild(row_3);
 
 	display_large.appendChild(table);
+	document.getElementById('anchor').height = '100%';
+	document.getElementById('anchor').width = '100%';
 	document.getElementById('anchor').appendChild(image_background);
 	document.getElementById('anchor').appendChild(display_large);
 }
@@ -373,6 +375,8 @@ function cancle_image_large(e)
 	}
 
 	document.getElementById('anchor').innerHTML = "";
+	document.getElementById('anchor').height = '0px';
+	document.getElementById('anchor').width = '0px';
 }
 
 //init the height of the page
