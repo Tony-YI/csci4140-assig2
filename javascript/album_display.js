@@ -243,6 +243,8 @@ function img_click(e)
 	var file_name = e.target.getAttribute('file_name');
 	var img_path = e.target.getAttribute('path');
 
+	var image_background = document.createElement('div');
+	image_background.id = ('image_background');
 	var table = document.createElement('table');
 
 	//row 1 of table
@@ -297,7 +299,10 @@ function img_click(e)
 	table.appendChild(row_1);
 	table.appendChild(row_2);
 	table.appendChild(row_3);
-	document.getElementById('display_large').appendChild(table);
+
+	image_background.appendChild(table);
+
+	document.getElementById('display_large').appendChild(image_background);
 }
 
 function resize()
