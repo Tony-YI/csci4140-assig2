@@ -328,7 +328,7 @@ function img_click(e)
 	document.getElementById('display_large').appendChild(image_background);
 }
 
-function disable_scroll()
+function disable_scroll(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
