@@ -251,7 +251,7 @@ function img_click(e)
 	display_large.id = 'display_large';
 	try
 	{
-		display_large.addEventListener("onmousewheel", disable_scroll, false);
+		display_large.addEventListener("onmousewheel", resize, false);
 		console.log('heh1');
 	}
 	catch(error)
@@ -303,7 +303,6 @@ function img_click(e)
 	var e = document.createElement('td');
 	e.id = 'e';
 	e.addEventListener("mousedown", resize, false);
-	e.addEventListener("onscroll", disable_scroll, false);
 	row_2.appendChild(w);
 	row_2.appendChild(image_large);
 	row_2.appendChild(e);
