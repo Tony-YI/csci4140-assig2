@@ -303,7 +303,7 @@ function img_click(e)
 	var e = document.createElement('td');
 	e.id = 'e';
 	e.addEventListener("mousedown", resize, false);
-	e.addEventListener("onmousewheel", disable_scroll, false);
+	e.addEventListener("onscroll", disable_scroll, false);
 	row_2.appendChild(w);
 	row_2.appendChild(image_large);
 	row_2.appendChild(e);
