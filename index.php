@@ -26,10 +26,11 @@
 		<br/>
 		<progress id="progress_bar" value="0" max="100"></progress>
 
-		<div id="display_large">
-			
+		<div>
+			<div id="display_large">
+			</div>
 		</div>
-
+		
 		<div>
 			<p>Console</p>
 			<p id="file_name"></p>

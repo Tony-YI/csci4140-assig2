@@ -324,7 +324,7 @@ function img_click(e)
 	table.appendChild(row_3);
 
 	document.getElementById('display_large').appendChild(table);
-	document.getElementById('display_large').appendChild(image_background);
+	document.getElementById('display_large').parentNode.appendChild(image_background);
 }
 
 //disable_scroll is predefined, we can't use it 
