@@ -367,7 +367,7 @@ function cancle_image_large(e)
 		console.log("Cancel image_large: " + error);
 	}
 
-	document.getElementById('display_large').innerHTML = "";
+	document.getElementById('display_large').parentNode.innerHTML = "";
 }
 
 //init the height of the page
