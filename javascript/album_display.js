@@ -248,22 +248,20 @@ function img_click(e)
 	image_background.addEventListener("click", cancle_image_large, false);
 	try
 	{
-		//disable_scroll is predefined, we can't use it 
-		document.body.addEventListener("onmousewheel", disable_scroll, false);
+		image_background.addEventListener("onmousewheel", disable_scroll, false);
 		console.log('heh1');
 	}
-	catch(err)
+	catch(error)
 	{
 		console.log("Scrolling: " + err);
 	}
 
 	try
 	{
-		//disable_scroll is predefined, we can't use it 
-		document.body.addEventListener("DOMMouseScroll", disable_scroll, false);
+		image_background.addEventListener("DOMMouseScroll", disable_scroll, false);
 		console.log('heh2');
 	}
-	catch(err)
+	catch(error)
 	{
 		console.log("Scrolling: " + err);
 	}
@@ -349,25 +347,25 @@ function cancle_image_large(e)
 	e.stopPropagation();
 	e.preventDefault();
 
+	try
+	{
+		document.getElementById('image_background').removeEventListener("onmousewheel", disable_scroll, false);
+	}
+	catch(error)
+	{
+		console.log("Cancel image_large: " + error);
+	}
+
+	try
+	{
+		document.getElementById('image_background').removeEventListener("DOMMouseScroll", disable_scroll, false);
+	}
+	catch(error)
+	{
+		console.log("Cancel image_large: " + error);
+	}
+
 	document.getElementById('display_large').innerHTML = "";
-
-	try
-	{
-		document.body.removeEventListener("onmousewheel", disable_scroll, false);
-	}
-	catch(error)
-	{
-		console.log("Cancel image_large: " + error);
-	}
-
-	try
-	{
-		document.body.removeEventListener("DOMMouseScroll", disable_scroll, false);
-	}
-	catch(error)
-	{
-		console.log("Cancel image_large: " + error);
-	}
 }
 
 //init the height of the page
