@@ -350,6 +350,7 @@ function cancle_image_large(e)
 	try
 	{
 		document.body.removeEventListener("onmousewheel", disable_scroll, false);
+		console.log(heh);
 	}
 	catch(error)
 	{
