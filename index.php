@@ -15,12 +15,10 @@
 
 		<div id="display">
 
-		<!--
 		<?php
-			//require './lib.php';
-			display_all_img();
+			require './lib.php';
+			//display_all_img();
 		?>
-		-->
 
 		</div>
 
