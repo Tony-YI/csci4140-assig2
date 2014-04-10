@@ -266,6 +266,10 @@ function img_click(e)
 		console.log("Scrolling: " + err);
 	}
 
+	var display_large = document.createElement('div');
+	display_large.id = 'display_large';
+
+
 	var table = document.createElement('table');
 	table.id = ('table');
 
@@ -323,8 +327,9 @@ function img_click(e)
 	table.appendChild(row_2);
 	table.appendChild(row_3);
 
-	document.getElementById('display_large').appendChild(table);
-	document.getElementById('display_large').parentNode.appendChild(image_background);
+	display_large.appendChild(table);
+	document.getElementById('anchor').appendChild(image_background);
+	document.getElementById('anchor').appendChild(display_large);
 }
 
 //disable_scroll is predefined, we can't use it 
