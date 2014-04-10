@@ -248,7 +248,7 @@ function img_click(e)
 	image_background.addEventListener("click", cancle_image_large, false);
 	try
 	{
-		document.getElementById('anchor').addEventListener("onmousewheel", disable_scroll, false);
+		document.body.addEventListener("onmousewheel", disable_scroll, false);
 		console.log('heh1');
 	}
 	catch(error)
@@ -258,7 +258,7 @@ function img_click(e)
 
 	try
 	{
-		document.getElementById('anchor').addEventListener("DOMMouseScroll", disable_scroll, false);
+		document.body.addEventListener("DOMMouseScroll", disable_scroll, false);
 		console.log('heh2');
 	}
 	catch(error)
@@ -328,10 +328,8 @@ function img_click(e)
 	table.appendChild(row_3);
 
 	display_large.appendChild(table);
-	document.getElementById('anchor').style.height = '100%';
-	document.getElementById('anchor').style.width = '100%';
-	document.getElementById('anchor').appendChild(image_background);
-	document.getElementById('anchor').appendChild(display_large);
+	document.getElementById('anchor').parentNode.appendChild(image_background);
+	document.getElementById('anchor').parentNode.appendChild(display_large);
 }
 
 //disable_scroll is predefined, we can't use it 
@@ -374,9 +372,8 @@ function cancle_image_large(e)
 		console.log("Cancel image_large: " + error);
 	}
 
-	document.getElementById('anchor').innerHTML = "";
-	document.getElementById('anchor').style.height = '0px';
-	document.getElementById('anchor').style.width = '0px';
+	document.getElementById('anchor').parentNode.removeChild(document.getElementById('display_large'));
+	document.getElementById('anchor').parentNode.removeChild(document.getElementById('image_background'));
 }
 
 //init the height of the page
