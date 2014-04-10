@@ -269,9 +269,9 @@ function img_click(e)
 
 	var e = document.createElement('td');
 	e.addEventListener("mousedown", resize, false);
-	row_3.appendChild(w);
-	row_3.appendChild(image_large);
-	row_3.appendChild(e);
+	row_2.appendChild(w);
+	row_2.appendChild(image_large);
+	row_2.appendChild(e);
 
 	//row 3 of table
 	var row_3 = document.createElement('tr');
