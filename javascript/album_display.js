@@ -264,6 +264,14 @@ function img_click(e)
 	alert("IMAGE");
 }
 
+//init the height of the page
+function update_page_height()
+{
+	var num_of_image = document.getElementsByClassName("image");
+	var display_height = document.getElementById("display");
+	display_height.style.height = Math.ceil(num_of_image.length / 4) * 210 + "px";
+}
+
 //update album after upload
 function update_img()
 {
@@ -336,6 +344,8 @@ function update_img()
 				img.appendChild(image);
 				img.appendChild(name);
 			}
+
+			update_page_height();
 
 			console.log("MYSQL ERROR: " + response.mysql_error);
 

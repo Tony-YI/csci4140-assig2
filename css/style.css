@@ -42,8 +42,6 @@ img.image
 
 p.name
 {
-	position: absolute;
-	bottom: 0px;
 }
 
 img.image:hover
