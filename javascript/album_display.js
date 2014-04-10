@@ -240,6 +240,8 @@ function img_click(e)
 
 	alert("IMAGE");
 
+	alert(e.target);
+
 	var file_name = e.target.getAttribute('file_name');
 	var img_path = e.target.getAttribute('img_path');
 
