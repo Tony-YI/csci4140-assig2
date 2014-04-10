@@ -263,6 +263,7 @@ function img_click(e)
 	w.addEventListener("mousedown", resize, false);
 
 	var image_large = document.createElement('td');
+	image_large.id = 'image_large';
 	var img = document.createElement('img');
 	img.src = img_path;
 	image_large.appendChild(img);

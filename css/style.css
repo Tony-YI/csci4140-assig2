@@ -147,3 +147,9 @@ img.delete
 {
 	width: 10px;
 }
+
+#image_large
+{
+	width: 200px;
+	height: 200px;
+}
