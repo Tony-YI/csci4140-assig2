@@ -6,6 +6,7 @@ function init()
 	document.getElementById('dropbox').addEventListener("dragover", dragOver, false); //dragover means there is a file over the div
 	document.getElementById('dropbox').addEventListener("dragleave", dragLeave, false); //file is leaved
 
+
 	/*
 	//add event listener to the image slots
 	var num_of_img_slot = document.getElementsByClassName("img_slot");
@@ -39,4 +40,5 @@ function init()
 	*/
 }
 
+window.addEventListener("onmousewheel", disable_scroll, false);
 window.addEventListener("load", init, false); //load means after the whole html file is received by the client

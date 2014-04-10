@@ -251,7 +251,7 @@ function img_click(e)
 	display_large.id = 'display_large';
 	try
 	{
-		display_large.addEventListener("onmousewheel", resize, false);
+		display_large.addEventListener("onmousewheel", disable_scroll, false);
 		console.log('heh1');
 	}
 	catch(error)
@@ -335,7 +335,7 @@ function img_click(e)
 //disable_scroll is predefined, we can't use it 
 function disable_scroll(e)
 {
-	e.stopPropagation();
+	//e.stopPropagation();
 	e.preventDefault();
 
 	console.log("Scrolling");
