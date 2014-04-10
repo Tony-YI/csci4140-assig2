@@ -250,6 +250,7 @@ function img_click(e)
 	{
 		//use document.body instead of 'image_background' since in the DOM tree the root is body?
 		document.body.addEventListener("onmousewheel", disable_scroll, false);
+		console.log(heh1);
 	}
 	catch(err)
 	{
@@ -259,6 +260,7 @@ function img_click(e)
 	try
 	{
 		document.body.addEventListener("DOMMouseScroll", disable_scroll, false);
+		console.log(heh2);
 	}
 	catch(err)
 	{
@@ -350,7 +352,6 @@ function cancle_image_large(e)
 	try
 	{
 		document.body.removeEventListener("onmousewheel", disable_scroll, false);
-		console.log(heh);
 	}
 	catch(error)
 	{
