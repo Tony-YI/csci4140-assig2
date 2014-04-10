@@ -372,7 +372,7 @@ function cancle_image_large(e)
 		console.log("Cancel image_large: " + error);
 	}
 
-	document.getElementById('anchor').innerHTML = "";
+	document.getElementById('anchor').innerHTML = null;
 }
 
 //init the height of the page
