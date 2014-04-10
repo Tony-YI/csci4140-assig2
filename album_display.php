@@ -22,8 +22,12 @@
 		$array = $result; //xhr response
 	}
 
+	while($row = $result->fetch())
+	{
+		$array[] = $row;
+	}
+
+	print_r($array);
 	//$response = json_encode($array);
 	//echo $response;
-
-	print_r($result);
 ?>
