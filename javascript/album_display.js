@@ -295,7 +295,7 @@ function update_img()
 
 			//remove all the old element
 			document.getElementById("display").innerHTML = "";
-			
+
 			//dynamicaly generate html
 			for(var i = 0; i < response.length; i++)
 			{
@@ -324,11 +324,16 @@ function update_img()
 				image.setAttribute("title", response[i].img_description);
 				image.addEventListener("click", img_click, false);
 
+				var name = document.createElement("h3");
+				name.className = "name";
+				name.innerHTML = response[i].file_name;
+
 				document.getElementById('display').appendChild(img_slot);
 				img_slot.appendChild(_edit);
 				img_slot.appendChild(_delete);
 				img_slot.appendChild(img);
 				img.appendChild(image);
+				img.appendChild(name);
 			}
 
 			console.log("MYSQL ERROR: " + response.mysql_error);
