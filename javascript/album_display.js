@@ -322,8 +322,7 @@ function img_click(e)
 	table.appendChild(row_2);
 	table.appendChild(row_3);
 
-	image_background.appendChild(table);
-
+	document.getElementById('display_large').appendChild(table);
 	document.getElementById('display_large').appendChild(image_background);
 }
 
