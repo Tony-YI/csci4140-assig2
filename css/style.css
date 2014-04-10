@@ -172,6 +172,11 @@ img.delete
 	z-index: 100;
 }
 
+#image
+{
+	z-index: 100;
+}
+
 #image_background
 {
 	position: fixed;

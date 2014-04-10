@@ -293,6 +293,7 @@ function img_click(e)
 	var image_large = document.createElement('td');
 	image_large.id = 'image_large';
 	var img = document.createElement('img');
+	img.id = 'image';
 	img.src = img_path;
 	image_large.appendChild(img);
 
