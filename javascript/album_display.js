@@ -246,6 +246,24 @@ function img_click(e)
 	var image_background = document.createElement('div');
 	image_background.id = ('image_background');
 	image_background.addEventListener("click", cancle_image_large, false);
+	try
+	{
+		document.body.addEventListener("onmousewheel", disable_scroll, false);
+	}
+	catch(err)
+	{
+		console.log("Scrolling: " + err);
+	}
+
+	try
+	{
+		document.body.removeEventListener("DOMMouseScroll", disable_scroll, false);
+	}
+	catch(err)
+	{
+		console.log("Scrolling: " + err);
+	}
+
 	var table = document.createElement('table');
 	table.id = ('table');
 
@@ -307,6 +325,14 @@ function img_click(e)
 	document.getElementById('display_large').appendChild(image_background);
 }
 
+function disable_scroll()
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	console.log("Scrolling");
+}
+
 function resize(e)
 {
 	e.stopPropagation();
@@ -319,6 +345,24 @@ function cancle_image_large(e)
 	e.preventDefault();
 
 	document.getElementById('display_large').innerHTML = "";
+
+	try
+	{
+		document.body.removeEventListener("onmousewheel", disable_scroll, false);
+	}
+	catch(error)
+	{
+		console.log(error);
+	}
+
+	try
+	{
+		document.body.removeEventListener("DOMMouseScroll", disable_scroll, false);
+	}
+	catch(error)
+	{
+		console.log(error);
+	}
 }
 
 //init the height of the page
