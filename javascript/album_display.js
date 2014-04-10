@@ -238,7 +238,7 @@ function img_click(e)
 	e.preventDefault();
 	e.stopPropagation();
 
-	alert("IMAGE");
+	console.log("IMAGE is clicked.");
 
 	var file_name = e.target.getAttribute('file_name');
 	var img_path = e.target.getAttribute('path');
@@ -298,8 +298,6 @@ function img_click(e)
 	table.appendChild(row_2);
 	table.appendChild(row_3);
 	document.getElementById('display_large').appendChild(table);
-
-	alert("Finish");
 }
 
 function resize()
