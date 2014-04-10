@@ -290,6 +290,7 @@ function update_img()
 			}
 
 			console.log(response[0].file_name);
+			console.log(response[1].file_name);
 
 			//dynamicaly generate html
 			var img_slot = document.createElement("div");
