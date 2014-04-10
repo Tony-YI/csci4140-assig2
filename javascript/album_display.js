@@ -307,13 +307,13 @@ function img_click(e)
 	document.getElementById('display_large').appendChild(image_background);
 }
 
-function resize()
+function resize(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
 }
 
-function cancle_image_large()
+function cancle_image_large(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
