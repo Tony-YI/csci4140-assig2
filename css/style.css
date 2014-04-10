@@ -104,18 +104,46 @@ img.delete
 	position: fixed;
 }
 
-#nw #ne #sw #se
+#nw
 {
 	width: 10px;
 	height: 10px;
 }
 
-#n #s
+#ne
+{
+	width: 10px;
+	height: 10px;
+}
+
+#sw
+{
+	width: 10px;
+	height: 10px;
+}
+
+#se
+{
+	width: 10px;
+	height: 10px;
+}
+
+#n
 {
 	height: 10px;
 }
 
-#w #e
+#s
+{
+	height: 10px;
+}
+
+#w
+{
+	width: 10px;
+}
+
+#e
 {
 	width: 10px;
 }
