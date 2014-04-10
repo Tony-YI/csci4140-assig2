@@ -248,10 +248,13 @@ function img_click(e)
 	//row 1 of table
 	var row_1 = document.createElement('tr');
 	var nw = document.createElement('td');
+	nw.id = 'nw';
 	nw.addEventListener("mousedown", resize, false);
 	var n = document.createElement('td');
+	n.id = 'n';
 	n.addEventListener("mousedown", resize, false);
 	var ne = document.createElement('td');
+	ne.id = 'ne';
 	ne.addEventListener("mousedown", resize, false);
 	row_1.appendChild(nw);
 	row_1.appendChild(n);
@@ -260,6 +263,7 @@ function img_click(e)
 	//row 2 of table
 	var row_2 = document.createElement('tr');
 	var w = document.createElement('td');
+	w.id = 'w';
 	w.addEventListener("mousedown", resize, false);
 
 	var image_large = document.createElement('td');
@@ -269,6 +273,7 @@ function img_click(e)
 	image_large.appendChild(img);
 
 	var e = document.createElement('td');
+	e.id = 'e';
 	e.addEventListener("mousedown", resize, false);
 	row_2.appendChild(w);
 	row_2.appendChild(image_large);
@@ -277,10 +282,13 @@ function img_click(e)
 	//row 3 of table
 	var row_3 = document.createElement('tr');
 	var sw = document.createElement('td');
+	sw.id = 'sw';
 	sw.addEventListener("mousedown", resize, false);
 	var s = document.createElement('td');
+	s.id = 's';
 	s.addEventListener("mousedown", resize, false);
 	var se = document.createElement('td');
+	se.id = 'se';
 	se.addEventListener("mousedown", resize, false);
 	row_3.appendChild(sw);
 	row_3.appendChild(s);
