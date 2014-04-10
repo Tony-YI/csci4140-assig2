@@ -118,44 +118,52 @@ img.delete
 {
 	width: 10px;
 	height: 10px;
+	cursor: nw-resize;
 }
 
 #ne
 {
 	width: 10px;
 	height: 10px;
+	cursor: ne-resize;
 }
 
 #sw
 {
 	width: 10px;
 	height: 10px;
+	cursor: sw-resize;
 }
 
 #se
 {
 	width: 10px;
 	height: 10px;
+	cursor: se-resize;
 }
 
 #n
 {
 	height: 10px;
+	cursor: n-resize;
 }
 
 #s
 {
 	height: 10px;
+	cursor: s-resize;
 }
 
 #w
 {
 	width: 10px;
+	cursor: w-resize;
 }
 
 #e
 {
 	width: 10px;
+	cursor: e-resize;
 }
 
 #image_large
