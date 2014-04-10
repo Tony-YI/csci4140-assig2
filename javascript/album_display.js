@@ -244,7 +244,7 @@ function img_click(e)
 	var img_path = e.target.getAttribute('path');
 
 	var image_background = document.createElement('div');
-	image_background.id = ('image_background');
+	image_background.id = 'image_background';
 	image_background.addEventListener("click", cancle_image_large, false);
 	try
 	{
