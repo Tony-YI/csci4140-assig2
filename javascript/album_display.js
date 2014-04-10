@@ -245,6 +245,7 @@ function img_click(e)
 
 	var image_background = document.createElement('div');
 	image_background.id = ('image_background');
+	image_background.addEventListener("click", cancle_image_large, false);
 	var table = document.createElement('table');
 	table.id = ('table');
 
@@ -310,6 +311,14 @@ function resize()
 {
 	e.stopPropagation();
 	e.preventDefault();
+}
+
+function cancle_image_large()
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	document.getElementById(display_large).innerHTML = "";
 }
 
 //init the height of the page
