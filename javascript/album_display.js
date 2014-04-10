@@ -289,6 +289,8 @@ function update_img()
 				return; //exit the function
 			}
 
+			alert(response);
+
 			//dynamicaly generate html
 			var img_slot = document.createElement("div");
 			img_slot.className = "img_slot";
