@@ -21,10 +21,10 @@
 		while($row = $result->fetch())
 		{
 			$ln_shortcut_path = './data/'.$shortcut_dir.'/'.$row['file_name'];
-			$ln_shortcut_path = './data/'.$img_dir.'/'.$row['file_name'];
+			$ln_img_path = './data/'.$img_dir.'/'.$row['file_name'];
 
 			$row['shortcut_path'] = $ln_shortcut_path;
-			$row['img_path'] = $ln_shortcut_path;
+			$row['img_path'] = $ln_img_path;
 			$array[] = $row;
 		}
 	}
