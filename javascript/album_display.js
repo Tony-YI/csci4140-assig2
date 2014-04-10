@@ -287,6 +287,8 @@ function img_click(e)
 	row_3.appendChild(se);
 
 	document.getElementById('display_large').appendChild(table);
+
+	alert("Finish");
 }
 
 function resize()
