@@ -112,69 +112,58 @@ img.delete
 #table
 {
 	text-align: center;
-	z-index: 100;
 }
 
 #nw
 {
 	width: 10px;
 	height: 10px;
-	z-index: 100;
 }
 
 #ne
 {
 	width: 10px;
 	height: 10px;
-	z-index: 100;
 }
 
 #sw
 {
 	width: 10px;
 	height: 10px;
-	z-index: 100;
 }
 
 #se
 {
 	width: 10px;
 	height: 10px;
-	z-index: 100;
 }
 
 #n
 {
 	height: 10px;
-	z-index: 100;
 }
 
 #s
 {
 	height: 10px;
-	z-index: 100;
 }
 
 #w
 {
 	width: 10px;
-	z-index: 100;
 }
 
 #e
 {
 	width: 10px;
-	z-index: 100;
 }
 
 #image_large
 {
-	z-index: 100;
 }
 
 #image
 {
-	z-index: 100;
 }
 
 #image_background
