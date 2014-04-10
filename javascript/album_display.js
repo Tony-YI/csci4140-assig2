@@ -1,26 +1,3 @@
-/*
-<div id="display">
-	<div class="img_slot">
-		<img class="edit"/>
-		<img class="delete">
-		<div class="img">
-			<img/>
-		</div>
-	</div>
-
-	<div class="img_slot">
-		<img class="edit"/>
-		<img class="delete">
-		<div class="img">
-			<img/>
-			<p/>
-		</div>
-	</div>
-	.
-	.
-	.
-</div>
-*/
 //mouse is moved on the image slot
 function img_slot_mouse_on(e)
 {
@@ -262,6 +239,9 @@ function img_click(e)
 	e.stopPropagation();
 
 	alert("IMAGE");
+
+	var file_name = e.target.getAttribute('filename');
+
 }
 
 //init the height of the page
@@ -273,6 +253,29 @@ function update_page_height()
 }
 
 //update album after upload
+/*
+<div id="display">
+	<div class="img_slot">
+		<img class="edit"/>
+		<img class="delete">
+		<div class="img">
+			<img/>
+		</div>
+	</div>
+
+	<div class="img_slot">
+		<img class="edit"/>
+		<img class="delete">
+		<div class="img">
+			<img/>
+			<p/>
+		</div>
+	</div>
+	.
+	.
+	.
+</div>
+*/
 function update_img()
 {
 	console.log("Update image.");
@@ -329,8 +332,9 @@ function update_img()
 				var image = document.createElement("img");
 				image.className = "image";
 				image.src = response[i].shortcut_path;
-				image.setAttribute("filename", response[i].file_name);
+				image.setAttribute("file_name", response[i].file_name);
 				image.setAttribute("title", response[i].img_description);
+				image.setAttribute("path", response[i].img_path);
 				image.addEventListener("click", img_click, false);
 
 				var name = document.createElement("p");

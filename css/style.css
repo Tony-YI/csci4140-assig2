@@ -40,13 +40,13 @@ img.image
 	border-radius: 5px;
 }
 
-p.name
-{
-}
-
 img.image:hover
 {
 	cursor: pointer;
+}
+
+p.name
+{
 }
 
 img.edit
@@ -97,4 +97,9 @@ img.delete
 	margin-right: 5%;
 	width: 90%;
 	min-width: 800px;
+}
+
+#display_large
+{
+	position: fixed;
 }
