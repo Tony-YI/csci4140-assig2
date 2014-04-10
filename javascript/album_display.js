@@ -263,9 +263,9 @@ function img_click(e)
 	w.addEventListener("mousedown", resize, false);
 
 	var image_large = document.createElement('td');
-	var img = document.createElement(img);
+	var img = document.createElement('img');
 	img.src = img_path;
-	image_large.appendChild('img');
+	image_large.appendChild(img);
 
 	var e = document.createElement('td');
 	e.addEventListener("mousedown", resize, false);
