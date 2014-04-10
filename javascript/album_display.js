@@ -294,6 +294,9 @@ function img_click(e)
 	row_3.appendChild(s);
 	row_3.appendChild(se);
 
+	table.appendChild(row_1);
+	table.appendChild(row_2);
+	table.appendChild(row_3);
 	document.getElementById('display_large').appendChild(table);
 
 	alert("Finish");
