@@ -248,7 +248,7 @@ function img_click(e)
 	image_background.addEventListener("click", cancle_image_large, false);
 	try
 	{
-		document.body.addEventListener("onmousewheel", disable_scroll, false);
+		document.getElementById('display_large').addEventListener("onmousewheel", disable_scroll, false);
 		console.log('heh1');
 	}
 	catch(error)
@@ -258,7 +258,7 @@ function img_click(e)
 
 	try
 	{
-		document.body.addEventListener("DOMMouseScroll", disable_scroll, false);
+		document.getElementById('display_large').addEventListener("DOMMouseScroll", disable_scroll, false);
 		console.log('heh2');
 	}
 	catch(error)
