@@ -7,10 +7,9 @@
 
 	//quert the database
 	$query = "SELECT * FROM file ORDER BY upload_time DESC;";
+	$result = db_execute($query);
 
 	$array = array(); //xhr response array
-
-	$result = db_execute($query);
 
 	if($result == null) //mysql errer
 	{
@@ -19,12 +18,10 @@
 	}
 	else
 	{
-		$array = $result; //xhr response
-	}
-
-	while($row = $result->fetch())
-	{
-		$array[] = $row;
+		while($row = $result->fetch())
+		{
+			$array[] = $row;
+		}
 	}
 
 	print_r($array);
