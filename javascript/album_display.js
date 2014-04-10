@@ -248,7 +248,7 @@ function img_click(e)
 	image_background.addEventListener("click", cancle_image_large, false);
 	try
 	{
-		document.body.addEventListener("onmousewheel", disable_scroll, false);
+		document.image_background.addEventListener("onmousewheel", disable_scroll, false);
 	}
 	catch(err)
 	{
@@ -257,7 +257,7 @@ function img_click(e)
 
 	try
 	{
-		document.body.removeEventListener("DOMMouseScroll", disable_scroll, false);
+		document.image_background.removeEventListener("DOMMouseScroll", disable_scroll, false);
 	}
 	catch(err)
 	{
@@ -348,7 +348,7 @@ function cancle_image_large(e)
 
 	try
 	{
-		document.body.removeEventListener("onmousewheel", disable_scroll, false);
+		document.image_background.removeEventListener("onmousewheel", disable_scroll, false);
 	}
 	catch(error)
 	{
@@ -357,7 +357,7 @@ function cancle_image_large(e)
 
 	try
 	{
-		document.body.removeEventListener("DOMMouseScroll", disable_scroll, false);
+		document.image_background.removeEventListener("DOMMouseScroll", disable_scroll, false);
 	}
 	catch(error)
 	{
