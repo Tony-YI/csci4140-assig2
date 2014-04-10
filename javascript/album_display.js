@@ -240,8 +240,10 @@ function img_click(e)
 
 	alert("IMAGE");
 
-	var file_name = e.target.getAttribute('filename');
+	var file_name = e.target.getAttribute('file_name');
+	var img_path = e.target.getAttribute('img_path');
 
+	document.createElement()
 }
 
 //init the height of the page
