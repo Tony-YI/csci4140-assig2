@@ -27,28 +27,6 @@
 		<progress id="progress_bar" value="0" max="100"></progress>
 
 		<div id="display_large">
-			<table>
-				<tr>
-					<td id="nw"/>
-					<td id="n"/>
-					<td id="ne"/>
-				</tr>
-
-				<tr>
-					<td id="w"/>
-					<td id="image_large">
-						<img src="./img/1.jpg"/>
-					</td>
-					<td id="e"/>
-				</tr>
-
-				<tr>
-					<td id="sw"/>
-					<td id="s"/>
-					<td id="se"/>
-				</tr>
-
-			</table>
 		</div>
 
 		<div>

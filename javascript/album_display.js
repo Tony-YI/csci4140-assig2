@@ -243,7 +243,55 @@ function img_click(e)
 	var file_name = e.target.getAttribute('file_name');
 	var img_path = e.target.getAttribute('img_path');
 
-	document.createElement()
+	var table = document.createElement('table');
+
+	//row 1 of table
+	var row_1 = document.createElement('tr');
+	var nw = document.createElement('td');
+	nw.addEventListener("mousedown", resize, false);
+	var n = document.createElement('td');
+	n.addEventListener("mousedown", resize, false);
+	var ne = document.createElement('td');
+	ne.addEventListener("mousedown", resize, false);
+	row_1.appendChild(nw);
+	row_1.appendChild(n);
+	row_1.appendChild(ne);
+
+	//row 2 of table
+	var row_2 = document.createElement('tr');
+	var w = document.createElement('td');
+	w.addEventListener("mousedown", resize, false);
+
+	var image_large = document.createElement('td');
+	var img = document.createElement('img');
+	img.src = img_path;
+	image_large.appendChild('img');
+
+	var e = document.createElement('td');
+	e.addEventListener("mousedown", resize, false);
+	row_3.appendChild(w);
+	row_3.appendChild(image_large);
+	row_3.appendChild(e);
+
+	//row 3 of table
+	var row_3 = document.createElement('tr');
+	var sw = document.createElement('td');
+	sw.addEventListener("mousedown", resize, false);
+	var s = document.createElement('td');
+	s.addEventListener("mousedown", resize, false);
+	var se = document.createElement('td');
+	se.addEventListener("mousedown", resize, false);
+	row_3.appendChild(sw);
+	row_3.appendChild(s);
+	row_3.appendChild(se);
+
+	document.getElementById('display_large').appendChild(table);
+}
+
+function resize()
+{
+	e.stopPropagation();
+	e.preventDefault();
 }
 
 //init the height of the page
