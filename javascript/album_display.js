@@ -246,9 +246,12 @@ function img_click(e)
 	var image_background = document.createElement('div');
 	image_background.id = 'image_background';
 	image_background.addEventListener("click", cancle_image_large, false);
+
+	var display_large = document.createElement('div');
+	display_large.id = 'display_large';
 	try
 	{
-		document.getElementById('display_large').addEventListener("onmousewheel", disable_scroll, false);
+		display_large.addEventListener("onmousewheel", disable_scroll, false);
 		console.log('heh1');
 	}
 	catch(error)
@@ -258,17 +261,13 @@ function img_click(e)
 
 	try
 	{
-		document.getElementById('display_large').addEventListener("DOMMouseScroll", disable_scroll, false);
+		display_large.addEventListener("DOMMouseScroll", disable_scroll, false);
 		console.log('heh2');
 	}
 	catch(error)
 	{
 		console.log("Scrolling: " + err);
 	}
-
-	var display_large = document.createElement('div');
-	display_large.id = 'display_large';
-
 
 	var table = document.createElement('table');
 	table.id = ('table');
