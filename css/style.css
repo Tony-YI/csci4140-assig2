@@ -40,6 +40,12 @@ img.image
 	border-radius: 5px;
 }
 
+p.name
+{
+	position: absolute;
+	bottom: 0px;
+}
+
 img.image:hover
 {
 	cursor: pointer;

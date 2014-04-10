@@ -13,6 +13,7 @@
 		<img class="delete">
 		<div class="img">
 			<img/>
+			<p/>
 		</div>
 	</div>
 	.
@@ -324,7 +325,7 @@ function update_img()
 				image.setAttribute("title", response[i].img_description);
 				image.addEventListener("click", img_click, false);
 
-				var name = document.createElement("h3");
+				var name = document.createElement("p");
 				name.className = "name";
 				name.innerHTML = response[i].file_name;
 

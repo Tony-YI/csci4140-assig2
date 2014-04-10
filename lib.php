@@ -234,6 +234,7 @@ function display_all_img()
 		<img class="delete" src="./img/delete.png"/>
 		<div class="img">
 			<img class="image" src="./img/1.jpg" filename="1.jpg"/>
+			<p class="name">1.jpg<p/>
 		</div>
 	</div>
 	*/
@@ -255,7 +256,7 @@ function display_all_img()
 //udate the image display after upload
 function update_img()
 {
-	
+
 }
 
 //periodically update image display
