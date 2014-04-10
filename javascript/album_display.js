@@ -248,7 +248,8 @@ function img_click(e)
 	image_background.addEventListener("click", cancle_image_large, false);
 	try
 	{
-		image_background.addEventListener("onmousewheel", disable_scroll, false);
+		//use document.body instead of 'image_background' since in the DOM tree the root is body?
+		document.body.addEventListener("onmousewheel", disable_scroll, false);
 	}
 	catch(err)
 	{
@@ -257,7 +258,7 @@ function img_click(e)
 
 	try
 	{
-		image_background.addEventListener("DOMMouseScroll", disable_scroll, false);
+		document.body.addEventListener("DOMMouseScroll", disable_scroll, false);
 	}
 	catch(err)
 	{
@@ -348,7 +349,7 @@ function cancle_image_large(e)
 
 	try
 	{
-		document.getElementById('image_background').removeEventListener("onmousewheel", disable_scroll, false);
+		document.body.removeEventListener("onmousewheel", disable_scroll, false);
 	}
 	catch(error)
 	{
@@ -357,7 +358,7 @@ function cancle_image_large(e)
 
 	try
 	{
-		document.getElementById('image_background').removeEventListener("DOMMouseScroll", disable_scroll, false);
+		document.body.removeEventListener("DOMMouseScroll", disable_scroll, false);
 	}
 	catch(error)
 	{
