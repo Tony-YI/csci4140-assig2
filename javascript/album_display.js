@@ -330,8 +330,6 @@ function img_click(e)
 //disable_scroll is predefined, we can't use it 
 function disable_scroll(e)
 {
-	alert("scrolling.");
-
 	e.stopPropagation();
 	e.preventDefault();
 
@@ -342,6 +340,8 @@ function resize(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
+
+	console.log("Resizing");
 }
 
 function cancle_image_large(e)
@@ -368,7 +368,7 @@ function cancle_image_large(e)
 	}
 
 	document.getElementById('display_large').innerHTML = "";
-	document.getElementById('image_background').innerHTML = "";
+	document.getElementById('display_large').parentNode.removeChild(document.getElementById('image_background'));
 }
 
 //init the height of the page
