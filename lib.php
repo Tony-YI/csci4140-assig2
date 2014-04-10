@@ -255,7 +255,7 @@ function display_all_img()
 //udate the image display after upload
 function update_img()
 {
-
+	
 }
 
 //periodically update image display

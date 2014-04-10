@@ -262,36 +262,107 @@ function img_click(e)
 //update album after upload
 function update_img()
 {
-	console.log("Update image after upload.");
+	console.log("Update image.");
 
-	var img_slot = document.createElement("div");
-	img_slot.className = "img_slot";
-	img_slot.addEventListener("mouseenter", img_slot_mouse_on, false);//false means top-down.
-	img_slot.addEventListener("mouseleave", img_slot_mouse_off, false);
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', './album_display.php', true); //true means AJAX
 
-	var _edit = document.createElement("img");
-	_edit.className = "edit";
-	_edit.src = "./img/edit.png";
-	_edit.addEventListener("click", edit_click, false);
+	//no need to send anything to server
 
-	var _delete = document.createElement("img");
-	_delete.className = "delete";
-	_delete.src = "./img/delete.png"
-	_delete.addEventListener("click", delete_click, false);
+	xhr.send();
 
-	var img = document.createElement("div");
-	img.className = "img";
+	//deal whih the data send back from server
+
+	xhr.onreadystatechange = function()
+	{
+		if(xhr.status == 200 && xhr.readyState == 4) //200OK and send XHR successfully
+		{
+			console.log("XHR response: " + xhr.responseText);
+
+			try
+			{
+				var response = JSON.parse(xhr.responseText);
+			}
+			catch(e)
+			{
+				console.log(e);
+				return; //exit the function
+			}
+
+			//dynamicaly generate html
+			var img_slot = document.createElement("div");
+			img_slot.className = "img_slot";
+			img_slot.addEventListener("mouseenter", img_slot_mouse_on, false);//false means top-down.
+			img_slot.addEventListener("mouseleave", img_slot_mouse_off, false);
+
+			var _edit = document.createElement("img");
+			_edit.className = "edit";
+			_edit.src = "./img/edit.png";
+			_edit.addEventListener("click", edit_click, false);
+
+			var _delete = document.createElement("img");
+			_delete.className = "delete";
+			_delete.src = "./img/delete.png"
+			_delete.addEventListener("click", delete_click, false);
+
+			var img = document.createElement("div");
+			img.className = "img";
 	
-	var image = document.createElement("img");
-	image.className = "image";
-	image.src = "./img/1.jpg"; //TODO
-	image.setAttribute("filename", '1.jpg'); //TODO
-	image.setAttribute("title", "HAHA"); //TODO
-	image.addEventListener("click", img_click, false);
+			var image = document.createElement("img");
+			image.className = "image";
+			image.src = "./img/1.jpg"; //TODO
+			image.setAttribute("filename", '1.jpg'); //TODO
+			image.setAttribute("title", "HAHA"); //TODO
+			image.addEventListener("click", img_click, false);
 
-	document.getElementById('display').appendChild(img_slot);
-	img_slot.appendChild(_edit);
-	img_slot.appendChild(_delete);
-	img_slot.appendChild(img);
-	img.appendChild(image);
+			document.getElementById('display').appendChild(img_slot);
+			img_slot.appendChild(_edit);
+			img_slot.appendChild(_delete);
+			img_slot.appendChild(img);
+			img.appendChild(image);
+
+			console.log("MYSQL ERROR: " + response.mysql_error);
+
+			if(response.file_name)
+			{
+				document.getElementById('file_name').innerHTML = 'File Name: '+response.file_name;
+			}
+			else //clear the old data
+			{
+				document.getElementById('file_name').innerHTML = null;
+			}
+			if(response.file_type_flag)
+			{
+				document.getElementById('file_type_flag').innerHTML = 'File Type Flag: '+response.file_type_flag;
+			}
+			else
+			{
+				document.getElementById('file_type_flag').innerHTML = null;
+			}
+			if(response.file_size_flag)
+			{
+				document.getElementById('file_size_flag').innerHTML = 'File Size Flag: '+response.file_size_flag;
+			}
+			else
+			{
+				document.getElementById('file_size_flag').innerHTML = null;
+			}
+			if(response.mysql_error)
+			{
+				document.getElementById('mysql_error').innerHTML = 'MYSQL Error Flag: '+response.mysql_error;
+			}
+			else
+			{
+				document.getElementById('mysql_error').innerHTML = null;
+			}
+			if(response.file_exist_flag)
+			{
+				document.getElementById('file_exist_flag').innerHTML = 'File Existance Flag: '+response.file_exist_flag;
+			}
+			else
+			{
+				document.getElementById('file_exist_flag').innerHTML = null;
+			}
+		}
+	};
 }
