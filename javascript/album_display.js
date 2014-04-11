@@ -4,7 +4,7 @@ function img_slot_mouse_on(e)
 	e.preventDefault();
 	e.stopPropagation();
 
-	window.clearInterval(periodic);
+	window.clearInterval(periodic); //remove the periodic update function
 
 	//console.log(e.type +": "+ e.target);
 	e.target.children[0].style.display = "inline";
@@ -18,6 +18,8 @@ function img_slot_mouse_off(e)
 {
 	e.preventDefault();
 	e.stopPropagation();
+
+	periodic = window.setInterval(update_img, 5000);
 
 	//console.log(e.type +": "+ e.target);
 	e.target.children[0].style.display = "none";
