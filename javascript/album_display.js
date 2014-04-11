@@ -481,7 +481,7 @@ function update_img()
 				return; //exit the function
 			}
 
-			if(response.update_status != null) //new image exists
+			if(response.update_status == null) //new image exists
 			{
 				//remove all the old element
 				document.getElementById("display").innerHTML = "";
@@ -534,6 +534,7 @@ function update_img()
 
 			else //no new image
 			{
+				console.log("hehe");
 				//do nothing
 			}
 
