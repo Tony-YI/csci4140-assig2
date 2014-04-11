@@ -27,8 +27,15 @@ function resize_mouse_down(e)
 	{
 		//console.log("offsetTop " + display_large.offsetTop);
 		//console.log("offsetHeight " + display_large.offsetHeight);
-
-		display_large.style.bottom = (window.innerHeight - display_large.offsetHeight - display_large.offsetTop) + 'px';
+		if(display_large.style.bottom) //already exist this style
+		{
+			//do nothing
+			//display_large.style.bottom = display_large.offsetBottom + 'px';
+		}
+		else
+		{
+			display_large.style.bottom = (window.innerHeight - display_large.offsetHeight - display_large.offsetTop) + 'px';
+		}
 
 		display_large.style.top = 'auto';
 		display_large.style.height = 'auto';
@@ -36,7 +43,14 @@ function resize_mouse_down(e)
 
 	if(dir.indexOf('w') >= 0) //w direction
 	{
-		display_large.style.right = (window.innerWidth - display_large.offsetWidth - display_large.offsetLeft) + 'px';
+		if(display_large.style.right) //already exist this style
+		{
+			//do nothing
+		}
+		else
+		{
+			display_large.style.right = (window.innerWidth - display_large.offsetWidth - display_large.offsetLeft) + 'px';
+		}
 
 		display_large.style.left = 'auto';
 		display_large.style.width = 'auto';
@@ -44,7 +58,14 @@ function resize_mouse_down(e)
 
 	if(dir.indexOf('e') >= 0) //e direction
 	{
-		display_large.style.left = (window.innerWidth - display_large.offsetWidth - display_large.offsetRight) + 'px';
+		if(display_large.style.left)
+		{
+			//do nothing
+		}
+		else
+		{
+			display_large.style.left = (window.innerWidth - display_large.offsetWidth - display_large.offsetRight) + 'px';
+		}
 
 		display_large.style.right = 'auto';
 		display_large.style.width = 'auto';
@@ -52,8 +73,14 @@ function resize_mouse_down(e)
 
 	if(dir.indexOf('s') >= 0) //s direction
 	{
-		display_large.style.top = (window.innerHeight - display_large.offsetHeight - display_large.offsetBottom) + 'px';
-
+		if(display_large.style.top)
+		{
+			//do nothing
+		}
+		else
+		{
+			display_large.style.top = (window.innerHeight - display_large.offsetHeight - display_large.offsetBottom) + 'px';
+		}
 		display_large.style.bottom = 'auto';
 		display_large.style.height = 'auto';
 	}
