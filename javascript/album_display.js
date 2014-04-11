@@ -249,25 +249,6 @@ function img_click(e)
 
 	var display_large = document.createElement('div');
 	display_large.id = 'display_large';
-	try
-	{
-		display_large.addEventListener("onmousewheel", disable, false);
-		console.log('heh1');
-	}
-	catch(error)
-	{
-		console.log("Scrolling: " + err);
-	}
-
-	try
-	{
-		display_large.addEventListener("DOMMouseScroll", disable, false);
-		console.log('heh2');
-	}
-	catch(error)
-	{
-		console.log("Scrolling: " + err);
-	}
 
 	var table = document.createElement('table');
 	table.id = ('table');
@@ -330,6 +311,26 @@ function img_click(e)
 
 	document.getElementById('anchor').appendChild(image_background);
 	document.getElementById('anchor').appendChild(display_large);
+
+	try
+	{
+		document.body.addEventListener("onmousewheel", disable, false);
+		console.log('heh1');
+	}
+	catch(error)
+	{
+		console.log("Scrolling: " + err);
+	}
+
+	try
+	{
+		document.body.addEventListener("DOMMouseScroll", disable, false);
+		console.log('heh2');
+	}
+	catch(error)
+	{
+		console.log("Scrolling: " + err);
+	}
 }
 
 //disable_scroll is predefined, we can't use it 
@@ -338,8 +339,7 @@ function disable(e)
 	e.stopPropagation();
 	e.preventDefault();
 
-	console.log("Scrolling or droping file out of dropbox.");
-	alert("Scrolling or droping file out of dropbox.");
+	console.log("Scrolling");
 }
 
 function resize(e)
