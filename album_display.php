@@ -10,7 +10,7 @@
 	$array = array(); //xhr response array
 
 	//chech whether there is new image or not
-	if(0) //new images exist
+	if(1) //new images exist
 	{
 		//quert the database
 		$query = "SELECT * FROM file ORDER BY upload_time DESC;";
