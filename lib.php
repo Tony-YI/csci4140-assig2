@@ -178,7 +178,7 @@ function check_file_existance($file_name)
 	}
 }
 */
-function update_statue($current_time)
+function update_time($current_time)
 {
 	$query = "UPDATE update_status SET update_time='$current_time';";
 	$result = db_execute($query);
