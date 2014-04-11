@@ -567,7 +567,6 @@ function update_img()
 				return; //exit the function
 			}
 
-			old_response = response;
 			var j = 1;
 			for(var i = 0; i < response.length; i++)
 			{
@@ -604,6 +603,8 @@ function update_img()
 					j = 0;
 				}
 			}
+
+			old_response = response;
 
 			console.log("j: " + j);
 
