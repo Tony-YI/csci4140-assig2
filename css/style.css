@@ -35,6 +35,7 @@ div.img
 
 img.image
 {
+	margin-top: 10 px;
 	max-width: 198px;
 	max-height: 180px;
 	border-radius: 5px;
