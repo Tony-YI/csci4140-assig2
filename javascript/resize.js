@@ -125,8 +125,11 @@ function resize_mouse_move(e)
 	}
 	if(dir == 'e')
 	{
-		image.style.height = o_height;
-		image.style.width = (o_width + (current_mouse_x - original_mouse_x)) + 'px';
+		if(display_large.offsetRight >= 10)
+		{
+			image.style.height = o_height;
+			image.style.width = (o_width + (current_mouse_x - original_mouse_x)) + 'px';
+		}
 	}
 	if(dir == 'sw')
 	{
