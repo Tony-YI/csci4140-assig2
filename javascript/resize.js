@@ -6,8 +6,10 @@ var o_height = 0;
 
 var window_width = 0;
 var window_height = 0;
-var window_offset_left = 0;
-var window_offset_top = 0;
+var div_offset_left = 0;
+var div_offset_right = 0;
+var div_offset_top = 0;
+var div_offset_bottom = 0;
 
 //mouse is down
 function resize_mouse_down(e)
@@ -15,13 +17,15 @@ function resize_mouse_down(e)
 	e.stopPropagation();
 	e.preventDefault();
 
+	var display_large = document.getElementById('display_large'); //div
+	var image = document.getElementById('image'); //img
+
 	window_width = window.innerWidth;
 	window_height = window.innerHeight;
-	window_offset_left = window.event.offsetX;
-	window_offset_top = window.offsetY;
-
-	console.log(window_width);
-	console.log(window_offset_left);
+	div_offset_left = display_large.offsetLeft;
+	div_offset_right = display_large.offsetRight;
+	div_offset_top = display_large.offsetTop;
+	div_offset_bottom = display_large.offsetBottom;
 
 	console.log("Resizing");
 
@@ -31,8 +35,6 @@ function resize_mouse_down(e)
 
 	console.log("direction is " + dir + " original_mouse_x is " + original_mouse_x + ", original_mouse_y is " + original_mouse_y);
 
-	var display_large = document.getElementById('display_large'); //div
-	var image = document.getElementById('image'); //img
 	o_width = image.offsetWidth;
 	o_height = image.offsetHeight;
 
@@ -141,12 +143,14 @@ function resize_mouse_move(e)
 	if(dir == 'e')
 	{
 		console.log(window_width);
-		console.log(window_offset_left);
+		console.log(div_offset_left);
 
-		if(current_mouse_x < window_width + window_offset_left)
+		var temp = o_width + (current_mouse_x - original_mouse_x);
+
+		if(div_offset_left + temp < window_width)
 		{
 			image.style.height = o_height;
-			image.style.width = (o_width + (current_mouse_x - original_mouse_x)) + 'px';
+			image.style.width = temp + 'px';
 		}
 	}
 	if(dir == 'sw')
