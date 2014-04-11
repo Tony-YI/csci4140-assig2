@@ -568,7 +568,7 @@ function update_img()
 			}
 
 			old_response = response;
-			console.log("old: " + old_response[0].file_name);
+			console.log("old: " + old_response == response);
 
 			//remove all the old element
 			document.getElementById("display").innerHTML = "";
