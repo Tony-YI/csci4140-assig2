@@ -320,7 +320,7 @@ function img_click(e)
 	}
 
 	img.style.width = final_width + "px";
-	img.style.height = final_height + "px";
+	img.style.height = final_heigth + "px";
 
 	img.setAttribute('img_width', img_width);
 	img.setAttribute('img_height', img_height);
