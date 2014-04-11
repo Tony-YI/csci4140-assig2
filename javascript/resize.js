@@ -30,26 +30,32 @@ function resize_mouse_down(e)
 
 		display_large.style.bottom = (window.innerHeight - display_large.offsetHeight - display_large.offsetTop) + 'px';
 
-		//display_large.style.top = 'auto';
-		//display_large.style.height = 'auto';
+		display_large.style.top = 'auto';
+		display_large.style.height = 'auto';
 	}
 
 	if(dir.indexOf('w') >= 0) //w direction
 	{
 		display_large.style.right = (window.innerWidth - display_large.offsetWidth - display_large.offsetLeft) + 'px';
 
-		//display_large.style.left = 'auto';
-		//display_large.style.width = 'auto';
+		display_large.style.left = 'auto';
+		display_large.style.width = 'auto';
 	}
 
 	if(dir.indexOf('e') >= 0) //e direction
 	{
 		display_large.style.left = (window.innerWidth - display_large.offsetWidth - display_large.offsetRight) + 'px';
+
+		display_large.style.right = 'auto';
+		display_large.style.width = 'auto';
 	}
 
 	if(dir.indexOf('s') >= 0) //s direction
 	{
 		display_large.style.top = (window.innerHeight - display_large.offsetHeight - display_large.offsetBottom) + 'px';
+
+		display_large.style.bottom = 'auto';
+		display_large.style.height = 'auto';
 	}
 
 	display_large.addEventListener("mousemove", resize_mouse_move, false);
