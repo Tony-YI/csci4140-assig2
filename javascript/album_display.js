@@ -611,8 +611,3 @@ function update_img()
 		}
 	};
 }
-
-function periodic_update_img()
-{
-	setInterval(update_img, 1000); //periodically update images
-}
