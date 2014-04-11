@@ -281,8 +281,31 @@ function img_click(e)
 	var img = document.createElement('img');
 	img.id = 'image';
 	img.src = img_path;
-	img.setAttribute('img_width', img_width);
-	img.setAttribute('img_height', img_height);
+	//display_large.style.top = (30 + img_height); //30 is achieve by "eyes"
+	//display_large.style.left = (33 + img_width); //33 is achieve by "eyes"
+	if(img_width > window.innerWidth * 0.6 )
+	{
+		img.style.width = window.innerWidth * 0.6 + "px";
+		img.setAttribute('img_width', img.style.width);
+		display_large.style.left = window.innerWidth * 0.2 - 33/2 + "px";
+	}
+	else
+	{
+		img.setAttribute('img_width', img_width);
+		display_large.style.left = (window.innerWidth - img_width)/2 - 33/2 + "px";
+	}
+	
+	if(img_height > window.innerHeight * 0.6)
+	{
+		img.style.height = window.innerHeight * 0.6 + "px";
+		img.setAttribute('img_height', img.style.height);
+		display_large.style.top = window.innerHeight * 0.2 - 30/2 + "px";
+	}
+	else
+	{
+		img.setAttribute('img_height', img_height);
+		display_large.style.top = (window.innerHeight - img_height)/2 - 30/2 + "px";
+	}
 	image_large.appendChild(img);
 
 	var e = document.createElement('td');
