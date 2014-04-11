@@ -362,7 +362,7 @@ function resize(e)
 
 function cancle_image_large(e)
 {
-	e.stopPropagation();
+	//e.stopPropagation();
 	e.preventDefault();
 
 	try
