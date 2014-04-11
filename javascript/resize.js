@@ -11,7 +11,7 @@ function resize(e)
 	e.preventDefault();
 
 	console.log("Resizing");
-/*
+
 	dir = e.target.id;
 	o_x = e.clientX;
 	o_y = e.clientY;
@@ -33,5 +33,4 @@ function resize(e)
 		console.log("offsetHeight " + image_large.offsetTop);
 
 	}
-*/
 }
