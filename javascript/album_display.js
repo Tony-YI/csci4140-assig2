@@ -321,11 +321,19 @@ function img_click(e)
 	{
 		console.log("Scrolling: " + err);
 	}
-
 	try
 	{
 		document.body.addEventListener("DOMMouseScroll", disable, false);
 		console.log('heh2');
+	}
+	catch(error)
+	{
+		console.log("Scrolling: " + err);
+	}
+	try
+	{
+		document.body.addEventListener("click", disable, false);
+		console.log('heh1');
 	}
 	catch(error)
 	{
@@ -342,8 +350,6 @@ function disable(e)
 	e.preventDefault();
 
 	console.log("Scrolling");
-
-	return;
 }
 
 function resize(e)
