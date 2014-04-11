@@ -482,7 +482,7 @@ function cancle_image_large(e)
 
 	try
 	{
-		document.body.removeEventListener("onmousewheel", disable, false);
+		window.removeEventListener("onmousewheel", disable, false);
 	}
 	catch(error)
 	{
@@ -491,7 +491,7 @@ function cancle_image_large(e)
 
 	try
 	{
-		document.body.removeEventListener("DOMMouseScroll", disable, false);
+		window.removeEventListener("DOMMouseScroll", disable, false);
 	}
 	catch(error)
 	{
