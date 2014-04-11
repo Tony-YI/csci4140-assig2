@@ -417,7 +417,7 @@ function image_mouse_move(e)
 	//using diff_x or diff_y is because we can't use display_large.offset* in mousemove event
 	if(e.clientX + diff_x > 0 && e.clientX + diff_x < (window.innerWidth - display_large.offsetWidth))
 	{
-		display_large.style.left = (e.clientX + difference_x) + 'px';
+		display_large.style.left = (e.clientX + diff_x) + 'px';
 	}
 	else if(e.clientX + diff_x < 0)
 	{
