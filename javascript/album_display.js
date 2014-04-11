@@ -536,6 +536,8 @@ function update_page_height()
 	.
 </div>
 */
+var old_response = "";
+
 function update_img()
 {
 	console.log("Update image.");
@@ -564,6 +566,9 @@ function update_img()
 				console.log(e);
 				return; //exit the function
 			}
+
+			old_response = response;
+			console.log("ols: " + old_response);
 
 			//remove all the old element
 			document.getElementById("display").innerHTML = "";
