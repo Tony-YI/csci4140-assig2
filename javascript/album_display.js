@@ -54,7 +54,7 @@ function edit_click(e)
 		final_img_des += img_des[i];
 	}
 
-	final_img_des = final_img_des.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+	//final_img_des = final_img_des.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 	console.log("New description converted: " + final_img_des);
 
 	//send to the server
