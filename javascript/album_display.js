@@ -19,6 +19,8 @@ function img_slot_mouse_off(e)
 	e.preventDefault();
 	e.stopPropagation();
 
+	console.log('aaaaaaaa');
+
 	periodic = window.setInterval(update_img, 5000);
 
 	//console.log(e.type +": "+ e.target);
