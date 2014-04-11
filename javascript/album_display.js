@@ -608,6 +608,8 @@ function update_img()
 
 			console.log("j: " + j);
 
+			if(j == 0)
+			{
 			//remove all the old element
 			document.getElementById("display").innerHTML = "";
 
@@ -655,6 +657,7 @@ function update_img()
 			}
 
 			update_page_height();
+			}
 
 			console.log("MYSQL ERROR: " + response.mysql_error);
 		}
