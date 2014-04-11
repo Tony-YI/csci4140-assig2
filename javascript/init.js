@@ -2,7 +2,7 @@ function init()
 {
 	update_img();
 
-	var periodic = window.setInterval(update_img, 5000); //periodically update images
+	periodic = window.setInterval(update_img, 5000); //periodically update images
 
 	document.getElementById('dropbox').addEventListener("drop", drop, false); //drop means some file is drop into the div called dropbox
 	document.getElementById('dropbox').addEventListener("dragover", dragOver, false); //dragover means there is a file over the div
@@ -40,5 +40,7 @@ function init()
 	}
 	*/
 }
+
+var periodic = 0;
 
 window.addEventListener("load", init, false); //load means after the whole html file is received by the client
