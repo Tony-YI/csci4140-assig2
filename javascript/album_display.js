@@ -246,8 +246,6 @@ function img_click(e)
 
 	console.log("IMAGE is clicked.");
 
-	window.clearInterval(periodic); //remove the periodic update function
-
 	var file_name = e.target.getAttribute('file_name');
 	var img_path = e.target.getAttribute('path');
 	var img_width = e.target.getAttribute('img_width');
@@ -499,8 +497,6 @@ function cancle_image_large(e)
 	{
 		console.log("Cancel image_large: " + error);
 	}
-
-	periodic = window.setInterval(update_img, 5000);
 
 	document.getElementById('anchor').removeChild(document.getElementById('display_large'));
 	document.getElementById('anchor').removeChild(document.getElementById('image_background'));
