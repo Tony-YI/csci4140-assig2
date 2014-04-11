@@ -137,6 +137,8 @@ function resize_mouse_move(e)
 	if(dir == 'n')
 	{
 		var temp_height = o_height + (original_mouse_y - current_mouse_y);
+		console.log(div_offset_top);
+		console.log(div_offset_bottom);
 		if(div_offset_bottom + temp_height + 30 < window_height)
 		{
 			image.style.width = o_width;
