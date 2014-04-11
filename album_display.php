@@ -24,7 +24,15 @@
 
 			$row['shortcut_path'] = $ln_shortcut_path;
 			$row['img_path'] = $ln_img_path;
-			$array[] = $row;
+
+			$array[]['file_name'] = $row['file_name'];
+			$array[]['file_size'] = $row['file_size'];
+			$array[]['upload_time'] = $row['upload_time'];
+			$array[]['img_description'] = $row['img_description'];
+			$array[]['img_path'] = $row['img_path'];
+			$array[]['shortcut_path'] = $row['shortcut_path'];
+			$array[]['img_width'] = $row['img_width'];
+			$array[]['img_height'] = $row['img_height'];
 		}
 	}
 
