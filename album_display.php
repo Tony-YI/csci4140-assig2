@@ -17,6 +17,7 @@
 	}
 	else
 	{
+		$count = 0;
 		while($row = $result->fetch())
 		{
 			$ln_shortcut_path = './data/'.$shortcut_dir.'/'.$row['file_name'];
@@ -25,14 +26,16 @@
 			$row['shortcut_path'] = $ln_shortcut_path;
 			$row['img_path'] = $ln_img_path;
 
-			$array[]['file_name'] = $row['file_name'];
-			$array[]['file_size'] = $row['file_size'];
-			$array[]['upload_time'] = $row['upload_time'];
-			$array[]['img_description'] = $row['img_description'];
-			$array[]['img_path'] = $row['img_path'];
-			$array[]['shortcut_path'] = $row['shortcut_path'];
-			$array[]['img_width'] = $row['img_width'];
-			$array[]['img_height'] = $row['img_height'];
+			$array[$count]['file_name'] = $row['file_name'];
+			$array[$count]['file_size'] = $row['file_size'];
+			$array[$count]['upload_time'] = $row['upload_time'];
+			$array[$count]['img_description'] = $row['img_description'];
+			$array[$count]['img_path'] = $row['img_path'];
+			$array[$count]['shortcut_path'] = $row['shortcut_path'];
+			$array[$count]['img_width'] = $row['img_width'];
+			$array[$count]['img_height'] = $row['img_height'];
+
+			$count++;
 		}
 	}
 
