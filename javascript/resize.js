@@ -30,7 +30,7 @@ function resize(e)
 	if(dir.indexOf('n') >= 0) //n direction
 	{
 		console.log("offsetTop " + display_large.offsetTop);
-		console.log("offsetHeight " + display_large.offsetTop);
+		console.log("offsetHeight " + display_large.offsetHeight);
 
 	}
 }
