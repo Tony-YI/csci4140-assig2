@@ -6,7 +6,7 @@ function init()
 	document.getElementById('dropbox').addEventListener("dragover", dragOver, false); //dragover means there is a file over the div
 	document.getElementById('dropbox').addEventListener("dragleave", dragLeave, false); //file is leaved
 
-	document.body.addEventListener("drop", disable, false);
+	document.body.addEventListener("dragover", disable, false);
 
 	/*
 	//add event listener to the image slots
