@@ -1,11 +1,14 @@
-var mouse_x = 0; //x coordination of mouse
-var mouse_y = 0; //y coordination of mouse
+var original_mouse_x = 0; //x coordination of mouse
+var original_mouse_y = 0; //y coordination of mouse
 var dir = ""; //n/s/w/e/ne/nw/se/sw direction
 var o_width = 0;
 var o_height = 0;
 
+var display_large = document.getElementById('display_large'); //div
+var image = document.getElementById('image'); //img
+
 //mouse is down
-function resize(e)
+function resize_mouse_down(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
@@ -13,13 +16,10 @@ function resize(e)
 	console.log("Resizing");
 
 	dir = e.target.id;
-	mouse_x = e.clientX;
-	mouse_y = e.clientY;
+	original_mouse_x = e.clientX;
+	original_mouse_y = e.clientY;
 
-	console.log("direction is " + dir + " mouse_x is " + mouse_x + ", mouse_y is " + mouse_y);
-
-	var display_large = document.getElementById('display_large'); //div
-	var image = document.getElementById('image'); //img
+	console.log("direction is " + dir + " original_mouse_x is " + original_mouse_x + ", original_mouse_y is " + original_mouse_y);
 
 	//diff_x = display_large.offsetLeft - e.clientX;
 	//diff_y = display_large.offsetTop - e.clientY;
@@ -29,8 +29,109 @@ function resize(e)
 
 	if(dir.indexOf('n') >= 0) //n direction
 	{
-		console.log("offsetTop " + display_large.offsetTop);
-		console.log("offsetHeight " + display_large.offsetHeight);
+		//console.log("offsetTop " + display_large.offsetTop);
+		//console.log("offsetHeight " + display_large.offsetHeight);
 
+		display_large.style.bottom = (window.innerHeight - display_large.offsetHeight - display_large.offsetTop) + 'px';
+
+		//display_large.style.top = 'auto';
+		//display_large.style.height = 'auto';
 	}
+
+	if(dir.indexOf('w') >= 0) //w direction
+	{
+		display_large.style.right = (window.innerWidth - display_large.offsetWidth - display_large.offsetLeft) + 'px';
+
+		//display_large.style.left = 'auto';
+		//display_large.style.width = 'auto';
+	}
+
+	if(dir.indexOf('e') >= 0) //e direction
+	{
+		display_large.style.left = (window.innerWidth - display_large.offsetWidth - display_large.offsetRight) + 'px';
+	}
+
+	if(dir.indexOf('s') >= 0) //s direction
+	{
+		display_large.style.top = (window.innerHeight - display_large.offsetHeight - display_large.offsetBottom) + 'px';
+	}
+
+	display_large.addEventListener("mousemove", resize_mouse_move, false);
+	display_large.addEventListener("mouseup", resize_mouse_up, false);
+	document.addEventListener("mousemove", resize_mouse_move, false);
+	document.addEventListener("mouseup", resize_mouse_up, false);
+	window.addEventListener("mousemove", resize_mouse_move, false);
+	window.addEventListener("mouseup", resize_mouse_up, false);
+}
+
+function resize_mouse_move(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	var current_mouse_x = e.clientX;
+	var current_mouse_y = e.clientY;
+
+	if(dir == 'nw')
+	{
+		image.style.width = (o_width + (original_mouse_x - current_mouse_x)) + 'px';
+		image.style.height = (o_height + (original_mouse_y - current_mouse_y)) + 'px';
+	}
+	if(dir == 'n')
+	{
+		image.style.width = o_width;
+		image.style.height = (o_height + (original_mouse_y - current_mouse_y)) + 'px';
+	}
+	if(dir == 'ne')
+	{
+		image.style.width = (o_width + (current_mouse_x - original_mouse_x)) + 'px';
+		image.style.height = (o_height + (original_mouse_y - current_mouse_y)) + 'px';
+	}
+	if(dir == 'w')
+	{
+		image.style.height = o_height;
+		image.style.width = (o_width + (original_mouse_x - current_mouse_x)) + 'px';
+	}
+	if(dir == 'e')
+	{
+		image.style.height = o_height;
+		image.style.width = (o_width + (current_mouse_x - original_mouse_x)) + 'px';
+	}
+	if(dir == 'sw')
+	{
+		image.style.width = (o_width + (original_mouse_x - current_mouse_x)) + 'px';
+		image.style.height = (o_height + (current_mouse_y - original_mouse_y)) + 'px';
+	}
+	if(dir == 's')
+	{
+		image.style.width = o_width;
+		image.style.height = (o_height + (current_mouse_y - original_mouse_y)) + 'px';
+	}
+	if(dir == 'se')
+	{
+		image.style.width = (o_width + (current_mouse_x - original_mouse_x)) + 'px';
+		image.style.height = (o_height + (current_mouse_y - original_mouse_y)) + 'px';
+	}
+
+	console.log("resize_mouse_move: " + dir);
+}
+
+function resize_mouse_up(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	console.log("Finish resizing");
+
+	//remove event listener
+	display_large.removeEventListener("mousemove", resize_mouse_move, false);
+	display_large.removeEventListener("mouseup", resize_mouse_up, false);
+	document.removeEventListener("mousemove", resize_mouse_move, false);
+	document.removeEventListener("mouseup", resize_mouse_up, false);
+	window.removeEventListener("mousemove", resize_mouse_move, false);
+	window.removeEventListener("mouseup", resize_mouse_up, false);
+
+	dir = "";
+	original_mouse_x = 0;
+	original_mouse_y = 0;
 }

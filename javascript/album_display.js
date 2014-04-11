@@ -259,13 +259,13 @@ function img_click(e)
 	var row_1 = document.createElement('tr');
 	var nw = document.createElement('td');
 	nw.id = 'nw';
-	nw.addEventListener("mousedown", resize, false);
+	nw.addEventListener("mousedown", resize_mouse_down, false);
 	var n = document.createElement('td');
 	n.id = 'n';
-	n.addEventListener("mousedown", resize, false);
+	n.addEventListener("mousedown", resize_mouse_down, false);
 	var ne = document.createElement('td');
 	ne.id = 'ne';
-	ne.addEventListener("mousedown", resize, false);
+	ne.addEventListener("mousedown", resize_mouse_down, false);
 	row_1.appendChild(nw);
 	row_1.appendChild(n);
 	row_1.appendChild(ne);
@@ -274,7 +274,7 @@ function img_click(e)
 	var row_2 = document.createElement('tr');
 	var w = document.createElement('td');
 	w.id = 'w';
-	w.addEventListener("mousedown", resize, false);
+	w.addEventListener("mousedown", resize_mouse_down, false);
 
 	var image_large = document.createElement('td');
 	image_large.id = 'image_large';
@@ -287,7 +287,7 @@ function img_click(e)
 	var final_width = 0;
 	var final_height = 0;
 
-	if(img_width <= com_width && img_height <= com_height) //no need to resize
+	if(img_width <= com_width && img_height <= com_height) //no need to resize_mouse_down
 	{
 		final_width = img_width;
 		final_height = img_height;
@@ -333,7 +333,7 @@ function img_click(e)
 
 	var e = document.createElement('td');
 	e.id = 'e';
-	e.addEventListener("mousedown", resize, false);
+	e.addEventListener("mousedown", resize_mouse_down, false);
 	row_2.appendChild(w);
 	row_2.appendChild(image_large);
 	row_2.appendChild(e);
@@ -342,13 +342,13 @@ function img_click(e)
 	var row_3 = document.createElement('tr');
 	var sw = document.createElement('td');
 	sw.id = 'sw';
-	sw.addEventListener("mousedown", resize, false);
+	sw.addEventListener("mousedown", resize_mouse_down, false);
 	var s = document.createElement('td');
 	s.id = 's';
-	s.addEventListener("mousedown", resize, false);
+	s.addEventListener("mousedown", resize_mouse_down, false);
 	var se = document.createElement('td');
 	se.id = 'se';
-	se.addEventListener("mousedown", resize, false);
+	se.addEventListener("mousedown", resize_mouse_down, false);
 	row_3.appendChild(sw);
 	row_3.appendChild(s);
 	row_3.appendChild(se);
