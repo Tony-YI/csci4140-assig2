@@ -20,6 +20,9 @@ function resize_mouse_down(e)
 	window_offset_left = window.offsetLeft;
 	window_offset_top = window.offsetTop;
 
+	console.log(window_width);
+	console.log(window_offset_left);
+
 	console.log("Resizing");
 
 	dir = e.target.id;
@@ -139,7 +142,7 @@ function resize_mouse_move(e)
 	{
 		console.log(window_width);
 		console.log(window_offset_left);
-		
+
 		if(current_mouse_x < window_width + window_offset_left)
 		{
 			image.style.height = o_height;
