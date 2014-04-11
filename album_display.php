@@ -13,14 +13,14 @@
 	$result = db_execute($query);
 	if($result != NULL)
 	{
-		$last_update_time = $result->fetch();
+		$last_update_time = ($result->fetch())[0];
 	}
 
 	$query = "SELECT upload_time FROM file ORDER BY upload_time DESC;";
 	$result = db_execute($query);
 	if($result != NULL)
 	{
-		$current_update_time = $result->fetch();
+		$current_update_time = ($result->fetch())[0];
 	}
 
 	echo "last: $last_update_time";
