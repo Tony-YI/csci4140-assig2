@@ -94,6 +94,8 @@ function resize_mouse_down(e)
 
 function resize_mouse_move(e)
 {
+	//no display_large.offset* in this case
+
 	e.stopPropagation();
 	e.preventDefault();
 
@@ -125,7 +127,7 @@ function resize_mouse_move(e)
 	}
 	if(dir == 'e')
 	{
-		console.log("display_large.offsetRight");
+		console.log(display_large.style.left);
 
 			image.style.height = o_height;
 			image.style.width = (o_width + (current_mouse_x - original_mouse_x)) + 'px';
