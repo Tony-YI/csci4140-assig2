@@ -1,5 +1,7 @@
 function init()
 {
+	update_img();
+
 	setInterval(update_img, 5000); //periodically update images
 
 	document.getElementById('dropbox').addEventListener("drop", drop, false); //drop means some file is drop into the div called dropbox
