@@ -142,7 +142,7 @@ function delete_click(e)
 
 	var parent = e.target.parentNode;
 	var img = parent.children[2].children[0];
-	var file_name = img.getAttribute('filename'); //filename is the attribute predefined	
+	var file_name = img.getAttribute('file_name'); //filename is the attribute predefined	
 
 	var delete_option = window.confirm("Are you sure to DELETE this image?");
 
