@@ -2,8 +2,6 @@ function init()
 {
 	update_img();
 
-	setInterval(update_img, 5000); //periodically update images
-
 	document.getElementById('dropbox').addEventListener("drop", drop, false); //drop means some file is drop into the div called dropbox
 	document.getElementById('dropbox').addEventListener("dragover", dragOver, false); //dragover means there is a file over the div
 	document.getElementById('dropbox').addEventListener("dragleave", dragLeave, false); //file is leaved
@@ -41,4 +39,5 @@ function init()
 	*/
 }
 
+document.addEventListener("load", periodic_update_img, false);
 window.addEventListener("load", init, false); //load means after the whole html file is received by the client
