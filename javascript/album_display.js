@@ -242,6 +242,8 @@ function img_click(e)
 
 	var file_name = e.target.getAttribute('file_name');
 	var img_path = e.target.getAttribute('path');
+	var img_width = e.target.getAttribute('img_width');
+	var img_height = e.target.getAttribute('img_height');
 
 	var image_background = document.createElement('div');
 	image_background.id = 'image_background';
@@ -279,6 +281,8 @@ function img_click(e)
 	var img = document.createElement('img');
 	img.id = 'image';
 	img.src = img_path;
+	img.setAttribute('img_width') = img_width;
+	img.setAttribute('img_height') = img_height;
 	image_large.appendChild(img);
 
 	var e = document.createElement('td');
@@ -330,15 +334,6 @@ function img_click(e)
 	{
 		console.log("Scrolling: " + err);
 	}
-	try
-	{
-		document.body.addEventListener("click", disable, false);
-		console.log('heh1');
-	}
-	catch(error)
-	{
-		console.log("Scrolling: " + err);
-	}
 }
 
 //disable_scroll is predefined, we can't use it 
@@ -352,17 +347,9 @@ function disable(e)
 	console.log("Scrolling");
 }
 
-function resize(e)
-{
-	e.stopPropagation();
-	e.preventDefault();
-
-	console.log("Resizing");
-}
-
 function cancle_image_large(e)
 {
-	//e.stopPropagation();
+	e.stopPropagation();
 	e.preventDefault();
 
 	try
@@ -478,6 +465,8 @@ function update_img()
 				image.setAttribute("file_name", response[i].file_name);
 				image.setAttribute("title", response[i].img_description);
 				image.setAttribute("path", response[i].img_path);
+				image.setAttribute("img_width", response[i].img_width);
+				image.setAttribute("img_height", response[i].img_height);
 				image.addEventListener("click", img_click, false);
 
 				var name = document.createElement("p");

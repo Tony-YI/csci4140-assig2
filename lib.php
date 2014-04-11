@@ -71,7 +71,7 @@ function create_table()
 		
 		$db_obj->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		$query = $db_obj->prepare("CREATE TABLE file (file_name CHAR(255), file_size INT, upload_time TIMESTAMP, img_description CHAR(255), img_path CHAR(255), shortcut_path CHAR(255), PRIMARY KEY(file_name));");
+		$query = $db_obj->prepare("CREATE TABLE file (file_name CHAR(255), file_size INT, upload_time TIMESTAMP, img_description CHAR(255), img_path CHAR(255), shortcut_path CHAR(255), img_width INT, img_height INT, PRIMARY KEY(file_name));");
 		$query->execute();
 	}
 	catch(PDOException $e)
@@ -173,9 +173,9 @@ function check_file_existance($file_name)
 }
 */
 
-function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir)
+function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir, $img_width, $img_height)
 {
-	$query = "INSERT INTO file (file_name, file_size, upload_time, img_description, img_path, shortcut_path) VALUES ('$file_name', '$file_size', CURRENT_TIMESTAMP, '', '$_img_dir', '$_shortcut_dir');";
+	$query = "INSERT INTO file (file_name, file_size, upload_time, img_description, img_path, shortcut_path, img_width, img_height) VALUES ('$file_name', '$file_size', CURRENT_TIMESTAMP, '', '$_img_dir', '$_shortcut_dir', '$img_width', '$img_height');";
 	$result = db_execute($query);
 
 	if($result == NULL) //return value is null

@@ -38,12 +38,15 @@
 			//echo $type;
 			if($type == "JPEG" || $type == "JPG" || $type == "GIF" || $type == "PNG") //file type is correct
 			{
+				//get the img_width and img_heigh of the original image
+				$img_width = `identify -format "%w" "$_temp_dir"`;;
+				$img_heigh = `identify -format "%h" "$_temp_dir"`;
 				//generate shortcut
 				`convert "$_temp_dir" -resize 100x100 "$_shortcut_dir"`;
 				//move to _img dir
 				`cp "$_temp_dir" "$_img_dir"`;
 				//add record into database
-				$mysql_error = add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir);
+				$mysql_error = add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir, $img_width, $img_heigh);
 				if($mysql_error) //not null, error
 				{
 					$array['mysql_error'] = "$mysql_error";

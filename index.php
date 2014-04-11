@@ -1,5 +1,7 @@
 <html>
 	<head>
+		<!--image resize script-->
+		<script language="javascript" type="text/javascript" src="./javascript/resize.js"></script>
 		<!--album display script-->
 		<script language="javascript" type="text/javascript" src="./javascript/album_display.js"></script>
 		<!--drag_and_drop upload-->
