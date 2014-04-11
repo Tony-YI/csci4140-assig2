@@ -24,7 +24,7 @@
 	}
 
 	//chech whether there is new image or not
-	if($last_update_time < $current_update_time) //new images exist
+	if($last_update_time <= $current_update_time) //new images exist
 	{
 		//quert the database
 		$query = "SELECT * FROM file ORDER BY upload_time DESC;";
