@@ -285,24 +285,24 @@ function img_click(e)
 	var com_width = window.innerWidth * 0.6;
 	var com_height = window.innerHeight * 0.6;
 	var final_width = 0;
-	var final_heigth = 0;
+	var final_height = 0;
 
 	if(img_width <= com_width && img_height <= com_height) //no need to resize
 	{
 		final_width = img_width;
-		final_heigth = img_height;
+		final_height = img_height;
 	}
 
 	if(img_width <= com_width && img_height > com_height) //set height as reference
 	{
 		final_width = com_height;
-		final_heigth = img_width / (img_height / com_height);
+		final_height = img_width / (img_height / com_height);
 	}
 
 	if(img_width > com_width && img_height <= com_height) //set width as reference
 	{
 		final_width = com_width;
-		final_heigth = img_height / (img_width / com_width);
+		final_height = img_height / (img_width / com_width);
 	}
 
 	if(img_width > com_width && img_height > com_height)
@@ -316,11 +316,11 @@ function img_click(e)
 		}
 
 		final_width = temp_width;
-		final_heigth = temp_height;
+		final_height = temp_height;
 	}
 
 	img.style.width = final_width + "px";
-	img.style.height = final_heigth + "px";
+	img.style.height = final_height + "px";
 
 	img.setAttribute('img_width', img_width);
 	img.setAttribute('img_height', img_height);
