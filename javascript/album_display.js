@@ -373,7 +373,7 @@ function img_click(e)
 
 	try
 	{
-		window.addEventListener("onmousewheel", disable, false);
+		document.body.addEventListener("onmousewheel", disable, false);
 		console.log('heh1');
 	}
 	catch(error)
@@ -382,7 +382,7 @@ function img_click(e)
 	}
 	try
 	{
-		window.addEventListener("DOMMouseScroll", disable, false);
+		document.body.addEventListener("DOMMouseScroll", disable, false);
 		console.log('heh2');
 	}
 	catch(error)
@@ -484,7 +484,7 @@ function cancle_image_large(e)
 
 	try
 	{
-		window.removeEventListener("onmousewheel", disable, false);
+		document.body.removeEventListener("onmousewheel", disable, false);
 	}
 	catch(error)
 	{
@@ -493,7 +493,7 @@ function cancle_image_large(e)
 
 	try
 	{
-		window.removeEventListener("DOMMouseScroll", disable, false);
+		document.body.removeEventListener("DOMMouseScroll", disable, false);
 	}
 	catch(error)
 	{

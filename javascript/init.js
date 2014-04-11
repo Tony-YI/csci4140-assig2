@@ -4,9 +4,6 @@ function init()
 
 	periodic = window.setInterval(update_img, 5000); //periodically update images
 
-	document.addEventListener("onmousewheel", disable, false);
-	document.addEventListener("DOMMouseScroll", disable, false);
-
 	document.getElementById('dropbox').addEventListener("drop", drop, false); //drop means some file is drop into the div called dropbox
 	document.getElementById('dropbox').addEventListener("dragover", dragOver, false); //dragover means there is a file over the div
 	document.getElementById('dropbox').addEventListener("dragleave", dragLeave, false); //file is leaved
