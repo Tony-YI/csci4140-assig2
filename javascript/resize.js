@@ -4,9 +4,6 @@ var dir = ""; //n/s/w/e/ne/nw/se/sw direction
 var o_width = 0;
 var o_height = 0;
 
-var display_large = document.getElementById('display_large'); //div
-var image = document.getElementById('image'); //img
-
 //mouse is down
 function resize_mouse_down(e)
 {
@@ -21,9 +18,8 @@ function resize_mouse_down(e)
 
 	console.log("direction is " + dir + " original_mouse_x is " + original_mouse_x + ", original_mouse_y is " + original_mouse_y);
 
-	//diff_x = display_large.offsetLeft - e.clientX;
-	//diff_y = display_large.offsetTop - e.clientY;
-
+	var display_large = document.getElementById('display_large'); //div
+	var image = document.getElementById('image'); //img
 	o_width = image.offsetWidth;
 	o_height = image.offsetHeight;
 
@@ -71,6 +67,9 @@ function resize_mouse_move(e)
 
 	var current_mouse_x = e.clientX;
 	var current_mouse_y = e.clientY;
+
+	var display_large = document.getElementById('display_large'); //div
+	var image = document.getElementById('image'); //img
 
 	if(dir == 'nw')
 	{
@@ -122,6 +121,9 @@ function resize_mouse_up(e)
 	e.preventDefault();
 
 	console.log("Finish resizing");
+
+	var display_large = document.getElementById('display_large'); //div
+	var image = document.getElementById('image'); //img
 
 	//remove event listener
 	display_large.removeEventListener("mousemove", resize_mouse_move, false);
