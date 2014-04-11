@@ -281,31 +281,48 @@ function img_click(e)
 	var img = document.createElement('img');
 	img.id = 'image';
 	img.src = img_path;
-	//display_large.style.top = (30 + img_height); //30 is achieve by "eyes"
-	//display_large.style.left = (33 + img_width); //33 is achieve by "eyes"
-	if(img_width > window.innerWidth * 0.6 )
+
+	var com_width = window.innerWidth * 0.6;
+	var com_height = window.innerHeight * 0.6;
+
+	if(img_width <= com_width && img_height <= com_height) //no need to resize
 	{
-		img.style.width = window.innerWidth * 0.6 + "px";
-		img.setAttribute('img_width', img.style.width);
-		display_large.style.left = window.innerWidth * 0.2 - 33/2 + "px";
+		img.style.width = img_width + "px";
+		img.style.height = img_height + "px";
 	}
-	else
+
+	if(img_width <= com_width && img_height > com_height) //set height as reference
 	{
-		img.setAttribute('img_width', img_width);
-		display_large.style.left = (window.innerWidth - img_width)/2 - 33/2 + "px";
+		img.style.height = com_height + "px";
+		img.style.width = img_width / (img_height / com_height) + "px";
 	}
+
+	if(img_width > com_width && img_height <= com_height) //set width as reference
+	{
+		img.style.width = com_width + "px";
+		img.style.height = img_height / (img_width / com_width) + "px";
+	}
+
+	if(img_width > com_width && img_height > com_height)
+	{
+		var temp_width = img_width;
+		var temp_height = img_height;
+		while(temp_width > com_width || temp_height > com_height)
+		{
+			temp_width /= 2;
+			temp_height /= 2;
+		}
+
+		img.style.width = temp_width + "px";
+		img.style.height = temp_height + "px";
+	}
+
+	img.setAttribute('img_width', img_width);
+	img.setAttribute('img_height', img_height);
+
+	display_large.style.left = (window.innerWidth - img.style.width)/2 - 33/2 + "px"; //33 is achieve by "eyes"
+	display_large.style.top = (window.innerWidth - img.style.height)/2 - 33/2 + "px"; //33 is achieve by "eyes"
 	
-	if(img_height > window.innerHeight * 0.6)
-	{
-		img.style.height = window.innerHeight * 0.6 + "px";
-		img.setAttribute('img_height', img.style.height);
-		display_large.style.top = window.innerHeight * 0.2 - 30/2 + "px";
-	}
-	else
-	{
-		img.setAttribute('img_height', img_height);
-		display_large.style.top = (window.innerHeight - img_height)/2 - 30/2 + "px";
-	}
 	image_large.appendChild(img);
 
 	var e = document.createElement('td');
