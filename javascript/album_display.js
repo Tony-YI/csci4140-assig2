@@ -568,7 +568,7 @@ function update_img()
 			}
 
 			var j = 1;
-			for(var i = 0; i < response.length; i++)
+			for(var i = 0; i < response.length && i < old_response.length; i++)
 			{
 				if(old_response[i].file_name != response[i].file_name)
 				{
