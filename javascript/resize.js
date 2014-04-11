@@ -4,11 +4,21 @@ var dir = ""; //n/s/w/e/ne/nw/se/sw direction
 var o_width = 0;
 var o_height = 0;
 
+var window_width = 0;
+var window_height = 0;
+var window_offset_left = 0;
+var window_offset_top = 0;
+
 //mouse is down
 function resize_mouse_down(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
+
+	window_width = window.offsetWidth;
+	window_height = window.offsetHeight;
+	window_offset_left = win.offsetLeft;
+	window_offset_top = window.offsetTop;
 
 	console.log("Resizing");
 
@@ -127,8 +137,11 @@ function resize_mouse_move(e)
 	}
 	if(dir == 'e')
 	{
-		image.style.height = o_height;
-		image.style.width = (o_width + (current_mouse_x - original_mouse_x)) + 'px';
+		if(current_mouse_x < window_width + window_offset_left)
+		{
+			image.style.height = o_height;
+			image.style.width = (o_width + (current_mouse_x - original_mouse_x)) + 'px';
+		}
 	}
 	if(dir == 'sw')
 	{
