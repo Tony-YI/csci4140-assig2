@@ -5,62 +5,27 @@
 
 	header("Content-type: text/json");
 
-	$query = "";
-	$result = "";
 	$array = array(); //xhr response array
 
-	$query = "SELECT * FROM update_status;";
+	//quert the database
+	$query = "SELECT * FROM file ORDER BY upload_time DESC;";
 	$result = db_execute($query);
-	if($result != NULL)
+
+	if($result == null) //mysql errer
 	{
-		$row = $result->fetch();
-		$last_update_time = $row['update_time'];
-	}
-
-	$query = "SELECT upload_time FROM file ORDER BY upload_time DESC;";
-	$result = db_execute($query);
-	if($result != NULL)
-	{
-		$row = $result->fetch();
-		$current_update_time = $row['upload_time'];
-	}
-
-/*
-	echo "last: $last_update_time";
-	echo "current: $current_update_time";
-	$hehe = ($last_update_time > $current_update_time);
-	echo $hehe;
-*/
-	//chech whether there is new image or not
-	if($last_update_time < $current_update_time) //new images exist
-	{
-		update_time($current_update_time);
-
-		//quert the database
-		$query = "SELECT * FROM file ORDER BY upload_time DESC;";
-		$result = db_execute($query);
-
-		if($result == null) //mysql errer
-		{
-			$array['mysql_error'] = "ERROR when displaying images.";
-		}
-		else
-		{
-			while($row = $result->fetch())
-			{
-				$ln_shortcut_path = './data/'.$shortcut_dir.'/'.$row['file_name'];
-				$ln_img_path = './data/'.$img_dir.'/'.$row['file_name'];
-
-				$row['shortcut_path'] = $ln_shortcut_path;
-				$row['img_path'] = $ln_img_path;
-				$array[] = $row;
-			}
-		}
+		$array['mysql_error'] = "ERROR when displaying images.";
 	}
 	else
 	{
-		//do nothing
-		$array['update_status'] = "No new image exists.";
+		while($row = $result->fetch())
+		{
+			$ln_shortcut_path = './data/'.$shortcut_dir.'/'.$row['file_name'];
+			$ln_img_path = './data/'.$img_dir.'/'.$row['file_name'];
+
+			$row['shortcut_path'] = $ln_shortcut_path;
+			$row['img_path'] = $ln_img_path;
+			$array[] = $row;
+		}
 	}
 
 	//print_r($array);

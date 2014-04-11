@@ -73,12 +73,6 @@ function create_table()
 
 		$query = $db_obj->prepare("CREATE TABLE file (file_name CHAR(255), file_size INT, upload_time TIMESTAMP, img_description CHAR(255), img_path CHAR(255), shortcut_path CHAR(255), img_width INT, img_height INT, PRIMARY KEY(file_name));");
 		$query->execute();
-
-		$query = $db_obj->prepare("CREATE TABLE update_status (update_time TIMESTAMP, PRIMARY KEY(update_time));");
-		$query->execute();
-
-		$query = $db_obj->prepare("INSERT INTO update_status (update_time) VALUES (CURRENT_TIMESTAMP);");
-		$query->execute();
 	}
 	catch(PDOException $e)
 	{
@@ -178,16 +172,6 @@ function check_file_existance($file_name)
 	}
 }
 */
-function update_time($current_time)
-{
-	$query = "UPDATE update_status SET update_time='$current_time';";
-	$result = db_execute($query);
-
-	if($result == NULL) //return value is null
-	{
-		return "Error when updating update_status.";
-	}
-}
 
 function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir, $img_width, $img_height)
 {
