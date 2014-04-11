@@ -281,8 +281,8 @@ function img_click(e)
 	var img = document.createElement('img');
 	img.id = 'image';
 	img.src = img_path;
-	img.setAttribute('img_width') = img_width;
-	img.setAttribute('img_height') = img_height;
+	img.setAttribute('img_width', img_width);
+	img.setAttribute('img_height', img_height);
 	image_large.appendChild(img);
 
 	var e = document.createElement('td');
