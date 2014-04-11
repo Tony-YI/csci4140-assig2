@@ -530,7 +530,6 @@ function update_img()
 				}
 
 				update_page_height();
-				}
 			}
 
 			else //no new image
