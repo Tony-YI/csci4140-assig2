@@ -1,6 +1,6 @@
-var mouse_x = 0;
-var mouse_y = 0;
-var dir = ""; //n/s/w/e/ne/nw/se/sw
+var mouse_x = 0; //x coordination of mouse
+var mouse_y = 0; //y coordination of mouse
+var dir = ""; //n/s/w/e/ne/nw/se/sw direction
 var o_width = 0;
 var o_height = 0;
 
