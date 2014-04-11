@@ -335,7 +335,7 @@ function img_click(e)
 //disable_scroll is predefined, we can't use it 
 function disable_scroll(e)
 {
-	//e.stopPropagation();
+	e.stopPropagation();
 	e.preventDefault();
 
 	console.log("Scrolling");
