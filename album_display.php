@@ -22,7 +22,7 @@
 	if($result != NULL)
 	{
 		$row = $result->fetch();
-		$current_update_time = $row['update_time'];
+		$current_update_time = $row['upload_time'];
 	}
 
 	echo "last: $last_update_time";
