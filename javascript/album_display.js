@@ -281,6 +281,7 @@ function img_click(e)
 	var img = document.createElement('img');
 	img.id = 'image';
 	img.src = img_path;
+	img.addEventListener("mousedown", image_mouse_down, false);
 
 	var com_width = window.innerWidth * 0.6;
 	var com_height = window.innerHeight * 0.6;
@@ -380,6 +381,81 @@ function img_click(e)
 	{
 		console.log("Scrolling: " + err);
 	}
+}
+
+var diff_x = 0;
+var diff_y = 0;
+function image_mouse_down(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	console.log('image_mouse_down');
+
+	var display_large = document.getElementById('display_large');
+	
+	display_large.addEventListener("mousemove", image_mouse_move, false);
+	display_large.addEventListener("mouseup", image_mouse_up, false);
+	document.addEventListener("mousemove", image_mouse_move, false);
+	document.addEventListener("mouseup", image_mouse_up, false);
+	window.addEventListener("mousemove", image_mouse_move, false);
+	window.addEventListener("mouseup", image_mouse_up, false);
+
+	diff_x = display_large.offsetLeft - e.clientX;
+	diff_y = display_large.offsetTop - e.clientY;
+}
+
+function image_mouse_move(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	console.log('image_mouse_move');
+
+	var display_large = document.getElementById('display_large');
+
+	//using diff_x or diff_y is because we can't use display_large.offset* in mousemove event
+	if(e.clientX + diff_x > 0 && e.clientX + diff_x < (window.innerWidth - display_large.offsetWidth))
+	{
+		display_large.style.left = (e.clientX + difference_x) + 'px';
+	}
+	else if(e.clientX + diff_x < 0)
+	{
+		display_large.style.left = '0px';
+	}
+	else if(e.clientX + diff_x > window.innerWidth - display_large.offsetWidth)
+	{
+		display_large.style.left = (window.innerWidth - display_large.offsetWidth) + 'px';
+	}
+
+	if(e.clientY + diff_y > 0 && e.clientY + diff_y < (window.innerHeight - display_large.offsetHeight))
+	{
+		display_large.style.top = (e.clientY + diff_y) + 'px';
+	}
+	else if(e.clientY + diff_y < 0)
+	{
+		display_large.style.top = '0px';
+	}
+	else if(e.clientY + diff_y > window.innerHeight - display_large.offsetHeight)
+	{
+		display_large.style.top = (window.innerHeight - display_large.offsetHeight) + 'px';
+	}
+}
+
+function image_mouse_up(e)
+{
+	e.stopPropagation();
+	e.preventDefault();
+
+	console.log('image_mouse_up');
+
+	//remove event listener
+	display_large.removeEventListener("mousemove", image_mouse_move, false);
+	display_large.removeEventListener("mouseup", image_mouse_up, false);
+	document.removeEventListener("mousemove", image_mouse_move, false);
+	document.removeEventListener("mouseup", image_mouse_up, false);
+	window.removeEventListener("mousemove", image_mouse_move, false);
+	window.removeEventListener("mouseup", image_mouse_up, false);
 }
 
 //disable_scroll is predefined, we can't use it 
