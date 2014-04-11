@@ -29,8 +29,7 @@ function resize_mouse_down(e)
 		//console.log("offsetHeight " + display_large.offsetHeight);
 		if(display_large.offsetBottom) //already exist this style
 		{
-			//do nothing
-			//display_large.style.bottom = display_large.offsetBottom + 'px';
+			display_large.style.bottom = display_large.offsetBottom + 'px';
 		}
 		else
 		{
@@ -45,7 +44,7 @@ function resize_mouse_down(e)
 	{
 		if(display_large.offsetRight) //already exist this style
 		{
-			//do nothing
+			display_large.style.right = display_large.offsetRight + 'px';
 		}
 		else
 		{
@@ -60,7 +59,7 @@ function resize_mouse_down(e)
 	{
 		if(display_large.offsetLeft)
 		{
-			//do nothing
+			display_large.style.left = display_large.offsetLeft + 'px';
 		}
 		else
 		{
@@ -75,7 +74,7 @@ function resize_mouse_down(e)
 	{
 		if(display_large.offsetTop)
 		{
-			//do nothing
+			display_large.style.top = display_large.offsetTop + 'px';
 		}
 		else
 		{
