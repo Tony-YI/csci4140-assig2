@@ -4,13 +4,6 @@ var dir = ""; //n/s/w/e/ne/nw/se/sw direction
 var o_width = 0;
 var o_height = 0;
 
-var window_width = 0;
-var window_height = 0;
-var div_offset_left = 0;
-var div_offset_right = 0;
-var div_offset_top = 0;
-var div_offset_bottom = 0;
-
 //mouse is down
 function resize_mouse_down(e)
 {
@@ -19,13 +12,6 @@ function resize_mouse_down(e)
 
 	var display_large = document.getElementById('display_large'); //div
 	var image = document.getElementById('image'); //img
-
-	window_width = window.innerWidth;
-	window_height = window.innerHeight;
-	div_offset_left = display_large.offsetLeft;
-	div_offset_right = div_offset_left;
-	div_offset_top = display_large.offsetTop;
-	div_offset_bottom = div_offset_top;
 
 	console.log("Resizing");
 
@@ -124,100 +110,61 @@ function resize_mouse_move(e)
 	{
 		var temp_width = o_width + (original_mouse_x - current_mouse_x);
 		var temp_height = o_height + (original_mouse_y - current_mouse_y);
-
-		if(div_offset_right + temp_width + 30 < window_width)
-		{
-			image.style.width = temp_width + 'px';
-		}
-		if(div_offset_bottom + temp_height + 30 < window_height)
-		{
-			image.style.height = temp_height + 'px';
-		}
+			
+		image.style.width = temp_width + 'px';
+		image.style.height = temp_height + 'px';
 	}
 	if(dir == 'n')
 	{
 		var temp_height = o_height + (original_mouse_y - current_mouse_y);
-		console.log(div_offset_top);
-		console.log(div_offset_bottom);
-		console.log(div_offset_left);
-		console.log(div_offset_right);
-		if(div_offset_bottom + temp_height + 30 < window_height)
-		{
-			image.style.width = o_width;
-			image.style.height = temp_height + 'px';
-		}
+		
+		image.style.width = o_width;
+		image.style.height = temp_height + 'px';
 	}
 	if(dir == 'ne')
 	{
 		var temp_width = o_width + (current_mouse_x - original_mouse_x);
 		var temp_height = o_height + (original_mouse_y - current_mouse_y);
 
-		if(div_offset_left + temp_width + 30 < window_width)
-		{
-			image.style.width = temp_width + 'px';
-		}
-		if(div_offset_bottom + temp_height + 30 < window_height)
-		{
-			image.style.height = temp_height + 'px';
-		}
+		image.style.width = temp_width + 'px';
+		image.style.height = temp_height + 'px';
 	}
 	if(dir == 'w')
 	{
 		var temp_width = o_width + (original_mouse_x - current_mouse_x);
 
-		if(div_offset_right + temp_width + 30 < window_width)
-		{
-			image.style.height = o_height;
-			image.style.width = temp_width + 'px';
-		}
+		image.style.height = o_height;
+		image.style.width = temp_width + 'px';
 	}
 	if(dir == 'e')
 	{
 		var temp_width = o_width + (current_mouse_x - original_mouse_x);
 
-		if(div_offset_left + temp_width + 30 < window_width)
-		{
-			image.style.height = o_height;
-			image.style.width = temp_width + 'px';
-		}
+		image.style.height = o_height;
+		image.style.width = temp_width + 'px';
 	}
 	if(dir == 'sw')
 	{
 		var temp_width = o_width + (original_mouse_x - current_mouse_x);
 		var temp_height = o_height + (current_mouse_y - original_mouse_y);
 
-		if(div_offset_right + temp_width + 30 < window_width)
-		{
-			image.style.width = temp_width + 'px';
-		}
-		if(div_offset_top + temp_height + 30 < window_height)
-		{
-			image.style.height = temp_height + 'px';
-		}
+		image.style.width = temp_width + 'px';
+		image.style.height = temp_height + 'px';
 	}
 	if(dir == 's')
 	{
 		var temp_height = o_height + (current_mouse_y - original_mouse_y);
 
-		if(div_offset_top + temp_height + 30 < window_height)
-		{
-			image.style.width = o_width;
-			image.style.height = temp_height + 'px';
-		}
+		image.style.width = o_width;
+		image.style.height = temp_height + 'px';
 	}
 	if(dir == 'se')
 	{
 		var temp_width = o_width + (current_mouse_x - original_mouse_x);
 		var temp_height = o_height + (current_mouse_y - original_mouse_y);
 
-		if(div_offset_left + temp_width + 30 < window_width)
-		{
-			image.style.width = temp_width + 'px';
-		}
-		if(div_offset_top + temp_height + 30 < window_height)
-		{
-			image.style.height = temp_height + 'px';
-		}
+		image.style.width = temp_width + 'px';
+		image.style.height = temp_height + 'px';
 	}
 
 	console.log("resize_mouse_move: " + dir);
