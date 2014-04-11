@@ -287,20 +287,20 @@ function img_click(e)
 
 	if(img_width <= com_width && img_height <= com_height) //no need to resize
 	{
-		img.style.width = img_width + "px";
-		img.style.height = img_height + "px";
+		img.style.width = img_width;
+		img.style.height = img_height;
 	}
 
 	if(img_width <= com_width && img_height > com_height) //set height as reference
 	{
-		img.style.height = com_height + "px";
-		img.style.width = img_width / (img_height / com_height) + "px";
+		img.style.height = com_height;
+		img.style.width = img_width / (img_height / com_height);
 	}
 
 	if(img_width > com_width && img_height <= com_height) //set width as reference
 	{
-		img.style.width = com_width + "px";
-		img.style.height = img_height / (img_width / com_width) + "px";
+		img.style.width = com_width;
+		img.style.height = img_height / (img_width / com_width);
 	}
 
 	if(img_width > com_width && img_height > com_height)
@@ -313,8 +313,8 @@ function img_click(e)
 			temp_height /= 2;
 		}
 
-		img.style.width = temp_width + "px";
-		img.style.height = temp_height + "px";
+		img.style.width = temp_width;
+		img.style.height = temp_height;
 	}
 
 	img.setAttribute('img_width', img_width);
@@ -322,6 +322,8 @@ function img_click(e)
 
 	display_large.style.left = (window.innerWidth - img.style.width)/2 - 33/2 + "px"; //33 is achieve by "eyes"
 	display_large.style.top = (window.innerWidth - img.style.height)/2 - 33/2 + "px"; //33 is achieve by "eyes"
+	img.style.width += "px";
+	img.style.height += "px";
 	
 	image_large.appendChild(img);
 
