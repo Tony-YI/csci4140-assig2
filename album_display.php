@@ -9,8 +9,22 @@
 	$result = "";
 	$array = array(); //xhr response array
 
+	$query = "SELECT * FROM update_status;";
+	$result = db_execute($query);
+	if($result != NULL)
+	{
+		$last_update_time = $result->fetch();
+	}
+
+	$query = "SELECT upload_time FROM file ORDER BY upload_time DESC;";
+	$result = db_execute($query);
+	if($result != NULL)
+	{
+		$current_update_time = $result->fetch();
+	}
+
 	//chech whether there is new image or not
-	if(1) //new images exist
+	if($last_update_time < $current_update_time) //new images exist
 	{
 		//quert the database
 		$query = "SELECT * FROM file ORDER BY upload_time DESC;";

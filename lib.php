@@ -73,6 +73,9 @@ function create_table()
 
 		$query = $db_obj->prepare("CREATE TABLE file (file_name CHAR(255), file_size INT, upload_time TIMESTAMP, img_description CHAR(255), img_path CHAR(255), shortcut_path CHAR(255), img_width INT, img_height INT, PRIMARY KEY(file_name));");
 		$query->execute();
+
+		$query = $db_obj->prepare("CREATE TABLE update_status (update_time TIMESTAMP, PRIMARY KEY(update_time));");
+		$query->execute();
 	}
 	catch(PDOException $e)
 	{
@@ -172,6 +175,16 @@ function check_file_existance($file_name)
 	}
 }
 */
+function update_statue()
+{
+	$query = "UPDATE update_status SET update_time=CURRENT_TIMESTAMP;";
+	$result = db_execute($query);
+
+	if($result == NULL) //return value is null
+	{
+		return "Error when updating update_status.";
+	}
+}
 
 function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir, $img_width, $img_height)
 {
@@ -181,6 +194,10 @@ function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir, $img
 	if($result == NULL) //return value is null
 	{
 		return "Error when adding file record.";
+	}
+	else
+	{
+		update_statue();
 	}
 }
 
@@ -193,6 +210,10 @@ function delete_file_record($file_name)
 	{
 		return "Error when deleting file record.";
 	}
+	else
+	{
+		update_statue();
+	}
 }
 
 function modify_file_desc($file_name, $file_desc)
@@ -203,6 +224,10 @@ function modify_file_desc($file_name, $file_desc)
 	if($result == NULL) //return value is null
 	{
 		return "Error when updating image description file record.";
+	}
+	else
+	{
+		update_statue();
 	}
 }
 /********************************************/
