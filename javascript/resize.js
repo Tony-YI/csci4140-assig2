@@ -17,7 +17,7 @@ function resize_mouse_down(e)
 
 	window_width = window.offsetWidth;
 	window_height = window.offsetHeight;
-	window_offset_left = win.offsetLeft;
+	window_offset_left = window.offsetLeft;
 	window_offset_top = window.offsetTop;
 
 	console.log("Resizing");
