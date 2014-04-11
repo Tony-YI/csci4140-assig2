@@ -371,7 +371,7 @@ function img_click(e)
 
 	try
 	{
-		document.body.addEventListener("onmousewheel", disable, false);
+		window.addEventListener("onmousewheel", disable, false);
 		console.log('heh1');
 	}
 	catch(error)
@@ -380,7 +380,7 @@ function img_click(e)
 	}
 	try
 	{
-		document.body.addEventListener("DOMMouseScroll", disable, false);
+		window.addEventListener("DOMMouseScroll", disable, false);
 		console.log('heh2');
 	}
 	catch(error)
