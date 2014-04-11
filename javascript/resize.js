@@ -27,7 +27,7 @@ function resize_mouse_down(e)
 	{
 		//console.log("offsetTop " + display_large.offsetTop);
 		//console.log("offsetHeight " + display_large.offsetHeight);
-		if(display_large.style.bottom) //already exist this style
+		if(display_large.offsetBottom) //already exist this style
 		{
 			//do nothing
 			//display_large.style.bottom = display_large.offsetBottom + 'px';
@@ -43,7 +43,7 @@ function resize_mouse_down(e)
 
 	if(dir.indexOf('w') >= 0) //w direction
 	{
-		if(display_large.style.right) //already exist this style
+		if(display_large.offsetRight) //already exist this style
 		{
 			//do nothing
 		}
@@ -58,7 +58,7 @@ function resize_mouse_down(e)
 
 	if(dir.indexOf('e') >= 0) //e direction
 	{
-		if(display_large.style.left)
+		if(display_large.offsetLeft)
 		{
 			//do nothing
 		}
@@ -73,7 +73,7 @@ function resize_mouse_down(e)
 
 	if(dir.indexOf('s') >= 0) //s direction
 	{
-		if(display_large.style.top)
+		if(display_large.offsetTop)
 		{
 			//do nothing
 		}
