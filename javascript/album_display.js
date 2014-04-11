@@ -568,7 +568,44 @@ function update_img()
 			}
 
 			old_response = response;
-			console.log("old: " + old_response == response);
+			var j = 1;
+			for(var i = 0; i < response.length; i++)
+			{
+				if(old_response[i].file_name != response[i].file_name)
+				{
+					j = 0;
+				}
+				if(old_response[i].file_size != response[i].file_size)
+				{
+					j = 0;
+				}
+				if(old_response[i].upload_time != response[i].upload_time)
+				{
+					j = 0;
+				}
+				if(old_response[i].img_description != response[i].img_description)
+				{
+					j = 0;
+				}
+				if(old_response[i].img_path != response[i].img_path)
+				{
+					j = 0;
+				}
+				if(old_response[i].shortcut_path != response[i].shortcut_path)
+				{
+					j = 0;
+				}
+				if(old_response[i].img_width != response[i].img_width)
+				{
+					j = 0;
+				}
+				if(old_response[i].img_height != response[i].img_height)
+				{
+					j = 0;
+				}
+			}
+
+			console.log("j: " + j);
 
 			//remove all the old element
 			document.getElementById("display").innerHTML = "";
