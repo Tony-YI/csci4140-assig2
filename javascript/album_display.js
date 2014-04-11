@@ -326,7 +326,7 @@ function img_click(e)
 	img.setAttribute('img_height', img_height);
 
 	display_large.style.left = (window.innerWidth - final_width)/2 - 33/2 + "px"; //33 is achieve by "eyes"
-	display_large.style.top = (window.innerWidth - final_height)/2 - 33/2 + "px"; //33 is achieve by "eyes"
+	display_large.style.top = (window.innerHeight - final_height)/2 - 33/2 + "px"; //33 is achieve by "eyes"
 	
 	
 	image_large.appendChild(img);
