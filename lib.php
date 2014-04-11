@@ -76,6 +76,9 @@ function create_table()
 
 		$query = $db_obj->prepare("CREATE TABLE update_status (update_time TIMESTAMP, PRIMARY KEY(update_time));");
 		$query->execute();
+
+		$query = $db_obj->prepare("INSERT INTO update_status (update_time) VALUES (CURRENT_TIMESTAMP);");
+		$query->execute();
 	}
 	catch(PDOException $e)
 	{
