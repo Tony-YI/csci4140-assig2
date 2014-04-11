@@ -147,7 +147,7 @@ function resize_mouse_move(e)
 
 		var temp = o_width + (current_mouse_x - original_mouse_x);
 
-		if(div_offset_left + temp < window_width)
+		if(div_offset_left + temp + 33/2 < window_width)
 		{
 			image.style.height = o_height;
 			image.style.width = temp + 'px';
