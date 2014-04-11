@@ -7,6 +7,7 @@ function img_slot_mouse_on(e)
 	//console.log(e.type +": "+ e.target);
 	e.target.children[0].style.display = "inline";
 	e.target.children[1].style.display = "inline";
+	e.target.children[2].children[0].style.border = "2px solid red";
 	return null;
 }
 
@@ -19,6 +20,7 @@ function img_slot_mouse_off(e)
 	//console.log(e.type +": "+ e.target);
 	e.target.children[0].style.display = "none";
 	e.target.children[1].style.display = "none";
+	e.target.children[2].children[0].style.border = "0px";
 	return null;
 }
 
