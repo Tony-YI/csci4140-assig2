@@ -1,5 +1,5 @@
-var o_x = 0;
-var o_y = 0;
+var mouse_x = 0;
+var mouse_y = 0;
 var dir = ""; //n/s/w/e/ne/nw/se/sw
 var o_width = 0;
 var o_height = 0;
@@ -13,10 +13,10 @@ function resize(e)
 	console.log("Resizing");
 
 	dir = e.target.id;
-	o_x = e.clientX;
-	o_y = e.clientY;
+	mouse_x = e.clientX;
+	mouse_y = e.clientY;
 
-	console.log("direction is " + dir + " x is " + o_x + ", y is " + o_y);
+	console.log("direction is " + dir + " mouse_x is " + mouse_x + ", mouse_y is " + mouse_y);
 
 	var image_large = document.getElementById('image_large'); //td
 	var image = document.getElementById('image'); //img
