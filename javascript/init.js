@@ -1,6 +1,6 @@
 function init()
 {
-	update_img();
+	//update_img();
 
 	setInterval(update_img, 5000); //periodically update images
 
