@@ -339,6 +339,7 @@ function disable(e)
 	e.preventDefault();
 
 	console.log("Scrolling or droping file out of dropbox.");
+	alert("Scrolling or droping file out of dropbox.");
 }
 
 function resize(e)
