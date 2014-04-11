@@ -4,10 +4,7 @@ var dir = ""; //n/s/w/e/ne/nw/se/sw direction
 var o_width = 0;
 var o_height = 0;
 
-var window_width = 0;
-var window_height = 0;
-var window_offset_left = 0;
-var window_offset_top = 0;
+
 
 //mouse is down
 function resize_mouse_down(e)
@@ -15,10 +12,10 @@ function resize_mouse_down(e)
 	e.stopPropagation();
 	e.preventDefault();
 
-	window_width = window.offsetWidth;
-	window_height = window.offsetHeight;
-	window_offset_left = window.offsetLeft;
-	window_offset_top = window.offsetTop;
+	var window_width = window.offsetWidth;
+	var window_height = window.offsetHeight;
+	var window_offset_left = window.offsetLeft;
+	var window_offset_top = window.offsetTop;
 
 	console.log(window_width);
 	console.log(window_offset_left);
