@@ -251,7 +251,7 @@ function img_click(e)
 	display_large.id = 'display_large';
 	try
 	{
-		display_large.addEventListener("onmousewheel", disable_scroll, false);
+		display_large.addEventListener("onmousewheel", disable, false);
 		console.log('heh1');
 	}
 	catch(error)
@@ -261,7 +261,7 @@ function img_click(e)
 
 	try
 	{
-		display_large.addEventListener("DOMMouseScroll", disable_scroll, false);
+		display_large.addEventListener("DOMMouseScroll", disable, false);
 		console.log('heh2');
 	}
 	catch(error)
@@ -333,12 +333,12 @@ function img_click(e)
 }
 
 //disable_scroll is predefined, we can't use it 
-function disable_scroll(e)
+function disable(e)
 {
 	e.stopPropagation();
 	e.preventDefault();
 
-	console.log("Scrolling");
+	console.log("Scrolling or droping file out of dropbox.");
 }
 
 function resize(e)
@@ -356,7 +356,7 @@ function cancle_image_large(e)
 
 	try
 	{
-		document.getElementById('image_background').removeEventListener("onmousewheel", disable_scroll, false);
+		document.getElementById('image_background').removeEventListener("onmousewheel", disable, false);
 	}
 	catch(error)
 	{
@@ -365,7 +365,7 @@ function cancle_image_large(e)
 
 	try
 	{
-		document.getElementById('image_background').removeEventListener("DOMMouseScroll", disable_scroll, false);
+		document.getElementById('image_background').removeEventListener("DOMMouseScroll", disable, false);
 	}
 	catch(error)
 	{
