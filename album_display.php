@@ -32,8 +32,10 @@
 	echo $hehe;
 */
 	//chech whether there is new image or not
-	if($last_update_time <= $current_update_time) //new images exist
+	if($last_update_time < $current_update_time) //new images exist
 	{
+		update_status($current_time);
+		
 		//quert the database
 		$query = "SELECT * FROM file ORDER BY upload_time DESC;";
 		$result = db_execute($query);

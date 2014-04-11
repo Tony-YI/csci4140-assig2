@@ -178,9 +178,9 @@ function check_file_existance($file_name)
 	}
 }
 */
-function update_statue()
+function update_statue($current_time)
 {
-	$query = "UPDATE update_status SET update_time=CURRENT_TIMESTAMP;";
+	$query = "UPDATE update_status SET update_time='$current_time';";
 	$result = db_execute($query);
 
 	if($result == NULL) //return value is null
@@ -198,10 +198,6 @@ function add_file_record($file_name, $file_size, $_img_dir, $_shortcut_dir, $img
 	{
 		return "Error when adding file record.";
 	}
-	else
-	{
-		update_statue();
-	}
 }
 
 function delete_file_record($file_name)
@@ -213,10 +209,6 @@ function delete_file_record($file_name)
 	{
 		return "Error when deleting file record.";
 	}
-	else
-	{
-		update_statue();
-	}
 }
 
 function modify_file_desc($file_name, $file_desc)
@@ -227,10 +219,6 @@ function modify_file_desc($file_name, $file_desc)
 	if($result == NULL) //return value is null
 	{
 		return "Error when updating image description file record.";
-	}
-	else
-	{
-		update_statue();
 	}
 }
 /********************************************/
