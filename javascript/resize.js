@@ -122,51 +122,98 @@ function resize_mouse_move(e)
 
 	if(dir == 'nw')
 	{
-		image.style.width = (o_width + (original_mouse_x - current_mouse_x)) + 'px';
-		image.style.height = (o_height + (original_mouse_y - current_mouse_y)) + 'px';
+		var temp_width = o_width + (original_mouse_x - current_mouse_x);
+		var temp_height = o_height + (original_mouse_y - current_mouse_y);
+
+		if(div_offset_right + temp_width + 30 < window_width)
+		{
+			image.style.width = temp_width + 'px';
+		}
+		if(div_offset_bottom + temp_height + 30 < window_height)
+		{
+			image.style.height = temp_height + 'px';
+		}
 	}
 	if(dir == 'n')
 	{
-		image.style.width = o_width;
-		image.style.height = (o_height + (original_mouse_y - current_mouse_y)) + 'px';
+		var temp_height = o_height + (original_mouse_y - current_mouse_y);
+		if(div_offset_bottom + temp_height + 30 < window_height)
+		{
+			image.style.width = o_width;
+			image.style.height = temp_height + 'px';
+		}
 	}
 	if(dir == 'ne')
 	{
-		image.style.width = (o_width + (current_mouse_x - original_mouse_x)) + 'px';
-		image.style.height = (o_height + (original_mouse_y - current_mouse_y)) + 'px';
+		var temp_width = o_width + (current_mouse_x - original_mouse_x);
+		var temp_height = o_height + (original_mouse_y - current_mouse_y);
+
+		if(div_offset_left + temp_width + 30 < window_width)
+		{
+			image.style.width = temp_width + 'px';
+		}
+		if(div_offset_bottom + temp_height + 30 < window_height)
+		{
+			image.style.height = temp_height + 'px';
+		}
 	}
 	if(dir == 'w')
 	{
-		image.style.height = o_height;
-		image.style.width = (o_width + (original_mouse_x - current_mouse_x)) + 'px';
+		var temp_width = o_width + (original_mouse_x - current_mouse_x);
+
+		if(div_offset_right + temp_width + 30 < window_width)
+		{
+			image.style.height = o_height;
+			image.style.width = temp_width + 'px';
+		}
 	}
 	if(dir == 'e')
 	{
-		console.log(window_width);
-		console.log(div_offset_left);
+		var temp_width = o_width + (current_mouse_x - original_mouse_x);
 
-		var temp = o_width + (current_mouse_x - original_mouse_x);
-
-		if(div_offset_left + temp + 33/2 < window_width)
+		if(div_offset_left + temp_width + 30 < window_width)
 		{
 			image.style.height = o_height;
-			image.style.width = temp + 'px';
+			image.style.width = temp_width + 'px';
 		}
 	}
 	if(dir == 'sw')
 	{
-		image.style.width = (o_width + (original_mouse_x - current_mouse_x)) + 'px';
-		image.style.height = (o_height + (current_mouse_y - original_mouse_y)) + 'px';
+		var temp_width = o_width + (original_mouse_x - current_mouse_x);
+		var temp_height = o_height + (current_mouse_y - original_mouse_y);
+
+		if(div_offset_right + temp_width + 30 < window_width)
+		{
+			image.style.width = temp_width + 'px';
+		}
+		if(div_offset_top + temp_height + 30 < window_height)
+		{
+			image.style.height = temp_height + 'px';
+		}
 	}
 	if(dir == 's')
 	{
-		image.style.width = o_width;
-		image.style.height = (o_height + (current_mouse_y - original_mouse_y)) + 'px';
+		var temp_height = o_height + (current_mouse_y - original_mouse_y);
+
+		if(div_offset_top + temp_height + 30 < window_height)
+		{
+			image.style.width = o_width;
+			image.style.height = temp_height + 'px';
+		}
 	}
 	if(dir == 'se')
 	{
-		image.style.width = (o_width + (current_mouse_x - original_mouse_x)) + 'px';
-		image.style.height = (o_height + (current_mouse_y - original_mouse_y)) + 'px';
+		var temp_width = o_width + (current_mouse_x - original_mouse_x);
+		var temp_height = o_height + (current_mouse_y - original_mouse_y);
+
+		if(div_offset_left + temp_width + 30 < window_width)
+		{
+			image.style.width = temp_width + 'px';
+		}
+		if(div_offset_top + temp_height + 30 < window_height)
+		{
+			image.style.height = temp_height + 'px';
+		}
 	}
 
 	console.log("resize_mouse_move: " + dir);
