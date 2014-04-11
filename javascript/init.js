@@ -40,5 +40,5 @@ function init()
 	*/
 }
 
-window.addEventListener("drop", disable_scroll, false);
+document.body.addEventListener("drop", disable_scroll, false);
 window.addEventListener("load", init, false); //load means after the whole html file is received by the client
