@@ -23,6 +23,11 @@
 		$current_update_time = $result->fetch();
 	}
 
+	echo "last: $last_update_time";
+	echo "current: $current_update_time";
+	$hehe = ($last_update_time <= $current_update_time);
+	echo $hehe;
+
 	//chech whether there is new image or not
 	if($last_update_time <= $current_update_time) //new images exist
 	{
