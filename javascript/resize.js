@@ -137,6 +137,9 @@ function resize_mouse_move(e)
 	}
 	if(dir == 'e')
 	{
+		console.log(window_width);
+		console.log(window_offset_left);
+		
 		if(current_mouse_x < window_width + window_offset_left)
 		{
 			image.style.height = o_height;
