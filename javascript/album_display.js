@@ -610,6 +610,7 @@ function update_img()
 
 			if(j == 0)
 			{
+				console.log('updating');
 			//remove all the old element
 			document.getElementById("display").innerHTML = "";
 
