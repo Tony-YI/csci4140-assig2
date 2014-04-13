@@ -536,7 +536,6 @@ function update_page_height()
 	.
 </div>
 */
-var old_response = "";
 
 function update_img()
 {
@@ -567,50 +566,6 @@ function update_img()
 				return; //exit the function
 			}
 
-			var j = 1;
-			for(var i = 0; i < response.length && i < old_response.length; i++)
-			{
-				if(old_response[i].file_name != response[i].file_name)
-				{
-					j = 0;
-				}
-				if(old_response[i].file_size != response[i].file_size)
-				{
-					j = 0;
-				}
-				if(old_response[i].upload_time != response[i].upload_time)
-				{
-					j = 0;
-				}
-				if(old_response[i].img_description != response[i].img_description)
-				{
-					j = 0;
-				}
-				if(old_response[i].img_path != response[i].img_path)
-				{
-					j = 0;
-				}
-				if(old_response[i].shortcut_path != response[i].shortcut_path)
-				{
-					j = 0;
-				}
-				if(old_response[i].img_width != response[i].img_width)
-				{
-					j = 0;
-				}
-				if(old_response[i].img_height != response[i].img_height)
-				{
-					j = 0;
-				}
-			}
-
-			old_response = response;
-
-			console.log("j: " + j);
-
-			if(j == 0)
-			{
-				console.log('updating');
 			//remove all the old element
 			document.getElementById("display").innerHTML = "";
 
@@ -658,7 +613,7 @@ function update_img()
 			}
 
 			update_page_height();
-			}
+			
 
 			console.log("MYSQL ERROR: " + response.mysql_error);
 		}
